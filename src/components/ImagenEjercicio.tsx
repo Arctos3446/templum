@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import type { Ejercicio } from '../db/tipos'
 import { MapaMusculos } from './MapaMusculos'
 
-const url = (ruta: string) => `./${ruta}`
+// Dirección completa del dibujo. Tiene que ser completa: dentro de una variable de CSS, algunos navegadores
+// (como Firefox) resuelven las direcciones relativas desde el archivo de estilos (/templum/assets/) y no las encuentran.
+const url = (ruta: string) => new URL(ruta, document.baseURI).href
 
 /** Miniatura para listas: el dibujo dorado (fase de esfuerzo) o, si no tiene, el mapa de músculos. */
 export function Miniatura({ ej, size = 52 }: { ej: Ejercicio; size?: number }) {
