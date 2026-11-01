@@ -5,11 +5,13 @@ import { Empty } from '../components/Empty'
 import { Icon } from '../components/Icon'
 import { TarjetaRutina } from '../components/TarjetaRutina'
 import { diaDeSemana } from '../lib/rutinas'
+import { useEmpezar } from '../components/Empezar'
 
 export function Rutinas() {
   const rutinas = useRutinas()
   const mapa = useMapaEjercicios()
   const hoy = diaDeSemana()
+  const { empezar, dialogo } = useEmpezar()
   const propios = mapa ? mapa.size - CATALOGO.length : 0
 
   return (
@@ -31,7 +33,7 @@ export function Rutinas() {
           ) : (
             <div className="lista-rutinas">
               {rutinas.map((r) => (
-                <TarjetaRutina key={r.id} r={r} mapa={mapa} hoy={r.dias.includes(hoy)} />
+                <TarjetaRutina key={r.id} r={r} mapa={mapa} hoy={r.dias.includes(hoy)} onEmpezar={() => empezar(r)} />
               ))}
             </div>
           )}
@@ -53,6 +55,7 @@ export function Rutinas() {
           </Link>
         </>
       )}
+      {dialogo}
     </main>
   )
 }

@@ -81,3 +81,65 @@ export const OBJETIVO_INICIAL: Record<TipoEjercicio, string> = {
   tiempo: '30 s',
   cardio: '20 min',
 }
+
+// ---------- Entrenamientos ----------
+
+/** Una serie mientras se entrena. Se guarda como texto tal como lo escribe el usuario ("62,5", "1:30"). */
+export interface SerieEnCurso {
+  uid: string
+  kg: string
+  reps: string
+  /** m:ss (tiempo y cardio) */
+  tiempo: string
+  km: string
+  hecha: boolean
+}
+
+export interface EjercicioEnCurso {
+  uid: string
+  ejercicioId: string
+  objetivo: string
+  /** Descanso en segundos. */
+  descanso: number
+  nota: string
+  series: SerieEnCurso[]
+}
+
+/** El entrenamiento que se está haciendo ahora (hay uno como máximo). */
+export interface EntrenamientoEnCurso {
+  id: string
+  nombre: string
+  rutinaId?: string
+  inicio: number
+  /** Se marca al tocar "Terminar"; si vuelve al entrenamiento, se borra. */
+  fin?: number
+  ejercicios: EjercicioEnCurso[]
+  /** Descanso que está corriendo: termina en `hasta` (ms) y dura `total` segundos. */
+  descanso?: { hasta: number; total: number } | null
+}
+
+/** Una serie ya hecha. Solo lleva los datos que corresponden al tipo de ejercicio. */
+export interface SerieHecha {
+  kg?: number
+  reps?: number
+  /** segundos */
+  seg?: number
+  km?: number
+}
+
+export interface EjercicioHecho {
+  uid: string
+  ejercicioId: string
+  nota: string
+  series: SerieHecha[]
+}
+
+/** Un entrenamiento terminado y guardado en el historial. */
+export interface Entrenamiento {
+  id: string
+  nombre: string
+  rutinaId?: string
+  inicio: number
+  fin: number
+  ejercicios: EjercicioHecho[]
+}

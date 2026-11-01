@@ -7,6 +7,9 @@ import { useRutinas } from '../db/rutinas'
 import { useMapaEjercicios } from '../db/ejercicios'
 import { TarjetaRutina } from '../components/TarjetaRutina'
 import { diaDeSemana } from '../lib/rutinas'
+import { useEnCurso, useEntrenamientos } from '../db/entrenamientos'
+import { useEmpezar } from '../components/Empezar'
+import { numeroEntero } from '../lib/series'
 
 const INICIALES = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
 
@@ -17,6 +20,21 @@ export function Inicio() {
   const mapa = useMapaEjercicios()
   const dia = diaDeSemana(hoy)
   // Primero las que tocan hoy; se muestran hasta 4.
+  const enCurso = useEnCurso()
+  const historial = useEntrenamientos()
+  const { empezar, dialogo } = useEmpezar()
+
+  // Lo de esta semana (de lunes a hoy).
+  const lunes = semana[0].getTime()
+  const deLaSemana = (historial ?? []).filter((h) => h.inicio >= lunes)
+  const diasHechos = semana.map((d) => deLaSemana.some((h) => mismoDia(new Date(h.inicio), d)))
+  let vol = 0
+  let minutos = 0
+  for (const h of deLaSemana) {
+    minutos += Math.round((h.fin - h.inicio) / 60000)
+    for (const x of h.ejercicios) if (mapa?.get(x.ejercicioId)?.tipo === 'pesas') for (const s of x.series) vol += (s.kg ?? 0) * (s.reps ?? 0)
+  }
+
   const lista = rutinas ? [...rutinas].sort((a, b) => Number(b.dias.includes(dia)) - Number(a.dias.includes(dia))).slice(0, 4) : []
 
   return (
@@ -38,10 +56,17 @@ export function Inicio() {
             <span className="r">1 Corintios 6, 19</span>
           </div>
 
-          <Link to="/rutinas" className="btn btn-primary btn-block">
-            <Icon name="play" />
-            Empezar entrenamiento
-          </Link>
+          {enCurso ? (
+            <Link to="/entrenamiento" className="btn btn-primary btn-block">
+              <Icon name="play" />
+              Continuar entrenamiento
+            </Link>
+          ) : (
+            <Link to="/empezar" className="btn btn-primary btn-block">
+              <Icon name="play" />
+              Empezar entrenamiento
+            </Link>
+          )}
         </div>
 
         <div className="inicio-col">
@@ -52,7 +77,7 @@ export function Inicio() {
           {rutinas && mapa && lista.length > 0 ? (
             <div className="lista-rutinas una-col">
               {lista.map((r) => (
-                <TarjetaRutina key={r.id} r={r} mapa={mapa} hoy={r.dias.includes(dia)} />
+                <TarjetaRutina key={r.id} r={r} mapa={mapa} hoy={r.dias.includes(dia)} onEmpezar={() => empezar(r)} />
               ))}
             </div>
           ) : rutinas ? (
@@ -66,19 +91,20 @@ export function Inicio() {
           </div>
           <div className="semana">
             {semana.map((d, i) => (
-              <span key={i} className={mismoDia(d, hoy) ? 'hoy' : undefined}>
-                <i />
+              <span key={i} className={[mismoDia(d, hoy) && 'hoy', diasHechos[i] && 'hecho'].filter(Boolean).join(' ') || undefined}>
+                <i>{diasHechos[i] && <Icon name="check" size={16} />}</i>
                 {INICIALES[i]}
               </span>
             ))}
           </div>
           <div className="stats num">
-            <Stat v="0" l="entrenamientos" />
-            <Stat v="0 kg" l="volumen" />
-            <Stat v="0 min" l="tiempo" />
+            <Stat v={String(deLaSemana.length)} l={deLaSemana.length === 1 ? 'entrenamiento' : 'entrenamientos'} />
+            <Stat v={`${numeroEntero(vol)} kg`} l="volumen" />
+            <Stat v={minutos < 60 ? `${minutos} min` : `${Math.floor(minutos / 60)} h ${minutos % 60} min`} l="tiempo" />
           </div>
         </div>
       </div>
+      {dialogo}
     </main>
   )
 }

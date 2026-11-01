@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import {
   DndContext,
@@ -12,7 +12,7 @@ import {
 import { SortableContext, arrayMove, sortableKeyboardCoordinates, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { eliminarRutina, guardarRutina, useRutina } from '../db/rutinas'
-import { useEjercicios, useMapaEjercicios } from '../db/ejercicios'
+import { useMapaEjercicios } from '../db/ejercicios'
 import { nuevoId } from '../db/db'
 import { ETIQUETA_OBJETIVO, OBJETIVO_INICIAL, type Ejercicio, type EjercicioEnRutina } from '../db/tipos'
 import { DIAS_INICIAL, DIAS_LARGOS, resumenFila } from '../lib/rutinas'
@@ -23,7 +23,7 @@ import { Dialogo } from '../components/Dialogo'
 import { Empty } from '../components/Empty'
 import { Icon } from '../components/Icon'
 import { Miniatura } from '../components/ImagenEjercicio'
-import { ListaEjercicios } from '../components/ListaEjercicios'
+import { SelectorEjercicios } from '../components/SelectorEjercicios'
 import { useVolver } from '../components/Volver'
 
 type Borrador = { nombre: string; dias: number[]; ejercicios: EjercicioEnRutina[] }
@@ -44,7 +44,6 @@ function filaNueva(ej: Ejercicio): EjercicioEnRutina {
 export function RutinaEditor() {
   const { id } = useParams()
   const existente = useRutina(id)
-  const ejercicios = useEjercicios()
   const mapa = useMapaEjercicios()
   const navigate = useNavigate()
   const volver = useVolver('/rutinas')
@@ -53,7 +52,6 @@ export function RutinaEditor() {
   const [original, setOriginal] = useState<Borrador>(VACIA)
   const [abierto, setAbierto] = useState<string | null>(null)
   const [eligiendo, setEligiendo] = useState(false)
-  const [seleccion, setSeleccion] = useState<string[]>([])
   const [borrar, setBorrar] = useState(false)
   const [error, setError] = useState(false)
   const nombreRef = useRef<HTMLInputElement>(null)
@@ -71,17 +69,7 @@ export function RutinaEditor() {
     setOriginal(inicial)
   }, [id, existente, b])
 
-  // Mientras se eligen ejercicios, la página de atrás no se mueve.
-  useEffect(() => {
-    if (!eligiendo) return
-    document.body.style.overflow = 'hidden'
-    const esc = (e: KeyboardEvent) => e.key === 'Escape' && setEligiendo(false)
-    window.addEventListener('keydown', esc)
-    return () => {
-      document.body.style.overflow = ''
-      window.removeEventListener('keydown', esc)
-    }
-  }, [eligiendo])
+  const cerrarSelector = useCallback(() => setEligiendo(false), [])
 
   const hayCambios = !!b && JSON.stringify(b) !== JSON.stringify(original)
   const aviso = useAvisoSalida(hayCambios, volver)
@@ -94,7 +82,7 @@ export function RutinaEditor() {
         </Empty>
       </main>
     )
-  if (!b || !mapa || !ejercicios) return <main className="screen" />
+  if (!b || !mapa) return <main className="screen" />
 
   const set = (p: Partial<Borrador>) => setB({ ...b, ...p })
   const cambiarFila = (uid: string, p: Partial<EjercicioEnRutina>) =>
@@ -107,11 +95,10 @@ export function RutinaEditor() {
     set({ ejercicios: arrayMove(b!.ejercicios, de, a) })
   }
 
-  function agregar() {
-    const nuevas = seleccion.map((eid) => mapa!.get(eid)).filter((x): x is Ejercicio => !!x).map(filaNueva)
+  function agregar(ids: string[]) {
+    const nuevas = ids.map((eid) => mapa!.get(eid)).filter((x): x is Ejercicio => !!x).map(filaNueva)
     set({ ejercicios: [...b!.ejercicios, ...nuevas] })
     if (nuevas.length) setAbierto(nuevas[0].uid)
-    setSeleccion([])
     setEligiendo(false)
   }
 
@@ -214,35 +201,7 @@ export function RutinaEditor() {
         </button>
       )}
 
-      {eligiendo && (
-        <div className="selector" role="dialog" aria-modal="true" aria-label="Agregar ejercicios">
-          <div className="selector-caja">
-            <header className="selector-cab">
-              <button type="button" className="btn-texto" onClick={() => setEligiendo(false)}>
-                Cancelar
-              </button>
-              <span className="barra-editor-titulo">Agregar ejercicios</span>
-              <span style={{ width: 70 }} />
-            </header>
-            <div className="selector-cuerpo">
-              <ListaEjercicios
-                ejercicios={ejercicios}
-                clave="selector"
-                modo="elegir"
-                seleccion={seleccion}
-                onAlternar={(eid) => setSeleccion(seleccion.includes(eid) ? seleccion.filter((x) => x !== eid) : [...seleccion, eid])}
-              />
-            </div>
-            <div className="selector-pie">
-              <button type="button" className="btn btn-primary btn-block" disabled={!seleccion.length} onClick={agregar}>
-                {seleccion.length === 0
-                  ? 'Elige uno o más ejercicios'
-                  : `Agregar ${seleccion.length} ${seleccion.length === 1 ? 'ejercicio' : 'ejercicios'}`}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {eligiendo && <SelectorEjercicios onCerrar={cerrarSelector} onElegir={agregar} />}
 
       <Dialogo
         abierto={borrar}

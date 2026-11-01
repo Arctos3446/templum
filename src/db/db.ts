@@ -1,5 +1,5 @@
 import Dexie, { type EntityTable } from 'dexie'
-import type { Ejercicio, Rutina } from './tipos'
+import type { Ejercicio, Entrenamiento, EntrenamientoEnCurso, Rutina } from './tipos'
 
 // Base de datos local (IndexedDB). Todo vive solo en este dispositivo.
 // Los 112 ejercicios de la biblioteca vienen con la app (contenido/ejercicios.json);
@@ -7,11 +7,20 @@ import type { Ejercicio, Rutina } from './tipos'
 export const db = new Dexie('templum') as Dexie & {
   ejerciciosPropios: EntityTable<Ejercicio, 'id'>
   rutinas: EntityTable<Rutina, 'id'>
+  entrenamientos: EntityTable<Entrenamiento, 'id'>
+  /** Como máximo una fila: el entrenamiento que se está haciendo. */
+  enCurso: EntityTable<EntrenamientoEnCurso, 'id'>
 }
 
 db.version(1).stores({
   ejerciciosPropios: 'id, grupo, nombre',
   rutinas: 'id, actualizada',
+})
+
+// Parte 3: historial de entrenamientos y el entrenamiento en curso.
+db.version(2).stores({
+  entrenamientos: 'id, inicio, rutinaId',
+  enCurso: 'id',
 })
 
 /** Identificador único (funciona también sin https). */

@@ -13,6 +13,7 @@ import '@fontsource/cormorant-garamond/500-italic.css'
 import './styles/tokens.css'
 import './styles/base.css'
 import './styles/parte2.css'
+import './styles/parte3.css'
 import { App } from './App'
 import { pedirAlmacenamientoPersistente } from './db/db'
 

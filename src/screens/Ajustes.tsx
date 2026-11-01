@@ -1,6 +1,7 @@
 import { ChiRho } from '../components/Logo'
 import { Empty } from '../components/Empty'
 import { useTema, type Tema } from '../lib/tema'
+import { cambiarAjuste, puedeVibrar, useAjustes, type Ajustes as TAjustes } from '../lib/ajustes'
 
 const OPCIONES: { valor: Tema; texto: string }[] = [
   { valor: 'auto', texto: 'Automático' },
@@ -10,6 +11,7 @@ const OPCIONES: { valor: Tema; texto: string }[] = [
 
 export function Ajustes() {
   const [tema, setTema] = useTema()
+  const a = useAjustes()
 
   return (
     <main className="screen">
@@ -31,9 +33,22 @@ export function Ajustes() {
         <span className="row-s">Automático sigue el modo de tu celular o computador.</span>
       </div>
 
+      <span className="sec" style={{ marginTop: 14 }}>Entrenamiento</span>
+      <div className="grp">
+        <Interruptor a={a} k="sonido" texto="Sonido al terminar el descanso" detalle="En iPhone no suena si el celular está en silencio." />
+        <Interruptor
+          a={a}
+          k="vibrar"
+          texto="Vibración"
+          detalle={puedeVibrar ? 'Al terminar el descanso.' : 'Este celular no permite vibrar desde la app (pasa en iPhone).'}
+          deshabilitado={!puedeVibrar}
+        />
+        <Interruptor a={a} k="pantallaEncendida" texto="Mantener pantalla encendida" detalle="Mientras entrenas, para que el descanso pueda avisarte." />
+      </div>
+
       <div style={{ marginTop: 14 }}>
         <Empty icon="gear" title="Más ajustes" soon="Llegan en las partes 6 y 7">
-          Entrenamiento, elementos de fe con sus interruptores, y respaldo de tus datos.
+          Descanso por defecto, elementos de fe con sus interruptores, y respaldo de tus datos.
         </Empty>
       </div>
 
@@ -61,5 +76,36 @@ export function Ajustes() {
       </div>
       </div>
     </main>
+  )
+}
+
+function Interruptor({
+  a,
+  k,
+  texto,
+  detalle,
+  deshabilitado = false,
+}: {
+  a: TAjustes
+  k: keyof TAjustes
+  texto: string
+  detalle?: string
+  deshabilitado?: boolean
+}) {
+  return (
+    <label className="row" data-deshabilitado={deshabilitado}>
+      <span className="row-t">
+        <span>{texto}</span>
+        {detalle && <span className="row-s">{detalle}</span>}
+      </span>
+      <input
+        type="checkbox"
+        className="sw"
+        role="switch"
+        checked={a[k] && !deshabilitado}
+        disabled={deshabilitado}
+        onChange={(e) => cambiarAjuste(k, e.target.checked)}
+      />
+    </label>
   )
 }

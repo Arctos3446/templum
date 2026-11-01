@@ -1,6 +1,8 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { Icon, type IconName } from './Icon'
 import { Wordmark } from './Logo'
+import { BarraEnCurso } from './BarraEnCurso'
+import type { EntrenamientoEnCurso } from '../db/tipos'
 
 const tabs: { to: string; label: string; icon: IconName; tambien?: string[] }[] = [
   { to: '/', label: 'Inicio', icon: 'home' },
@@ -11,7 +13,7 @@ const tabs: { to: string; label: string; icon: IconName; tambien?: string[] }[] 
   { to: '/ajustes', label: 'Ajustes', icon: 'gear' },
 ]
 
-export function TabBar() {
+export function TabBar({ enCurso }: { enCurso?: EntrenamientoEnCurso | null }) {
   const { pathname } = useLocation()
   const activa = (t: (typeof tabs)[number]) =>
     t.to === '/' ? pathname === '/' : [t.to, ...(t.tambien ?? [])].some((p) => pathname === p || pathname.startsWith(p + '/'))
@@ -25,6 +27,7 @@ export function TabBar() {
           {t.label}
         </NavLink>
       ))}
+      {enCurso && <BarraEnCurso e={enCurso} />}
     </nav>
   )
 }

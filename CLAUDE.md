@@ -15,7 +15,7 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Sigue la Parte 3 (entrenamiento en curso) |
+| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 hecha el 2026-11-01, espera la prueba del usuario |
 | 3 · Publicar e instalar en el celular | Pendiente |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
@@ -82,6 +82,11 @@ src/
   lib/                         tema.ts (Automático/Oscuro/Claro, en localStorage), fechas.ts, tiempo.ts (m:ss), rutinas.ts, useSesion.ts
   db/                          Capa de datos (Dexie). tipos.ts, db.ts, ejercicios.ts y rutinas.ts, con hooks useLiveQuery
   styles/parte2.css            Estilos de la biblioteca, el detalle, los editores, el selector y los avisos
+  styles/parte3.css            Entrenamiento en curso, descanso, fin, menú que sube (Hoja), interruptores
+  screens/Entrenamiento.tsx    Entrenamiento en curso · FinEntrenamiento.tsx · Empezar.tsx
+  lib/series.ts                Leer y mostrar series por tipo (kg con coma, m:ss), sugerencias, récords
+  lib/ajustes.ts, lib/aviso.ts Ajustes de cada persona (sonido, vibración, pantalla) y aviso del descanso
+  lib/contenido.ts             Versículos y oraciones (elige uno fijo por entrenamiento)
 public/dibujos/                Copia de contenido/dibujos que usa la app (si cambia un dibujo, copiarlo aquí)
 diseno/
   guia-de-estilo.html          Guía de estilo aprobada (paleta, letras, logos, piezas)
@@ -123,6 +128,19 @@ contenido/
 - Decisiones del usuario: valores iniciales al agregar un ejercicio, 3 series × 8–10 con 1:30 de descanso (cardio: 1 × 20 min, sin descanso); los 112 de la biblioteca no se editan, solo los propios.
 - Los créditos de Everkinetic (CC BY-SA 4.0) y de free-exercise-db ya están al pie de Ajustes.
 - Prueba automática: puppeteer-core con Brave (`executablePath: '/usr/bin/brave'`), instalado en una carpeta temporal y no en el proyecto. Crea una rutina, agrega ejercicios, los reordena, la guarda, prueba los avisos y crea un ejercicio propio, sin errores en la consola.
+
+## Cómo quedó construida la Parte 3 (2026-11-01)
+
+- El usuario usa un **Samsung A16**; sus amigos con iPhone y otros celulares también usarán la app. Lo que depende del celular va como ajuste de cada persona: sonido, vibración (el iPhone no vibra desde una web) y pantalla encendida, en Ajustes → Entrenamiento (localStorage `templum.ajustes`).
+- Base de datos versión 2: `entrenamientos` (terminados) y `enCurso` (una fila como máximo). Mientras se entrena, las series se guardan como texto ("62,5", "1:30") y al guardar pasan a números (`kg`, `reps`, `seg`, `km`); solo se guardan las series marcadas.
+- La pantalla trabaja sobre una copia local y la guarda 0,4 s después de cada cambio (y al esconder la app), así sobrevive a recargas y a cerrar el navegador.
+- Sugerencias en cada casilla: lo de la vez anterior; si no hay, la serie de arriba; si tampoco, el objetivo de la rutina. Al marcar ✓ con casillas vacías se usan esas sugerencias; si falta un dato, la casilla se pone roja y recibe el cursor.
+- Descanso: corre con la hora de término (no se desfasa); el aviso suena desde cualquier pantalla de la app (`useVigiaDescanso` en App.tsx). Con el celular bloqueado no puede sonar; por eso "Mantener pantalla encendida" viene activado.
+- Récord en vivo: supera lo mejor del historial (kg en pesas, reps en peso corporal, tiempo, km en cardio). La primera vez que se hace un ejercicio no cuenta como récord.
+- Fin: duración, volumen, series, récords, versículo de cierre y oración de cierre (fijos por entrenamiento), "Guardar" y la casilla "Actualizar la rutina" si cambió la estructura (ejercicios, cantidad de series, descanso, notas).
+- Se puede empezar desde ▶ en cada rutina (Inicio, Rutinas o la pantalla Empezar) o en blanco. Si ya hay uno en curso, pregunta antes de descartarlo. Mientras hay uno en curso se ve el aviso "En curso" sobre el menú (abajo en el celular, al final del menú lateral en el computador).
+- Inicio ya muestra los días entrenados de la semana y sus totales.
+- Prueba automática: `pruebas/parte3.mjs` en la carpeta temporal (siembra una rutina y un entrenamiento anterior directo en IndexedDB).
 
 ## Plan técnico (Etapa 2)
 

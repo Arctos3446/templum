@@ -9,15 +9,23 @@ import { EjercicioForm } from './screens/EjercicioForm'
 import { Progreso } from './screens/Progreso'
 import { Historial } from './screens/Historial'
 import { Ajustes } from './screens/Ajustes'
+import { Entrenamiento } from './screens/Entrenamiento'
+import { FinEntrenamiento } from './screens/FinEntrenamiento'
+import { Empezar } from './screens/Empezar'
+import { useEnCurso } from './db/entrenamientos'
+import { useVigiaDescanso } from './lib/aviso'
 
 // Las pantallas "de enfoque" (editores) esconden el menú de abajo en el celular.
 const enfoque = { enfoque: true }
 
 function Marco() {
   const enfocado = useMatches().some((m) => (m.handle as { enfoque?: boolean } | undefined)?.enfoque)
+  const enCurso = useEnCurso()
+  useVigiaDescanso(enCurso?.descanso?.hasta)
+  const clases = ['app', enfocado && 'enfocado', enCurso && 'con-curso'].filter(Boolean).join(' ')
   return (
-    <div className={enfocado ? 'app enfocado' : 'app'}>
-      <TabBar />
+    <div className={clases}>
+      <TabBar enCurso={enCurso} />
       <Outlet />
     </div>
   )
@@ -35,6 +43,9 @@ const router = createHashRouter([
       { path: '/ejercicios/nuevo', element: <EjercicioForm />, handle: enfoque },
       { path: '/ejercicios/:id', element: <EjercicioDetalle /> },
       { path: '/ejercicios/:id/editar', element: <EjercicioForm />, handle: enfoque },
+      { path: '/empezar', element: <Empezar /> },
+      { path: '/entrenamiento', element: <Entrenamiento />, handle: enfoque },
+      { path: '/entrenamiento/fin', element: <FinEntrenamiento />, handle: enfoque },
       { path: '/progreso', element: <Progreso /> },
       { path: '/historial', element: <Historial /> },
       { path: '/ajustes', element: <Ajustes /> },
