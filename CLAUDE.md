@@ -15,7 +15,7 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Parte 5 hecha el 2026-11-01, espera la prueba del usuario |
+| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Parte 5 ✅ aceptada el 2026-11-01 · El usuario pidió terminar las partes 6 y 7 y publicar, para probar con uso real en el celular |
 | 3 · Publicar e instalar en el celular | Pendiente |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
