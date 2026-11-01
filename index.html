@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0D0A10" />
+    <meta name="description" content="Tu cuerpo es templo. Registro de entrenamiento." />
+    <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <title>Templum</title>
+    <script>
+      // Aplica el tema guardado antes de pintar, para que no parpadee.
+      try {
+        var t = localStorage.getItem('templum.tema');
+        if (t === 'oscuro') document.documentElement.dataset.theme = 'dark';
+        if (t === 'claro') document.documentElement.dataset.theme = 'light';
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

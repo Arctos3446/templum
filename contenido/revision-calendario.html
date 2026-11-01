@@ -1,0 +1,298 @@
+<title>Templum Calendario</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: una columna estrecha; arriba la línea del día tal como irá en Inicio, abajo un mes recorrible como un ordo (lista de días con su color litúrgico). */
+:root {
+  --bg: #0D0A10;
+  --surface: #16111A;
+  --raised: #1F1826;
+  --line: #2F2539;
+  --fg: #EEE7DC;
+  --muted: #A3969F;
+  --purple: #6B3A9E;
+  --purple-ink: #B892E0;
+  --gold: #CFA54E;
+  --gold-faint: rgba(207,165,78,.16);
+  --on-accent: #F7F1E6;
+  --lit-verde: #5C9B69;
+  --lit-rojo: #E35C70;
+  --lit-morado: #9B6CD0;
+  --lit-rosa: #E39AB3;
+  --lit-blanco: #F2ECE0;
+  --lit-borde: #5A4C55;
+  --font-display: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-ui: "Jost", "Futura", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #E4D9C6; --surface: #EDE4D3; --raised: #D8CAB2; --line: #C6B396;
+    --fg: #1D1421; --muted: #5A4C55; --purple: #4B2275; --purple-ink: #4B2275;
+    --gold: #85631A; --gold-faint: rgba(133,99,26,.14); --on-accent: #F3ECDF;
+    --lit-verde: #3C7049; --lit-rojo: #8F1A2E; --lit-morado: #4B2275; --lit-rosa: #B5577A;
+    --lit-blanco: #F8F3EA; --lit-borde: #8A7A68; color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #E4D9C6; --surface: #EDE4D3; --raised: #D8CAB2; --line: #C6B396;
+  --fg: #1D1421; --muted: #5A4C55; --purple: #4B2275; --purple-ink: #4B2275;
+  --gold: #85631A; --gold-faint: rgba(133,99,26,.14); --on-accent: #F3ECDF;
+  --lit-verde: #3C7049; --lit-rojo: #8F1A2E; --lit-morado: #4B2275; --lit-rosa: #B5577A;
+  --lit-blanco: #F8F3EA; --lit-borde: #8A7A68; color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-block: 32px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 28px;
+}
+h1, h2 { margin: 0; text-wrap: balance; font-weight: 500; }
+p { margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.brand { display: flex; align-items: center; gap: 10px; color: var(--gold); }
+.brand svg { width: 28px; height: 28px; }
+.brand span { font-family: var(--font-display); font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--fg); }
+header.top { display: grid; gap: 14px; }
+header.top h1 { font-family: var(--font-display); font-size: 2.4rem; line-height: 1.1; }
+.lede { color: var(--muted); max-width: 60ch; }
+.k { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+
+/* Punto de color litúrgico */
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.dot.verde { background: var(--lit-verde); }
+.dot.rojo { background: var(--lit-rojo); }
+.dot.morado { background: var(--lit-morado); }
+.dot.rosa { background: var(--lit-rosa); }
+.dot.blanco { background: var(--lit-blanco); box-shadow: inset 0 0 0 1px var(--lit-borde); }
+
+/* Vista previa de Inicio */
+.preview { display: grid; gap: 12px; }
+.inicio { display: grid; gap: 18px; padding: 20px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+.scr-date { display: grid; gap: 2px; }
+.scr-date .d { font-size: 1.375rem; font-weight: 500; line-height: 1.2; }
+.lit { display: flex; align-items: center; gap: 8px; font-size: .8125rem; color: var(--muted); min-width: 0; }
+.lit .dot { width: 8px; height: 8px; }
+.inicio + .inicio { margin-top: 0; }
+.preview .cap { font-size: .8125rem; color: var(--muted); }
+
+/* Mes */
+.month { display: grid; gap: 12px; }
+.month-head { display: flex; align-items: center; gap: 10px; }
+.month-head h2 { font-family: var(--font-display); font-size: 1.75rem; line-height: 1.1; margin-right: auto; }
+.nav { width: 40px; height: 40px; border-radius: 999px; border: 1px solid var(--line); background: transparent; display: grid; place-items: center; }
+.nav svg { width: 18px; height: 18px; }
+.today-btn { height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-size: .875rem; }
+.season { font-size: .8125rem; color: var(--muted); }
+.days { display: grid; border-top: 1px solid var(--line); }
+.day {
+  display: grid;
+  grid-template-columns: 44px 12px minmax(0, 1fr);
+  gap: 4px 12px;
+  align-items: baseline;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.day.sunday { background: var(--gold-faint); }
+.day.today { box-shadow: inset 3px 0 0 var(--gold); }
+.num { display: grid; justify-items: center; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.num b { font-size: 1.25rem; font-weight: 500; }
+.num span { font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.day .dot { align-self: center; }
+.body { display: grid; gap: 3px; min-width: 0; }
+.title { line-height: 1.35; }
+.day.high .title { font-weight: 500; }
+.sub { font-size: .8125rem; color: var(--muted); line-height: 1.4; }
+.tag { display: inline-block; margin-left: 6px; font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .8125rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.notes { display: grid; gap: 8px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; font-size: .9375rem; }
+.notes ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--muted); }
+.empty { color: var(--muted); text-align: center; padding: 24px 0; }
+
+footer { text-align: center; color: var(--muted); font-size: .875rem; display: grid; gap: 4px; }
+footer i { font-family: var(--font-display); font-size: 1.1rem; color: var(--fg); }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="chirho" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="square"><path d="M50 20 V82"/><path d="M50 20 H58 a13 13 0 0 1 0 26 H50"/><path d="M31 46 L69 82"/><path d="M69 46 L31 82"/></g></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><svg><use href="#chirho"/></svg><span>Templum</span></div>
+    <h1>Calendario litúrgico</h1>
+    <p class="lede">Todos los santos y fiestas del calendario de la Iglesia, con las celebraciones propias de Chile. La app calcula sola las fiestas que cambian de fecha cada año, como la Pascua, y el color litúrgico de cada día.</p>
+  </header>
+
+  <section class="preview" aria-labelledby="h-preview">
+    <span class="k" id="h-preview">Así se verá en Inicio</span>
+    <div class="inicio" id="inicio-hoy"></div>
+    <div class="inicio" id="inicio-manana"></div>
+    <p class="cap">Hoy y mañana. Es una sola línea discreta bajo la fecha, con el punto del color litúrgico.</p>
+  </section>
+
+  <section class="month" aria-labelledby="month-title">
+    <div class="month-head">
+      <h2 id="month-title">Mes</h2>
+      <button class="today-btn" id="hoy" type="button">Hoy</button>
+      <button class="nav" id="prev" type="button" aria-label="Mes anterior"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+      <button class="nav" id="next" type="button" aria-label="Mes siguiente"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+    </div>
+    <p class="season" id="season"></p>
+    <div class="days" id="days"><p class="empty">Cargando calendario…</p></div>
+    <div class="legend">
+      <span><i class="dot verde"></i>Tiempo Ordinario</span>
+      <span><i class="dot morado"></i>Adviento y Cuaresma</span>
+      <span><i class="dot blanco"></i>Navidad, Pascua, el Señor, la Virgen y los santos</span>
+      <span><i class="dot rojo"></i>Mártires, apóstoles y Pentecostés</span>
+      <span><i class="dot rosa"></i>Gaudete y Laetare</span>
+    </div>
+  </section>
+
+  <section class="notes" aria-labelledby="h-notes">
+    <span class="k" id="h-notes">Cómo lo calcula</span>
+    <ul>
+      <li>Sigue el orden de la Iglesia: si un santo cae en domingo o en Semana Santa, ese día manda el domingo. Las solemnidades que chocan se pasan al día siguiente, como la Inmaculada cuando cae en domingo de Adviento.</li>
+      <li>Como se hace en Chile, la Epifanía, la Ascensión y Corpus Christi se celebran en domingo.</li>
+      <li>Incluye la Virgen del Carmen como solemnidad, Santa Teresa de los Andes, San Alberto Hurtado y la Virgen de Guadalupe como Patrona de América.</li>
+      <li>En Cuaresma y en los días cercanos a Navidad, los santos solo se recuerdan y el día mantiene su color.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <i>Ad maiorem Dei gloriam</i>
+    <span>Templum · Etapa 1, contenido</span>
+  </footer>
+</div>
+
+<script src="liturgia.js"></script>
+<script>
+(function () {
+  var MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  var DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  var CORTO = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+  var RANGO = { solemnidad: 'Solemnidad', fiesta: 'Fiesta', memoria: 'Memoria', libre: 'Memoria libre' };
+  var TIEMPO = { adviento: 'Adviento', navidad: 'Tiempo de Navidad', ordinario: 'Tiempo Ordinario', cuaresma: 'Cuaresma', triduo: 'Triduo Pascual', pascua: 'Tiempo de Pascua' };
+
+  var $ = function (id) { return document.getElementById(id); };
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  var cal = null;
+  var hoy = new Date();
+  var vista = { anio: hoy.getFullYear(), mes: hoy.getMonth() };
+
+  function lineaInicio(box, fecha) {
+    var d = cal.dia(fecha);
+    box.textContent = '';
+    var wrap = el('div', 'scr-date');
+    wrap.appendChild(el('span', 'd', cap(DIAS[fecha.getDay()]) + ' ' + fecha.getDate() + ' de ' + MESES[fecha.getMonth()]));
+    var lit = el('span', 'lit');
+    lit.appendChild(el('i', 'dot ' + d.color));
+    lit.appendChild(el('span', null, d.nombre));
+    wrap.appendChild(lit);
+    box.appendChild(wrap);
+  }
+
+  function renderMes() {
+    var a = vista.anio, m = vista.mes;
+    $('month-title').textContent = cap(MESES[m]) + ' ' + a;
+    var lista = $('days');
+    lista.textContent = '';
+    var tiempos = [];
+    var ultimo = new Date(a, m + 1, 0).getDate();
+    for (var n = 1; n <= ultimo; n++) {
+      var f = new Date(a, m, n);
+      var d = cal.dia([a, m + 1, n]);
+      if (tiempos.indexOf(TIEMPO[d.tiempo]) === -1) tiempos.push(TIEMPO[d.tiempo]);
+      var alta = d.rango === 'solemnidad' || d.rango === 'fiesta' || f.getDay() === 0 || d.tiempo === 'triduo';
+      var row = el('div', 'day' + (f.getDay() === 0 ? ' sunday' : '') + (alta ? ' high' : ''));
+      if (a === hoy.getFullYear() && m === hoy.getMonth() && n === hoy.getDate()) {
+        row.className += ' today';
+        row.setAttribute('aria-current', 'date');
+      }
+      var num = el('div', 'num');
+      num.appendChild(el('b', null, String(n)));
+      num.appendChild(el('span', null, CORTO[f.getDay()]));
+      row.appendChild(num);
+      var dot = el('i', 'dot ' + d.color);
+      dot.setAttribute('aria-label', 'Color ' + d.color);
+      dot.setAttribute('role', 'img');
+      row.appendChild(dot);
+      var body = el('div', 'body');
+      var title = el('div', 'title', d.nombre);
+      if (RANGO[d.rango]) title.appendChild(el('span', 'tag', RANGO[d.rango]));
+      body.appendChild(title);
+      var extra = [];
+      if (d.trasladada) extra.push('Trasladada desde su fecha habitual');
+      if (d.otras.length) extra.push('También: ' + d.otras.join(' · '));
+      if (d.conmemoraciones.length) extra.push('Se recuerda: ' + d.conmemoraciones.join(' · '));
+      if (d.rango !== 'feria' && d.rango !== 'solemnidad' && d.feria.indexOf('Domingo') === -1 && d.tiempo !== 'navidad') extra.push(d.feria);
+      extra.forEach(function (t) { body.appendChild(el('div', 'sub', t)); });
+      row.appendChild(body);
+      lista.appendChild(row);
+    }
+    var d1 = cal.dia([a, m + 1, 1]);
+    $('season').textContent = tiempos.join(' · ') + ' · Ciclo ' + d1.ciclo + ' de los domingos';
+  }
+
+  $('prev').addEventListener('click', function () {
+    vista.mes -= 1;
+    if (vista.mes < 0) { vista.mes = 11; vista.anio -= 1; }
+    renderMes();
+  });
+  $('next').addEventListener('click', function () {
+    vista.mes += 1;
+    if (vista.mes > 11) { vista.mes = 0; vista.anio += 1; }
+    renderMes();
+  });
+  $('hoy').addEventListener('click', function () {
+    vista = { anio: hoy.getFullYear(), mes: hoy.getMonth() };
+    renderMes();
+  });
+
+  fetch('calendario.json')
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (datos) {
+      cal = Liturgia.crear(datos);
+      lineaInicio($('inicio-hoy'), hoy);
+      lineaInicio($('inicio-manana'), new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() + 1));
+      renderMes();
+    })
+    .catch(function () {
+      $('days').textContent = '';
+      $('days').appendChild(el('p', 'empty', 'No se pudo cargar el calendario. Recarga la página.'));
+    });
+})();
+</script>

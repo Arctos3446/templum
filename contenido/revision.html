@@ -1,0 +1,516 @@
+<title>Templum Versículos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: una sola columna estrecha, como un leccionario; barra de avance fija arriba y tarjetas de texto sagrado con acciones abajo. */
+:root {
+  --bg: #0D0A10;
+  --surface: #16111A;
+  --raised: #1F1826;
+  --line: #2F2539;
+  --fg: #EEE7DC;
+  --muted: #A3969F;
+  --purple: #6B3A9E;
+  --purple-ink: #B892E0;
+  --purple-faint: rgba(184,146,224,.10);
+  --crimson: #9B1E33;
+  --crimson-ink: #E35C70;
+  --crimson-faint: rgba(227,92,112,.10);
+  --gold: #CFA54E;
+  --gold-faint: rgba(207,165,78,.16);
+  --on-accent: #F7F1E6;
+  --font-display: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-ui: "Jost", "Futura", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #E4D9C6; --surface: #EDE4D3; --raised: #D8CAB2; --line: #C6B396;
+    --fg: #1D1421; --muted: #5A4C55; --purple: #4B2275; --purple-ink: #4B2275;
+    --purple-faint: rgba(75,34,117,.09); --crimson: #7D1628; --crimson-ink: #8F1A2E;
+    --crimson-faint: rgba(143,26,46,.08); --gold: #85631A; --gold-faint: rgba(133,99,26,.14);
+    --on-accent: #F3ECDF; color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #E4D9C6; --surface: #EDE4D3; --raised: #D8CAB2; --line: #C6B396;
+  --fg: #1D1421; --muted: #5A4C55; --purple: #4B2275; --purple-ink: #4B2275;
+  --purple-faint: rgba(75,34,117,.09); --crimson: #7D1628; --crimson-ink: #8F1A2E;
+  --crimson-faint: rgba(143,26,46,.08); --gold: #85631A; --gold-faint: rgba(133,99,26,.14);
+  --on-accent: #F3ECDF; color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-block: 32px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 24px;
+}
+h1, h2 { margin: 0; text-wrap: balance; font-weight: 500; }
+p { margin: 0; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.brand { display: flex; align-items: center; gap: 10px; color: var(--gold); }
+.brand svg { width: 28px; height: 28px; }
+.brand span { font-family: var(--font-display); font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--fg); }
+header.top { display: grid; gap: 14px; }
+header.top h1 { font-family: var(--font-display); font-size: 2.4rem; line-height: 1.1; }
+.lede { color: var(--muted); max-width: 60ch; }
+.howto { display: grid; gap: 6px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; font-size: .9375rem; }
+.howto b { font-weight: 600; }
+.howto .small { font-size: .8125rem; color: var(--muted); }
+
+/* Barra fija */
+.bar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: var(--bg);
+  padding-block: 12px;
+  display: grid;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.progress-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; font-variant-numeric: tabular-nums; font-size: .9375rem; }
+.progress-row .n { font-weight: 600; }
+.progress-row .rm { color: var(--crimson-ink); }
+.progress-row .save { margin-left: auto; font-size: .8125rem; color: var(--muted); }
+.meter { height: 4px; border-radius: 4px; background: var(--raised); overflow: hidden; }
+.meter span { display: block; height: 100%; width: 0; background: var(--gold); transition: width .3s ease; }
+.tabs { display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 4px; }
+.tab { flex: 1; border: 0; background: transparent; color: var(--muted); border-radius: 7px; height: 38px; font-size: .9375rem; }
+.tab[aria-selected="true"] { background: var(--raised); color: var(--fg); font-weight: 500; }
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-size: .8125rem; white-space: nowrap; }
+.chip[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); color: var(--on-accent); }
+
+.notice { padding: 12px 14px; border: 1px solid var(--crimson-ink); background: var(--crimson-faint); border-radius: 10px; font-size: .9375rem; }
+
+/* Tarjetas */
+.list { display: grid; gap: 14px; }
+.group-h { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); padding-top: 10px; }
+.card {
+  display: grid;
+  gap: 12px;
+  padding: 18px 18px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: border-color .2s ease, opacity .2s ease;
+}
+.card[data-d="keep"] { border-color: var(--purple-ink); background: linear-gradient(var(--purple-faint), var(--purple-faint)), var(--surface); }
+.card[data-d="remove"] { border-color: var(--crimson-ink); background: linear-gradient(var(--crimson-faint), var(--crimson-faint)), var(--surface); }
+.card[data-d="remove"] .text { opacity: .55; }
+.card .ttl { font-weight: 600; font-size: 1rem; }
+.card .kind { font-size: .75rem; color: var(--muted); }
+.text { font-family: var(--font-display); font-style: italic; font-size: 1.3rem; line-height: 1.3; }
+.text.prayer { font-style: normal; font-size: 1.15rem; line-height: 1.4; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ref { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-right: auto; }
+.mom { font-size: .6875rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 12px; }
+.act { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-size: .875rem; }
+.act svg { width: 16px; height: 16px; }
+.act.keep[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); color: var(--on-accent); }
+.act.remove[aria-pressed="true"] { background: var(--crimson); border-color: var(--crimson); color: var(--on-accent); }
+.act.note { margin-left: auto; color: var(--muted); }
+.act.note.has { color: var(--gold); border-color: var(--gold); }
+.note-box { display: grid; gap: 6px; }
+.note-box label { font-size: .8125rem; color: var(--muted); }
+.note-box textarea { width: 100%; min-height: 72px; resize: vertical; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--raised); font-size: .9375rem; line-height: 1.4; }
+.status { font-size: .8125rem; font-weight: 500; }
+.card[data-d="remove"] .status { color: var(--crimson-ink); }
+.card[data-d="keep"] .status { color: var(--purple-ink); }
+
+/* Propuestas */
+form.add { display: grid; gap: 12px; padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+form.add h2 { font-family: var(--font-display); font-size: 1.5rem; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: .8125rem; color: var(--muted); }
+.field input, .field textarea, .field select { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--raised); font-size: 1rem; }
+.field textarea { min-height: 90px; resize: vertical; }
+.primary { height: 46px; border: 0; border-radius: 10px; background: var(--purple); color: var(--on-accent); font-weight: 500; }
+.primary:disabled { opacity: .5; cursor: default; }
+.form-msg { font-size: .875rem; color: var(--muted); }
+.del { height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--crimson-ink); font-size: .8125rem; }
+.empty { color: var(--muted); text-align: center; padding: 24px 0; }
+
+footer { text-align: center; color: var(--muted); font-size: .875rem; display: grid; gap: 4px; }
+footer i { font-family: var(--font-display); font-size: 1.1rem; color: var(--fg); }
+
+@media (prefers-reduced-motion: reduce) { .meter span, .card { transition: none; } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="chirho" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="square"><path d="M50 20 V82"/><path d="M50 20 H58 a13 13 0 0 1 0 26 H50"/><path d="M31 46 L69 82"/><path d="M69 46 L31 82"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><svg><use href="#chirho"/></svg><span>Templum</span></div>
+    <h1>Versículos y oraciones</h1>
+    <p class="lede">Estos son los textos que aparecerán en la app: el versículo del día, el de cierre, las frases de récord y las oraciones. Quédate con los que te inspiren.</p>
+    <div class="howto">
+      <span>Marca <b>Me gusta</b> o <b>Quitar</b> en cada uno. Si quieres cambiar una palabra, toca <b>Nota</b> y escríbelo.</span>
+      <span>Todo se guarda solo y puedes dejarlo a medias. Después yo leo tus respuestas.</span>
+      <span class="small">Los textos siguen las traducciones católicas en español de uso litúrgico. La redacción puede variar un poco respecto de tu Biblia; si notas algo, déjalo en una nota.</span>
+    </div>
+  </header>
+
+  <div class="bar">
+    <div class="progress-row">
+      <span><span class="n" id="done">0</span> de <span id="total">0</span> revisados</span>
+      <span class="rm" id="rm-count" hidden></span>
+      <span class="save" id="save-state">Cargando…</span>
+    </div>
+    <div class="meter"><span id="meter"></span></div>
+    <div class="tabs" role="tablist" aria-label="Secciones">
+      <button class="tab" role="tab" id="tab-v" aria-selected="true" aria-controls="panel-v">Versículos</button>
+      <button class="tab" role="tab" id="tab-o" aria-selected="false" aria-controls="panel-o">Oraciones</button>
+      <button class="tab" role="tab" id="tab-p" aria-selected="false" aria-controls="panel-p">Agregar</button>
+    </div>
+    <div class="chips" id="chips" aria-label="Filtrar por tema"></div>
+  </div>
+
+  <div class="notice" id="no-db" hidden>En esta vista no se pueden guardar tus respuestas. Abre la página desde claude.ai con tu cuenta para que queden guardadas.</div>
+
+  <section id="panel-v" role="tabpanel" aria-labelledby="tab-v">
+    <div class="list" id="list-v"><p class="empty">Cargando versículos…</p></div>
+  </section>
+
+  <section id="panel-o" role="tabpanel" aria-labelledby="tab-o" hidden>
+    <div class="list" id="list-o"></div>
+  </section>
+
+  <section id="panel-p" role="tabpanel" aria-labelledby="tab-p" hidden>
+    <div class="list">
+      <form class="add" id="add-form">
+        <h2>Agrega tus propios textos</h2>
+        <p class="lede">Un versículo que te guste o una frase de un santo. Si no sabes la cita exacta, pon lo que recuerdes y yo la busco.</p>
+        <div class="field">
+          <label for="p-ref">Cita o autor</label>
+          <input id="p-ref" placeholder="Ej.: Salmo 121, 1 · San Juan Pablo II">
+        </div>
+        <div class="field">
+          <label for="p-text">Texto</label>
+          <textarea id="p-text" required placeholder="Escribe la frase aquí"></textarea>
+        </div>
+        <div class="field">
+          <label for="p-kind">¿Dónde te gustaría que aparezca?</label>
+          <select id="p-kind">
+            <option value="inicio">Versículo del día</option>
+            <option value="cierre">Al terminar el entrenamiento</option>
+            <option value="record">Al lograr un récord</option>
+            <option value="descanso">Durante el descanso</option>
+            <option value="oracion">Como oración</option>
+          </select>
+        </div>
+        <button class="primary" id="p-submit" type="submit">Agregar</button>
+        <p class="form-msg" id="p-msg" hidden></p>
+      </form>
+      <div class="list" id="list-p"></div>
+    </div>
+  </section>
+
+  <footer>
+    <i>Ad maiorem Dei gloriam</i>
+    <span>Templum · Etapa 1, contenido</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var TEMA_ORDER = ['cuerpo', 'fortaleza', 'carrera', 'disciplina', 'descanso', 'gratitud'];
+  var MOM_LABEL = { cierre: 'Al terminar', record: 'Récord', descanso: 'Descanso' };
+  var PROP_LABEL = { inicio: 'Versículo del día', cierre: 'Al terminar', record: 'Récord', descanso: 'Descanso', oracion: 'Oración' };
+  var TIPO_LABEL = { propia: 'Escrita para Templum', tradicional: 'Oración tradicional', invocacion: 'Invocación' };
+
+  var verses = [], prayers = [], temas = {};
+  var reviews = {};          // id -> {decision, note}
+  var cards = {};            // id -> {el, apply}
+  var db = null;
+  var filter = 'todos';
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function icon(id) {
+    var s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    s.setAttribute('aria-hidden', 'true');
+    var u = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    u.setAttribute('href', '#' + id);
+    s.appendChild(u);
+    return s;
+  }
+
+  function setSave(text) { $('save-state').textContent = text; }
+
+  function save(id, patch) {
+    var cur = reviews[id] || { decision: null, note: '' };
+    var next = { decision: cur.decision, note: cur.note };
+    Object.keys(patch).forEach(function (k) { next[k] = patch[k]; });
+    reviews[id] = next;
+    if (cards[id]) cards[id].apply();
+    updateProgress();
+    if (!db) return;
+    setSave('Guardando…');
+    db.doc('revision/' + id).set({ decision: next.decision, note: next.note, updatedAt: new Date().toISOString() })
+      .then(function () { setSave('Guardado'); })
+      .catch(function (e) { setSave(e && e.code === 'quota_exceeded' ? 'No hay espacio para guardar' : 'No se pudo guardar, intenta otra vez'); });
+  }
+
+  function buildCard(item, isPrayer) {
+    var card = el('article', 'card');
+    card.id = 'card-' + item.id;
+    if (isPrayer) {
+      var head = el('div');
+      head.appendChild(el('div', 'ttl', item.titulo));
+      head.appendChild(el('div', 'kind', TIPO_LABEL[item.tipo] || ''));
+      card.appendChild(head);
+      card.appendChild(el('p', 'text prayer', item.texto));
+    } else {
+      card.appendChild(el('p', 'text', '“' + item.texto + '”'));
+      var meta = el('div', 'meta');
+      meta.appendChild(el('span', 'ref', item.ref));
+      item.momentos.forEach(function (m) { if (MOM_LABEL[m]) meta.appendChild(el('span', 'mom', MOM_LABEL[m])); });
+      card.appendChild(meta);
+    }
+
+    var actions = el('div', 'actions');
+    var keep = el('button', 'act keep'); keep.type = 'button'; keep.appendChild(icon('i-check')); keep.appendChild(document.createTextNode('Me gusta'));
+    var rem = el('button', 'act remove'); rem.type = 'button'; rem.appendChild(icon('i-x')); rem.appendChild(document.createTextNode('Quitar'));
+    var noteBtn = el('button', 'act note'); noteBtn.type = 'button'; noteBtn.appendChild(icon('i-pen')); noteBtn.appendChild(document.createTextNode('Nota'));
+    var status = el('span', 'status');
+    actions.appendChild(keep); actions.appendChild(rem); actions.appendChild(noteBtn);
+    card.appendChild(actions);
+
+    var box = el('div', 'note-box'); box.hidden = true;
+    var lab = el('label', null, 'Tu nota (por ejemplo, otra palabra o una corrección)');
+    var ta = el('textarea'); ta.id = 'note-' + item.id; lab.htmlFor = ta.id;
+    box.appendChild(lab); box.appendChild(ta);
+    card.appendChild(box);
+    card.appendChild(status);
+
+    keep.addEventListener('click', function () {
+      var d = (reviews[item.id] || {}).decision;
+      save(item.id, { decision: d === 'keep' ? null : 'keep' });
+    });
+    rem.addEventListener('click', function () {
+      var d = (reviews[item.id] || {}).decision;
+      save(item.id, { decision: d === 'remove' ? null : 'remove' });
+    });
+    noteBtn.addEventListener('click', function () {
+      box.hidden = !box.hidden;
+      if (!box.hidden) ta.focus();
+    });
+    var timer = null;
+    ta.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () { save(item.id, { note: ta.value.trim() }); }, 700);
+    });
+    ta.addEventListener('blur', function () {
+      clearTimeout(timer);
+      var cur = (reviews[item.id] || {}).note || '';
+      if (ta.value.trim() !== cur) save(item.id, { note: ta.value.trim() });
+    });
+
+    function apply() {
+      var r = reviews[item.id] || {};
+      card.dataset.d = r.decision || '';
+      keep.setAttribute('aria-pressed', r.decision === 'keep' ? 'true' : 'false');
+      rem.setAttribute('aria-pressed', r.decision === 'remove' ? 'true' : 'false');
+      status.textContent = r.decision === 'remove' ? 'Se quitará de la app' : '';
+      status.hidden = !status.textContent;
+      var hasNote = !!(r.note && r.note.length);
+      noteBtn.classList.toggle('has', hasNote);
+      if (document.activeElement !== ta) ta.value = r.note || '';
+      if (hasNote) box.hidden = false;
+    }
+    cards[item.id] = { el: card, apply: apply, tema: item.tema || null };
+    apply();
+    return card;
+  }
+
+  function renderVerses() {
+    var list = $('list-v');
+    list.textContent = '';
+    TEMA_ORDER.forEach(function (t) {
+      var items = verses.filter(function (v) { return v.tema === t; });
+      if (!items.length) return;
+      var h = el('h2', 'group-h', temas[t] + ' · ' + items.length);
+      h.dataset.tema = t;
+      list.appendChild(h);
+      items.forEach(function (v) { list.appendChild(buildCard(v, false)); });
+    });
+    applyFilter();
+  }
+  function renderPrayers() {
+    var list = $('list-o');
+    list.textContent = '';
+    [['inicio', 'Al empezar'], ['cierre', 'Al terminar']].forEach(function (g) {
+      var items = prayers.filter(function (p) { return p.momento === g[0]; });
+      list.appendChild(el('h2', 'group-h', g[1] + ' · ' + items.length));
+      items.forEach(function (p) { list.appendChild(buildCard(p, true)); });
+    });
+  }
+
+  function renderChips() {
+    var wrap = $('chips');
+    wrap.textContent = '';
+    var opts = [['todos', 'Todos'], ['pendientes', 'Sin revisar']].concat(TEMA_ORDER.map(function (t) { return [t, temas[t]]; }));
+    opts.forEach(function (o) {
+      var b = el('button', 'chip', o[1]);
+      b.type = 'button';
+      b.setAttribute('aria-pressed', filter === o[0] ? 'true' : 'false');
+      b.addEventListener('click', function () { filter = o[0]; renderChips(); applyFilter(); });
+      wrap.appendChild(b);
+    });
+  }
+  function applyFilter() {
+    var list = $('list-v');
+    Array.prototype.forEach.call(list.children, function (node) {
+      if (node.classList.contains('group-h')) {
+        node.hidden = !(filter === 'todos' || filter === 'pendientes' || filter === node.dataset.tema);
+        return;
+      }
+      var id = node.id.replace('card-', '');
+      var c = cards[id];
+      var r = reviews[id] || {};
+      var show = filter === 'todos' || (filter === 'pendientes' ? !r.decision : c.tema === filter);
+      node.hidden = !show;
+    });
+  }
+
+  function updateProgress() {
+    var all = verses.concat(prayers);
+    var done = 0, rm = 0;
+    all.forEach(function (i) {
+      var d = (reviews[i.id] || {}).decision;
+      if (d) done++;
+      if (d === 'remove') rm++;
+    });
+    $('done').textContent = done;
+    $('total').textContent = all.length;
+    $('meter').style.width = all.length ? (done / all.length * 100) + '%' : '0';
+    var rc = $('rm-count');
+    rc.hidden = rm === 0;
+    rc.textContent = rm === 1 ? '1 para quitar' : rm + ' para quitar';
+  }
+
+  // Pestañas
+  var tabs = [['tab-v', 'panel-v'], ['tab-o', 'panel-o'], ['tab-p', 'panel-p']];
+  tabs.forEach(function (t) {
+    $(t[0]).addEventListener('click', function () {
+      tabs.forEach(function (u) {
+        var on = u[0] === t[0];
+        $(u[0]).setAttribute('aria-selected', on ? 'true' : 'false');
+        $(u[1]).hidden = !on;
+      });
+      $('chips').hidden = t[0] !== 'tab-v';
+    });
+  });
+
+  // Propuestas
+  var proposals = [];
+  function renderProposals() {
+    var list = $('list-p');
+    list.textContent = '';
+    if (!proposals.length) { list.appendChild(el('p', 'empty', 'Todavía no agregas textos propios.')); return; }
+    proposals.forEach(function (p) {
+      var card = el('article', 'card');
+      card.appendChild(el('p', p.kind === 'oracion' ? 'text prayer' : 'text', p.kind === 'oracion' ? p.texto : '“' + p.texto + '”'));
+      var meta = el('div', 'meta');
+      meta.appendChild(el('span', 'ref', p.ref || 'Sin cita'));
+      meta.appendChild(el('span', 'mom', PROP_LABEL[p.kind] || ''));
+      var del = el('button', 'del', 'Eliminar'); del.type = 'button';
+      del.addEventListener('click', function () {
+        if (!db) return;
+        db.doc('propuestas/' + p.id).delete().catch(function () { setSave('No se pudo eliminar'); });
+      });
+      meta.appendChild(del);
+      card.appendChild(meta);
+      list.appendChild(card);
+    });
+  }
+  $('add-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var texto = $('p-text').value.trim();
+    var msg = $('p-msg');
+    if (!texto) { msg.hidden = false; msg.textContent = 'Escribe el texto antes de agregarlo.'; return; }
+    if (!db) { msg.hidden = false; msg.textContent = 'En esta vista no se puede guardar.'; return; }
+    $('p-submit').disabled = true;
+    db.collection('propuestas').add({ ref: $('p-ref').value.trim(), texto: texto, kind: $('p-kind').value, createdAt: new Date().toISOString() })
+      .then(function () {
+        $('p-ref').value = ''; $('p-text').value = '';
+        msg.hidden = false; msg.textContent = 'Agregado. Lo reviso cuando leamos tus respuestas.';
+      })
+      .catch(function () { msg.hidden = false; msg.textContent = 'No se pudo agregar. Intenta otra vez.'; })
+      .then(function () { $('p-submit').disabled = false; });
+  });
+
+  // Carga de textos
+  Promise.all([
+    fetch('versiculos.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }),
+    fetch('oraciones.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+  ]).then(function (res) {
+    verses = res[0].versiculos; temas = res[0].temas; prayers = res[1].oraciones;
+    renderChips(); renderVerses(); renderPrayers(); renderProposals(); updateProgress();
+  }).catch(function () {
+    $('list-v').textContent = '';
+    $('list-v').appendChild(el('p', 'empty', 'No se pudieron cargar los textos. Recarga la página.'));
+  });
+
+  // Guardado
+  var start = function () {
+    if (!window.claude || !window.claude.use) { $('no-db').hidden = false; setSave('Sin guardado'); return; }
+    window.claude.use('db').then(function (d) {
+      if (!d) { $('no-db').hidden = false; setSave('Sin guardado'); return; }
+      db = d;
+      setSave('Listo');
+      db.collection('revision').onSnapshot(function (snap) {
+        snap.docs.forEach(function (doc) {
+          var b = doc.data() || {};
+          reviews[doc.id] = { decision: b.decision || null, note: b.note || '' };
+          if (cards[doc.id]) cards[doc.id].apply();
+        });
+        updateProgress(); applyFilter();
+      }, function () { setSave('Se perdió la conexión; recarga la página'); });
+      db.collection('propuestas').orderBy('createdAt').onSnapshot(function (snap) {
+        proposals = snap.docs.map(function (doc) { var b = doc.data() || {}; return { id: doc.id, ref: b.ref, texto: b.texto, kind: b.kind }; });
+        renderProposals();
+      }, function () {});
+    });
+  };
+  start();
+})();
+</script>

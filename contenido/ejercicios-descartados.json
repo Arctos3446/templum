@@ -1,0 +1,964 @@
+[
+  {
+    "id": "press-banca-declinado",
+    "nombre": "Press banca declinado",
+    "grupo": "Pecho",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "imagenes": [
+      "Decline_Barbell_Bench_Press/0.jpg",
+      "Decline_Barbell_Bench_Press/1.jpg"
+    ],
+    "idOriginal": "Decline_Barbell_Bench_Press"
+  },
+  {
+    "id": "press-declinado-con-mancuernas",
+    "nombre": "Press declinado con mancuernas",
+    "grupo": "Pecho",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "imagenes": [
+      "Decline_Dumbbell_Bench_Press/0.jpg",
+      "Decline_Dumbbell_Bench_Press/1.jpg"
+    ],
+    "idOriginal": "Decline_Dumbbell_Bench_Press"
+  },
+  {
+    "id": "aperturas-con-mancuernas",
+    "nombre": "Aperturas con mancuernas",
+    "grupo": "Pecho",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Dumbbell_Flyes/0.jpg",
+      "Dumbbell_Flyes/1.jpg"
+    ],
+    "idOriginal": "Dumbbell_Flyes"
+  },
+  {
+    "id": "aperturas-inclinadas-con-mancuernas",
+    "nombre": "Aperturas inclinadas con mancuernas",
+    "grupo": "Pecho",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros"
+    ],
+    "imagenes": [
+      "Incline_Dumbbell_Flyes/0.jpg",
+      "Incline_Dumbbell_Flyes/1.jpg"
+    ],
+    "idOriginal": "Incline_Dumbbell_Flyes"
+  },
+  {
+    "id": "pullover-con-mancuerna",
+    "nombre": "Pullover con mancuerna",
+    "grupo": "Pecho",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Dorsales",
+      "Hombros",
+      "Tríceps"
+    ],
+    "imagenes": [
+      "Straight-Arm_Dumbbell_Pullover/0.jpg",
+      "Straight-Arm_Dumbbell_Pullover/1.jpg"
+    ],
+    "idOriginal": "Straight-Arm_Dumbbell_Pullover"
+  },
+  {
+    "id": "muscle-up",
+    "nombre": "Muscle-up",
+    "grupo": "Espalda",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Abdominales",
+      "Bíceps",
+      "Antebrazos",
+      "Espalda media",
+      "Hombros",
+      "Trapecio",
+      "Tríceps"
+    ],
+    "imagenes": [
+      "Muscle_Up/0.jpg",
+      "Muscle_Up/1.jpg"
+    ],
+    "idOriginal": "Muscle_Up"
+  },
+  {
+    "id": "remo-invertido-australiano",
+    "nombre": "Remo invertido (australiano)",
+    "grupo": "Espalda",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Dorsales"
+    ],
+    "imagenes": [
+      "Inverted_Row/0.jpg",
+      "Inverted_Row/1.jpg"
+    ],
+    "idOriginal": "Inverted_Row"
+  },
+  {
+    "id": "jalon-con-triangulo",
+    "nombre": "Jalón con triángulo",
+    "grupo": "Espalda",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Espalda media",
+      "Hombros"
+    ],
+    "imagenes": [
+      "V-Bar_Pulldown/0.jpg",
+      "V-Bar_Pulldown/1.jpg"
+    ],
+    "idOriginal": "V-Bar_Pulldown"
+  },
+  {
+    "id": "superman",
+    "nombre": "Superman",
+    "grupo": "Espalda",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Espalda baja",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Superman/0.jpg",
+      "Superman/1.jpg"
+    ],
+    "idOriginal": "Superman"
+  },
+  {
+    "id": "sentadilla-frontal",
+    "nombre": "Sentadilla frontal",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Front_Barbell_Squat/0.jpg",
+      "Front_Barbell_Squat/1.jpg"
+    ],
+    "idOriginal": "Front_Barbell_Squat"
+  },
+  {
+    "id": "sentadilla-al-cajon-con-barra",
+    "nombre": "Sentadilla al cajón con barra",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Aductores",
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales",
+      "Espalda baja"
+    ],
+    "imagenes": [
+      "Box_Squat/0.jpg",
+      "Box_Squat/1.jpg"
+    ],
+    "idOriginal": "Box_Squat"
+  },
+  {
+    "id": "sentadilla-goblet",
+    "nombre": "Sentadilla goblet",
+    "grupo": "Pierna",
+    "equipo": "Pesa rusa o mancuerna",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales",
+      "Hombros"
+    ],
+    "imagenes": [
+      "Goblet_Squat/0.jpg",
+      "Goblet_Squat/1.jpg"
+    ],
+    "idOriginal": "Goblet_Squat"
+  },
+  {
+    "id": "sentadilla-con-mancuernas",
+    "nombre": "Sentadilla con mancuernas",
+    "grupo": "Pierna",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales",
+      "Espalda baja"
+    ],
+    "imagenes": [
+      "Dumbbell_Squat/0.jpg",
+      "Dumbbell_Squat/1.jpg"
+    ],
+    "idOriginal": "Dumbbell_Squat"
+  },
+  {
+    "id": "peso-muerto-con-barra-hexagonal",
+    "nombre": "Peso muerto con barra hexagonal",
+    "grupo": "Pierna",
+    "equipo": "Barra hexagonal",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Trap_Bar_Deadlift/0.jpg",
+      "Trap_Bar_Deadlift/1.jpg"
+    ],
+    "idOriginal": "Trap_Bar_Deadlift"
+  },
+  {
+    "id": "buenos-dias-con-barra",
+    "nombre": "Buenos días con barra",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Isquiotibiales",
+    "musculosSecundarios": [
+      "Abdominales",
+      "Glúteos",
+      "Espalda baja"
+    ],
+    "imagenes": [
+      "Good_Morning/0.jpg",
+      "Good_Morning/1.jpg"
+    ],
+    "idOriginal": "Good_Morning"
+  },
+  {
+    "id": "estocadas-con-barra",
+    "nombre": "Estocadas con barra",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Barbell_Lunge/0.jpg",
+      "Barbell_Lunge/1.jpg"
+    ],
+    "idOriginal": "Barbell_Lunge"
+  },
+  {
+    "id": "estocadas-hacia-atras-con-mancuernas",
+    "nombre": "Estocadas hacia atrás con mancuernas",
+    "grupo": "Pierna",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Dumbbell_Rear_Lunge/0.jpg",
+      "Dumbbell_Rear_Lunge/1.jpg"
+    ],
+    "idOriginal": "Dumbbell_Rear_Lunge"
+  },
+  {
+    "id": "estocadas-caminando-con-barra",
+    "nombre": "Estocadas caminando con barra",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Barbell_Walking_Lunge/0.jpg",
+      "Barbell_Walking_Lunge/1.jpg"
+    ],
+    "idOriginal": "Barbell_Walking_Lunge"
+  },
+  {
+    "id": "estocadas-caminando",
+    "nombre": "Estocadas caminando",
+    "grupo": "Pierna",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Bodyweight_Walking_Lunge/0.jpg",
+      "Bodyweight_Walking_Lunge/1.jpg"
+    ],
+    "idOriginal": "Bodyweight_Walking_Lunge"
+  },
+  {
+    "id": "subidas-al-cajon-con-mancuernas",
+    "nombre": "Subidas al cajón con mancuernas",
+    "grupo": "Pierna",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Dumbbell_Step_Ups/0.jpg",
+      "Dumbbell_Step_Ups/1.jpg"
+    ],
+    "idOriginal": "Dumbbell_Step_Ups"
+  },
+  {
+    "id": "salto-al-cajon",
+    "nombre": "Salto al cajón",
+    "grupo": "Pierna",
+    "equipo": "Cajón",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Isquiotibiales",
+    "musculosSecundarios": [
+      "Abductores",
+      "Aductores",
+      "Pantorrillas",
+      "Glúteos",
+      "Cuádriceps"
+    ],
+    "imagenes": [
+      "Front_Box_Jump/0.jpg",
+      "Front_Box_Jump/1.jpg"
+    ],
+    "idOriginal": "Front_Box_Jump"
+  },
+  {
+    "id": "puente-de-gluteos",
+    "nombre": "Puente de glúteos",
+    "grupo": "Pierna",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Glúteos",
+    "musculosSecundarios": [
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Butt_Lift_Bridge/0.jpg",
+      "Butt_Lift_Bridge/1.jpg"
+    ],
+    "idOriginal": "Butt_Lift_Bridge"
+  },
+  {
+    "id": "puente-de-gluteos-a-una-pierna",
+    "nombre": "Puente de glúteos a una pierna",
+    "grupo": "Pierna",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Glúteos",
+    "musculosSecundarios": [
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Single_Leg_Glute_Bridge/0.jpg",
+      "Single_Leg_Glute_Bridge/1.jpg"
+    ],
+    "idOriginal": "Single_Leg_Glute_Bridge"
+  },
+  {
+    "id": "patada-de-gluteo",
+    "nombre": "Patada de glúteo",
+    "grupo": "Pierna",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Glúteos",
+    "musculosSecundarios": [
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Glute_Kickback/0.jpg",
+      "Glute_Kickback/1.jpg"
+    ],
+    "idOriginal": "Glute_Kickback"
+  },
+  {
+    "id": "patada-de-gluteo-en-polea",
+    "nombre": "Patada de glúteo en polea",
+    "grupo": "Pierna",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Glúteos",
+    "musculosSecundarios": [
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "One-Legged_Cable_Kickback/0.jpg",
+      "One-Legged_Cable_Kickback/1.jpg"
+    ],
+    "idOriginal": "One-Legged_Cable_Kickback"
+  },
+  {
+    "id": "pull-through-en-polea",
+    "nombre": "Pull-through en polea",
+    "grupo": "Pierna",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Glúteos",
+    "musculosSecundarios": [
+      "Isquiotibiales",
+      "Espalda baja"
+    ],
+    "imagenes": [
+      "Pull_Through/0.jpg",
+      "Pull_Through/1.jpg"
+    ],
+    "idOriginal": "Pull_Through"
+  },
+  {
+    "id": "pantorrillas-con-mancuernas",
+    "nombre": "Pantorrillas con mancuernas",
+    "grupo": "Pierna",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pantorrillas",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Standing_Dumbbell_Calf_Raise/0.jpg",
+      "Standing_Dumbbell_Calf_Raise/1.jpg"
+    ],
+    "idOriginal": "Standing_Dumbbell_Calf_Raise"
+  },
+  {
+    "id": "press-arnold",
+    "nombre": "Press Arnold",
+    "grupo": "Hombro",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Tríceps"
+    ],
+    "imagenes": [
+      "Arnold_Dumbbell_Press/0.jpg",
+      "Arnold_Dumbbell_Press/1.jpg"
+    ],
+    "idOriginal": "Arnold_Dumbbell_Press"
+  },
+  {
+    "id": "elevaciones-frontales-con-mancuernas",
+    "nombre": "Elevaciones frontales con mancuernas",
+    "grupo": "Hombro",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Front_Dumbbell_Raise/0.jpg",
+      "Front_Dumbbell_Raise/1.jpg"
+    ],
+    "idOriginal": "Front_Dumbbell_Raise"
+  },
+  {
+    "id": "elevacion-frontal-con-disco",
+    "nombre": "Elevación frontal con disco",
+    "grupo": "Hombro",
+    "equipo": "Disco",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Front_Plate_Raise/0.jpg",
+      "Front_Plate_Raise/1.jpg"
+    ],
+    "idOriginal": "Front_Plate_Raise"
+  },
+  {
+    "id": "pajaros-con-mancuernas",
+    "nombre": "Pájaros con mancuernas",
+    "grupo": "Hombro",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Reverse_Flyes/0.jpg",
+      "Reverse_Flyes/1.jpg"
+    ],
+    "idOriginal": "Reverse_Flyes"
+  },
+  {
+    "id": "remo-al-menton-con-barra",
+    "nombre": "Remo al mentón con barra",
+    "grupo": "Hombro",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Trapecio"
+    ],
+    "imagenes": [
+      "Upright_Barbell_Row/0.jpg",
+      "Upright_Barbell_Row/1.jpg"
+    ],
+    "idOriginal": "Upright_Barbell_Row"
+  },
+  {
+    "id": "rotacion-externa-en-polea",
+    "nombre": "Rotación externa en polea",
+    "grupo": "Hombro",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "External_Rotation_with_Cable/0.jpg",
+      "External_Rotation_with_Cable/1.jpg"
+    ],
+    "idOriginal": "External_Rotation_with_Cable"
+  },
+  {
+    "id": "curl-alterno-con-mancuernas",
+    "nombre": "Curl alterno con mancuernas",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [
+      "Antebrazos"
+    ],
+    "imagenes": [
+      "Dumbbell_Alternate_Bicep_Curl/0.jpg",
+      "Dumbbell_Alternate_Bicep_Curl/1.jpg"
+    ],
+    "idOriginal": "Dumbbell_Alternate_Bicep_Curl"
+  },
+  {
+    "id": "curl-concentrado",
+    "nombre": "Curl concentrado",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [
+      "Antebrazos"
+    ],
+    "imagenes": [
+      "Concentration_Curls/0.jpg",
+      "Concentration_Curls/1.jpg"
+    ],
+    "idOriginal": "Concentration_Curls"
+  },
+  {
+    "id": "curl-arana",
+    "nombre": "Curl araña",
+    "grupo": "Brazos",
+    "equipo": "Barra Z",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Spider_Curl/0.jpg",
+      "Spider_Curl/1.jpg"
+    ],
+    "idOriginal": "Spider_Curl"
+  },
+  {
+    "id": "extension-de-triceps-en-polea-con-agarre-supino",
+    "nombre": "Extensión de tríceps en polea con agarre supino",
+    "grupo": "Brazos",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Reverse_Grip_Triceps_Pushdown/0.jpg",
+      "Reverse_Grip_Triceps_Pushdown/1.jpg"
+    ],
+    "idOriginal": "Reverse_Grip_Triceps_Pushdown"
+  },
+  {
+    "id": "extension-de-triceps-tras-nuca-con-mancuerna",
+    "nombre": "Extensión de tríceps tras nuca con mancuerna",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Standing_Dumbbell_Triceps_Extension/0.jpg",
+      "Standing_Dumbbell_Triceps_Extension/1.jpg"
+    ],
+    "idOriginal": "Standing_Dumbbell_Triceps_Extension"
+  },
+  {
+    "id": "patada-de-triceps-con-mancuerna",
+    "nombre": "Patada de tríceps con mancuerna",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Tricep_Dumbbell_Kickback/0.jpg",
+      "Tricep_Dumbbell_Kickback/1.jpg"
+    ],
+    "idOriginal": "Tricep_Dumbbell_Kickback"
+  },
+  {
+    "id": "press-banca-con-agarre-cerrado",
+    "nombre": "Press banca con agarre cerrado",
+    "grupo": "Brazos",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros"
+    ],
+    "imagenes": [
+      "Close-Grip_Barbell_Bench_Press/0.jpg",
+      "Close-Grip_Barbell_Bench_Press/1.jpg"
+    ],
+    "idOriginal": "Close-Grip_Barbell_Bench_Press"
+  },
+  {
+    "id": "fondos-en-banco",
+    "nombre": "Fondos en banco",
+    "grupo": "Brazos",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros"
+    ],
+    "imagenes": [
+      "Bench_Dips/0.jpg",
+      "Bench_Dips/1.jpg"
+    ],
+    "idOriginal": "Bench_Dips"
+  },
+  {
+    "id": "fondos-en-anillas",
+    "nombre": "Fondos en anillas",
+    "grupo": "Brazos",
+    "equipo": "Anillas",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros"
+    ],
+    "imagenes": [
+      "Ring_Dips/0.jpg",
+      "Ring_Dips/1.jpg"
+    ],
+    "idOriginal": "Ring_Dips"
+  },
+  {
+    "id": "fondos-en-maquina",
+    "nombre": "Fondos en máquina",
+    "grupo": "Brazos",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros"
+    ],
+    "imagenes": [
+      "Dip_Machine/0.jpg",
+      "Dip_Machine/1.jpg"
+    ],
+    "idOriginal": "Dip_Machine"
+  },
+  {
+    "id": "paseo-del-granjero",
+    "nombre": "Paseo del granjero",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Antebrazos",
+    "musculosSecundarios": [
+      "Abdominales",
+      "Glúteos",
+      "Isquiotibiales",
+      "Espalda baja",
+      "Cuádriceps",
+      "Trapecio"
+    ],
+    "imagenes": [
+      "Farmers_Walk/0.jpg",
+      "Farmers_Walk/1.jpg"
+    ],
+    "idOriginal": "Farmers_Walk"
+  },
+  {
+    "id": "crunch-declinado",
+    "nombre": "Crunch declinado",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Decline_Crunch/0.jpg",
+      "Decline_Crunch/1.jpg"
+    ],
+    "idOriginal": "Decline_Crunch"
+  },
+  {
+    "id": "crunch-en-polea",
+    "nombre": "Crunch en polea",
+    "grupo": "Core",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Cable_Crunch/0.jpg",
+      "Cable_Crunch/1.jpg"
+    ],
+    "idOriginal": "Cable_Crunch"
+  },
+  {
+    "id": "dead-bug",
+    "nombre": "Dead bug",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Dead_Bug/0.jpg",
+      "Dead_Bug/1.jpg"
+    ],
+    "idOriginal": "Dead_Bug"
+  },
+  {
+    "id": "press-pallof",
+    "nombre": "Press Pallof",
+    "grupo": "Core",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros",
+      "Tríceps"
+    ],
+    "imagenes": [
+      "Pallof_Press/0.jpg",
+      "Pallof_Press/1.jpg"
+    ],
+    "idOriginal": "Pallof_Press"
+  },
+  {
+    "id": "lenador-en-polea",
+    "nombre": "Leñador en polea",
+    "grupo": "Core",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [
+      "Hombros"
+    ],
+    "imagenes": [
+      "Standing_Cable_Wood_Chop/0.jpg",
+      "Standing_Cable_Wood_Chop/1.jpg"
+    ],
+    "idOriginal": "Standing_Cable_Wood_Chop"
+  },
+  {
+    "id": "inclinaciones-laterales-con-mancuerna",
+    "nombre": "Inclinaciones laterales con mancuerna",
+    "grupo": "Core",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Dumbbell_Side_Bend/0.jpg",
+      "Dumbbell_Side_Bend/1.jpg"
+    ],
+    "idOriginal": "Dumbbell_Side_Bend"
+  },
+  {
+    "id": "caminar-al-aire-libre",
+    "nombre": "Caminar al aire libre",
+    "grupo": "Cardio",
+    "equipo": "Ninguno",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [],
+    "idOriginal": null
+  },
+  {
+    "id": "caminar-en-trotadora",
+    "nombre": "Caminar en trotadora",
+    "grupo": "Cardio",
+    "equipo": "Trotadora",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Walking_Treadmill/0.jpg",
+      "Walking_Treadmill/1.jpg"
+    ],
+    "idOriginal": "Walking_Treadmill"
+  },
+  {
+    "id": "bicicleta",
+    "nombre": "Bicicleta",
+    "grupo": "Cardio",
+    "equipo": "Bicicleta",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Bicycling/0.jpg",
+      "Bicycling/1.jpg"
+    ],
+    "idOriginal": "Bicycling"
+  },
+  {
+    "id": "bicicleta-reclinada",
+    "nombre": "Bicicleta reclinada",
+    "grupo": "Cardio",
+    "equipo": "Máquina",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "imagenes": [
+      "Recumbent_Bike/0.jpg",
+      "Recumbent_Bike/1.jpg"
+    ],
+    "idOriginal": "Recumbent_Bike"
+  },
+  {
+    "id": "maquina-de-remo",
+    "nombre": "Máquina de remo",
+    "grupo": "Cardio",
+    "equipo": "Máquina",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales",
+      "Espalda baja",
+      "Espalda media"
+    ],
+    "imagenes": [
+      "Rowing_Stationary/0.jpg",
+      "Rowing_Stationary/1.jpg"
+    ],
+    "idOriginal": "Rowing_Stationary"
+  },
+  {
+    "id": "cruce-de-poleas",
+    "nombre": "Cruce de poleas",
+    "grupo": "Pecho",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros"
+    ],
+    "imagenes": [
+      "Cable_Crossover/0.jpg",
+      "Cable_Crossover/1.jpg"
+    ],
+    "idOriginal": "Cable_Crossover"
+  },
+  {
+    "id": "cruce-de-poleas-desde-abajo",
+    "nombre": "Cruce de poleas desde abajo",
+    "grupo": "Pecho",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros"
+    ],
+    "imagenes": [
+      "Low_Cable_Crossover/0.jpg",
+      "Low_Cable_Crossover/1.jpg"
+    ],
+    "idOriginal": "Low_Cable_Crossover"
+  },
+  {
+    "id": "pajaros-en-polea",
+    "nombre": "Pájaros en polea",
+    "grupo": "Hombro",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [],
+    "imagenes": [
+      "Cable_Rear_Delt_Fly/0.jpg",
+      "Cable_Rear_Delt_Fly/1.jpg"
+    ],
+    "idOriginal": "Cable_Rear_Delt_Fly"
+  }
+]

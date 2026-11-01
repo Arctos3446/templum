@@ -1,0 +1,1670 @@
+[
+  {
+    "id": "press-banca",
+    "nombre": "Press banca",
+    "grupo": "Pecho",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Barbell_Bench_Press_-_Medium_Grip",
+    "dibujos": [
+      "dibujos/0042-relaxation.svg",
+      "dibujos/0042-tension.svg"
+    ]
+  },
+  {
+    "id": "press-banca-inclinado",
+    "nombre": "Press banca inclinado",
+    "grupo": "Pecho",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+    "dibujos": [
+      "dibujos/0043-relaxation.svg",
+      "dibujos/0043-tension.svg"
+    ]
+  },
+  {
+    "id": "press-plano-con-mancuernas",
+    "nombre": "Press plano con mancuernas",
+    "grupo": "Pecho",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Dumbbell_Bench_Press",
+    "dibujos": [
+      "dibujos/0055-relaxation.svg",
+      "dibujos/0055-tension.svg"
+    ]
+  },
+  {
+    "id": "press-inclinado-con-mancuernas",
+    "nombre": "Press inclinado con mancuernas",
+    "grupo": "Pecho",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Incline_Dumbbell_Press",
+    "dibujos": [
+      "dibujos/0080-relaxation.svg",
+      "dibujos/0080-tension.svg"
+    ]
+  },
+  {
+    "id": "press-de-pecho-en-maquina",
+    "nombre": "Press de pecho en máquina",
+    "grupo": "Pecho",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Machine_Bench_Press",
+    "dibujos": [
+      "dibujos/0066-relaxation.svg",
+      "dibujos/0066-tension.svg"
+    ]
+  },
+  {
+    "id": "press-inclinado-en-maquina",
+    "nombre": "Press inclinado en máquina",
+    "grupo": "Pecho",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Leverage_Incline_Chest_Press",
+    "dibujos": []
+  },
+  {
+    "id": "press-banca-en-maquina-smith",
+    "nombre": "Press banca en máquina Smith",
+    "grupo": "Pecho",
+    "equipo": "Máquina Smith",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Smith_Machine_Bench_Press",
+    "dibujos": [
+      "dibujos/0078-relaxation.svg",
+      "dibujos/0078-tension.svg"
+    ]
+  },
+  {
+    "id": "press-inclinado-en-maquina-smith",
+    "nombre": "Press inclinado en máquina Smith",
+    "grupo": "Pecho",
+    "equipo": "Máquina Smith",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Smith_Machine_Incline_Bench_Press",
+    "dibujos": [
+      "dibujos/0081-relaxation.svg",
+      "dibujos/0081-tension.svg"
+    ]
+  },
+  {
+    "id": "aperturas-en-maquina-peck-deck",
+    "nombre": "Aperturas en máquina (peck deck)",
+    "grupo": "Pecho",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [],
+    "idOriginal": "Butterfly",
+    "dibujos": []
+  },
+  {
+    "id": "fondos-en-paralelas",
+    "nombre": "Fondos en paralelas",
+    "grupo": "Pecho",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Dips_-_Chest_Version",
+    "dibujos": [
+      "dibujos/0054-relaxation.svg",
+      "dibujos/0054-tension.svg"
+    ]
+  },
+  {
+    "id": "flexiones",
+    "nombre": "Flexiones",
+    "grupo": "Pecho",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Pushups",
+    "dibujos": [
+      "dibujos/0077-relaxation.svg",
+      "dibujos/0077-tension.svg"
+    ]
+  },
+  {
+    "id": "flexiones-abiertas",
+    "nombre": "Flexiones abiertas",
+    "grupo": "Pecho",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Abdominales",
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Push-Up_Wide",
+    "dibujos": []
+  },
+  {
+    "id": "flexiones-inclinadas",
+    "nombre": "Flexiones inclinadas",
+    "grupo": "Pecho",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Incline_Push-Up",
+    "dibujos": []
+  },
+  {
+    "id": "flexiones-declinadas",
+    "nombre": "Flexiones declinadas",
+    "grupo": "Pecho",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Pecho",
+    "musculosSecundarios": [
+      "Hombros",
+      "Tríceps"
+    ],
+    "idOriginal": "Decline_Push-Up",
+    "dibujos": [
+      "dibujos/0075-relaxation.svg",
+      "dibujos/0075-tension.svg"
+    ]
+  },
+  {
+    "id": "dominadas",
+    "nombre": "Dominadas",
+    "grupo": "Espalda",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Espalda media"
+    ],
+    "idOriginal": "Pullups",
+    "dibujos": [
+      "dibujos/0087-relaxation.svg",
+      "dibujos/0087-tension.svg"
+    ]
+  },
+  {
+    "id": "dominadas-supinas",
+    "nombre": "Dominadas supinas",
+    "grupo": "Espalda",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Antebrazos",
+      "Espalda media"
+    ],
+    "idOriginal": "Chin-Up",
+    "dibujos": []
+  },
+  {
+    "id": "dominadas-con-lastre",
+    "nombre": "Dominadas con lastre",
+    "grupo": "Espalda",
+    "equipo": "Lastre",
+    "tipo": "pesas",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Espalda media"
+    ],
+    "idOriginal": "Weighted_Pull_Ups",
+    "dibujos": [
+      "dibujos/0087-relaxation.svg",
+      "dibujos/0087-tension.svg"
+    ]
+  },
+  {
+    "id": "dominadas-asistidas",
+    "nombre": "Dominadas asistidas",
+    "grupo": "Espalda",
+    "equipo": "Banda elástica",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Abdominales",
+      "Antebrazos",
+      "Espalda media"
+    ],
+    "idOriginal": "Band_Assisted_Pull-Up",
+    "dibujos": [
+      "dibujos/0087-relaxation.svg",
+      "dibujos/0087-tension.svg"
+    ]
+  },
+  {
+    "id": "jalon-al-pecho",
+    "nombre": "Jalón al pecho",
+    "grupo": "Espalda",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Espalda media",
+      "Hombros"
+    ],
+    "idOriginal": "Wide-Grip_Lat_Pulldown",
+    "dibujos": []
+  },
+  {
+    "id": "jalon-al-pecho-con-agarre-cerrado",
+    "nombre": "Jalón al pecho con agarre cerrado",
+    "grupo": "Espalda",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Espalda media",
+      "Hombros"
+    ],
+    "idOriginal": "Close-Grip_Front_Lat_Pulldown",
+    "dibujos": [
+      "dibujos/0096-relaxation.svg",
+      "dibujos/0096-tension.svg"
+    ]
+  },
+  {
+    "id": "jalon-supino",
+    "nombre": "Jalón supino",
+    "grupo": "Espalda",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Espalda media",
+      "Hombros"
+    ],
+    "idOriginal": "Underhand_Cable_Pulldowns",
+    "dibujos": [
+      "dibujos/0093-relaxation.svg",
+      "dibujos/0093-tension.svg"
+    ]
+  },
+  {
+    "id": "pullover-en-polea",
+    "nombre": "Pullover en polea",
+    "grupo": "Espalda",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [],
+    "idOriginal": "Straight-Arm_Pulldown",
+    "dibujos": [
+      "dibujos/0092-relaxation.svg",
+      "dibujos/0092-tension.svg"
+    ]
+  },
+  {
+    "id": "remo-con-barra",
+    "nombre": "Remo con barra",
+    "grupo": "Espalda",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Dorsales",
+      "Hombros"
+    ],
+    "idOriginal": "Bent_Over_Barbell_Row",
+    "dibujos": []
+  },
+  {
+    "id": "remo-supino-con-barra",
+    "nombre": "Remo supino con barra",
+    "grupo": "Espalda",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Dorsales",
+      "Hombros"
+    ],
+    "idOriginal": "Reverse_Grip_Bent-Over_Rows",
+    "dibujos": [
+      "dibujos/0026-relaxation.svg",
+      "dibujos/0026-tension.svg"
+    ]
+  },
+  {
+    "id": "remo-a-una-mano-con-mancuerna",
+    "nombre": "Remo a una mano con mancuerna",
+    "grupo": "Espalda",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Dorsales",
+      "Hombros"
+    ],
+    "idOriginal": "One-Arm_Dumbbell_Row",
+    "dibujos": []
+  },
+  {
+    "id": "remo-con-mancuernas",
+    "nombre": "Remo con mancuernas",
+    "grupo": "Espalda",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Dorsales",
+      "Hombros"
+    ],
+    "idOriginal": "Bent_Over_Two-Dumbbell_Row",
+    "dibujos": []
+  },
+  {
+    "id": "remo-con-pecho-apoyado-en-banco-inclinado",
+    "nombre": "Remo con pecho apoyado en banco inclinado",
+    "grupo": "Espalda",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Antebrazos",
+      "Dorsales",
+      "Hombros"
+    ],
+    "idOriginal": "Dumbbell_Incline_Row",
+    "dibujos": []
+  },
+  {
+    "id": "remo-sentado-en-polea",
+    "nombre": "Remo sentado en polea",
+    "grupo": "Espalda",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Dorsales",
+      "Hombros"
+    ],
+    "idOriginal": "Seated_Cable_Rows",
+    "dibujos": [
+      "dibujos/0025-relaxation.svg",
+      "dibujos/0025-tension.svg"
+    ]
+  },
+  {
+    "id": "remo-en-t",
+    "nombre": "Remo en T",
+    "grupo": "Espalda",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Dorsales"
+    ],
+    "idOriginal": "T-Bar_Row_with_Handle",
+    "dibujos": [
+      "dibujos/0029-relaxation.svg",
+      "dibujos/0029-tension.svg"
+    ]
+  },
+  {
+    "id": "remo-en-maquina",
+    "nombre": "Remo en máquina",
+    "grupo": "Espalda",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Bíceps",
+      "Espalda media"
+    ],
+    "idOriginal": "Leverage_Iso_Row",
+    "dibujos": []
+  },
+  {
+    "id": "remo-alto-en-maquina",
+    "nombre": "Remo alto en máquina",
+    "grupo": "Espalda",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Dorsales"
+    ],
+    "idOriginal": "Leverage_High_Row",
+    "dibujos": []
+  },
+  {
+    "id": "peso-muerto",
+    "nombre": "Peso muerto",
+    "grupo": "Espalda",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda baja",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Antebrazos",
+      "Glúteos",
+      "Isquiotibiales",
+      "Dorsales",
+      "Espalda media",
+      "Cuádriceps",
+      "Trapecio"
+    ],
+    "idOriginal": "Barbell_Deadlift",
+    "dibujos": [
+      "dibujos/0099-relaxation.svg",
+      "dibujos/0099-tension.svg"
+    ]
+  },
+  {
+    "id": "peso-muerto-desde-rack",
+    "nombre": "Peso muerto desde rack",
+    "grupo": "Espalda",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Espalda baja",
+    "musculosSecundarios": [
+      "Antebrazos",
+      "Glúteos",
+      "Isquiotibiales",
+      "Trapecio"
+    ],
+    "idOriginal": "Rack_Pulls",
+    "dibujos": []
+  },
+  {
+    "id": "hiperextensiones-lumbares",
+    "nombre": "Hiperextensiones lumbares",
+    "grupo": "Espalda",
+    "equipo": "Banco romano",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Espalda baja",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Hyperextensions_Back_Extensions",
+    "dibujos": [
+      "dibujos/0103-relaxation.svg",
+      "dibujos/0103-tension.svg"
+    ]
+  },
+  {
+    "id": "encogimientos-con-barra",
+    "nombre": "Encogimientos con barra",
+    "grupo": "Espalda",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Trapecio",
+    "musculosSecundarios": [],
+    "idOriginal": "Barbell_Shrug",
+    "dibujos": [
+      "dibujos/0030-relaxation.svg",
+      "dibujos/0030-tension.svg"
+    ]
+  },
+  {
+    "id": "encogimientos-con-mancuernas",
+    "nombre": "Encogimientos con mancuernas",
+    "grupo": "Espalda",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Trapecio",
+    "musculosSecundarios": [],
+    "idOriginal": "Dumbbell_Shrug",
+    "dibujos": [
+      "dibujos/0005-relaxation.svg",
+      "dibujos/0005-tension.svg"
+    ]
+  },
+  {
+    "id": "sentadilla-con-barra",
+    "nombre": "Sentadilla con barra",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales",
+      "Espalda baja"
+    ],
+    "idOriginal": "Barbell_Squat",
+    "dibujos": [
+      "dibujos/0122-relaxation.svg",
+      "dibujos/0122-tension.svg"
+    ]
+  },
+  {
+    "id": "sentadilla-en-maquina-smith",
+    "nombre": "Sentadilla en máquina Smith",
+    "grupo": "Pierna",
+    "equipo": "Máquina Smith",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales",
+      "Espalda baja"
+    ],
+    "idOriginal": "Smith_Machine_Squat",
+    "dibujos": [
+      "dibujos/0124-relaxation.svg",
+      "dibujos/0124-tension.svg"
+    ]
+  },
+  {
+    "id": "sentadilla-hack-en-maquina",
+    "nombre": "Sentadilla hack en máquina",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Hack_Squat",
+    "dibujos": [
+      "dibujos/0123-relaxation.svg",
+      "dibujos/0123-tension.svg"
+    ]
+  },
+  {
+    "id": "sentadilla-libre",
+    "nombre": "Sentadilla libre",
+    "grupo": "Pierna",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Bodyweight_Squat",
+    "dibujos": []
+  },
+  {
+    "id": "sentadilla-con-salto",
+    "nombre": "Sentadilla con salto",
+    "grupo": "Pierna",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Freehand_Jump_Squat",
+    "dibujos": []
+  },
+  {
+    "id": "sentadilla-bulgara-con-mancuernas",
+    "nombre": "Sentadilla búlgara con mancuernas",
+    "grupo": "Pierna",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Split_Squat_with_Dumbbells",
+    "dibujos": []
+  },
+  {
+    "id": "prensa-de-piernas",
+    "nombre": "Prensa de piernas",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Leg_Press",
+    "dibujos": [
+      "dibujos/0127-relaxation.svg",
+      "dibujos/0127-tension.svg"
+    ]
+  },
+  {
+    "id": "extension-de-cuadriceps-en-maquina",
+    "nombre": "Extensión de cuádriceps en máquina",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Leg_Extensions",
+    "dibujos": [
+      "dibujos/0142-relaxation.svg",
+      "dibujos/0142-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-femoral-acostado",
+    "nombre": "Curl femoral acostado",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Isquiotibiales",
+    "musculosSecundarios": [],
+    "idOriginal": "Lying_Leg_Curls",
+    "dibujos": [
+      "dibujos/0117-relaxation.svg",
+      "dibujos/0117-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-femoral-sentado",
+    "nombre": "Curl femoral sentado",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Isquiotibiales",
+    "musculosSecundarios": [],
+    "idOriginal": "Seated_Leg_Curl",
+    "dibujos": [
+      "dibujos/0119-relaxation.svg",
+      "dibujos/0119-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-femoral-de-pie",
+    "nombre": "Curl femoral de pie",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Isquiotibiales",
+    "musculosSecundarios": [],
+    "idOriginal": "Standing_Leg_Curl",
+    "dibujos": [
+      "dibujos/0120-relaxation.svg",
+      "dibujos/0120-tension.svg"
+    ]
+  },
+  {
+    "id": "peso-muerto-rumano",
+    "nombre": "Peso muerto rumano",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Isquiotibiales",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Espalda baja"
+    ],
+    "idOriginal": "Romanian_Deadlift",
+    "dibujos": [
+      "dibujos/0118-relaxation.svg",
+      "dibujos/0118-tension.svg"
+    ]
+  },
+  {
+    "id": "peso-muerto-rumano-con-mancuernas",
+    "nombre": "Peso muerto rumano con mancuernas",
+    "grupo": "Pierna",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Isquiotibiales",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Espalda baja"
+    ],
+    "idOriginal": "Stiff-Legged_Dumbbell_Deadlift",
+    "dibujos": [
+      "dibujos/0107-relaxation.svg",
+      "dibujos/0107-tension.svg"
+    ]
+  },
+  {
+    "id": "peso-muerto-sumo",
+    "nombre": "Peso muerto sumo",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Isquiotibiales",
+    "musculosSecundarios": [
+      "Aductores",
+      "Antebrazos",
+      "Glúteos",
+      "Espalda baja",
+      "Espalda media",
+      "Cuádriceps",
+      "Trapecio"
+    ],
+    "idOriginal": "Sumo_Deadlift",
+    "dibujos": []
+  },
+  {
+    "id": "estocadas-con-mancuernas",
+    "nombre": "Estocadas con mancuernas",
+    "grupo": "Pierna",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Dumbbell_Lunges",
+    "dibujos": [
+      "dibujos/0115-relaxation.svg",
+      "dibujos/0115-tension.svg"
+    ]
+  },
+  {
+    "id": "hip-thrust-con-barra",
+    "nombre": "Hip thrust con barra",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Glúteos",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Barbell_Hip_Thrust",
+    "dibujos": []
+  },
+  {
+    "id": "puente-de-gluteos-con-barra",
+    "nombre": "Puente de glúteos con barra",
+    "grupo": "Pierna",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Glúteos",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Barbell_Glute_Bridge",
+    "dibujos": []
+  },
+  {
+    "id": "abductores-en-maquina",
+    "nombre": "Abductores en máquina",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Abductores",
+    "musculosSecundarios": [
+      "Glúteos"
+    ],
+    "idOriginal": "Thigh_Abductor",
+    "dibujos": [
+      "dibujos/0156-relaxation.svg",
+      "dibujos/0156-tension.svg"
+    ]
+  },
+  {
+    "id": "aductores-en-maquina",
+    "nombre": "Aductores en máquina",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Aductores",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Thigh_Adductor",
+    "dibujos": [
+      "dibujos/0157-relaxation.svg",
+      "dibujos/0157-tension.svg"
+    ]
+  },
+  {
+    "id": "pantorrillas-de-pie-en-maquina",
+    "nombre": "Pantorrillas de pie en máquina",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pantorrillas",
+    "musculosSecundarios": [],
+    "idOriginal": "Standing_Calf_Raises",
+    "dibujos": [
+      "dibujos/0282-relaxation.svg",
+      "dibujos/0282-tension.svg"
+    ]
+  },
+  {
+    "id": "pantorrillas-sentado-en-maquina",
+    "nombre": "Pantorrillas sentado en máquina",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pantorrillas",
+    "musculosSecundarios": [],
+    "idOriginal": "Seated_Calf_Raise",
+    "dibujos": [
+      "dibujos/0279-relaxation.svg",
+      "dibujos/0279-tension.svg"
+    ]
+  },
+  {
+    "id": "pantorrillas-en-prensa",
+    "nombre": "Pantorrillas en prensa",
+    "grupo": "Pierna",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Pantorrillas",
+    "musculosSecundarios": [],
+    "idOriginal": "Calf_Press_On_The_Leg_Press_Machine",
+    "dibujos": [
+      "dibujos/0273-relaxation.svg",
+      "dibujos/0273-tension.svg"
+    ]
+  },
+  {
+    "id": "press-militar",
+    "nombre": "Press militar",
+    "grupo": "Hombro",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Tríceps"
+    ],
+    "idOriginal": "Standing_Military_Press",
+    "dibujos": []
+  },
+  {
+    "id": "press-militar-sentado",
+    "nombre": "Press militar sentado",
+    "grupo": "Hombro",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Tríceps"
+    ],
+    "idOriginal": "Seated_Barbell_Military_Press",
+    "dibujos": [
+      "dibujos/0004-relaxation.svg",
+      "dibujos/0004-tension.svg"
+    ]
+  },
+  {
+    "id": "press-de-hombros-con-mancuernas",
+    "nombre": "Press de hombros con mancuernas",
+    "grupo": "Hombro",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Tríceps"
+    ],
+    "idOriginal": "Dumbbell_Shoulder_Press",
+    "dibujos": []
+  },
+  {
+    "id": "press-de-hombros-en-maquina",
+    "nombre": "Press de hombros en máquina",
+    "grupo": "Hombro",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Tríceps"
+    ],
+    "idOriginal": "Machine_Shoulder_Military_Press",
+    "dibujos": []
+  },
+  {
+    "id": "press-de-hombros-en-maquina-smith",
+    "nombre": "Press de hombros en máquina Smith",
+    "grupo": "Hombro",
+    "equipo": "Máquina Smith",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Tríceps"
+    ],
+    "idOriginal": "Smith_Machine_Overhead_Shoulder_Press",
+    "dibujos": []
+  },
+  {
+    "id": "flexiones-en-parada-de-manos",
+    "nombre": "Flexiones en parada de manos",
+    "grupo": "Hombro",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Tríceps"
+    ],
+    "idOriginal": "Handstand_Push-Ups",
+    "dibujos": []
+  },
+  {
+    "id": "elevaciones-laterales",
+    "nombre": "Elevaciones laterales",
+    "grupo": "Hombro",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [],
+    "idOriginal": "Side_Lateral_Raise",
+    "dibujos": [
+      "dibujos/0018-relaxation.svg",
+      "dibujos/0018-tension.svg"
+    ]
+  },
+  {
+    "id": "elevaciones-laterales-en-polea",
+    "nombre": "Elevaciones laterales en polea",
+    "grupo": "Hombro",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Espalda media",
+      "Trapecio"
+    ],
+    "idOriginal": "Cable_Seated_Lateral_Raise",
+    "dibujos": []
+  },
+  {
+    "id": "peck-deck-invertido",
+    "nombre": "Peck deck invertido",
+    "grupo": "Hombro",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [],
+    "idOriginal": "Reverse_Machine_Flyes",
+    "dibujos": []
+  },
+  {
+    "id": "face-pull-en-polea",
+    "nombre": "Face pull en polea",
+    "grupo": "Hombro",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Hombros",
+    "musculosSecundarios": [
+      "Espalda media"
+    ],
+    "idOriginal": "Face_Pull",
+    "dibujos": []
+  },
+  {
+    "id": "curl-de-biceps-con-barra",
+    "nombre": "Curl de bíceps con barra",
+    "grupo": "Brazos",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [
+      "Antebrazos"
+    ],
+    "idOriginal": "Barbell_Curl",
+    "dibujos": [
+      "dibujos/0211-relaxation.svg",
+      "dibujos/0211-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-de-biceps-con-barra-z",
+    "nombre": "Curl de bíceps con barra Z",
+    "grupo": "Brazos",
+    "equipo": "Barra Z",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [],
+    "idOriginal": "EZ-Bar_Curl",
+    "dibujos": [
+      "dibujos/0226-relaxation.svg",
+      "dibujos/0226-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-de-biceps-con-mancuernas",
+    "nombre": "Curl de bíceps con mancuernas",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [
+      "Antebrazos"
+    ],
+    "idOriginal": "Dumbbell_Bicep_Curl",
+    "dibujos": [
+      "dibujos/0224-relaxation.svg",
+      "dibujos/0224-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-martillo",
+    "nombre": "Curl martillo",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Hammer_Curls",
+    "dibujos": [
+      "dibujos/0227-relaxation.svg",
+      "dibujos/0227-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-inclinado-con-mancuernas",
+    "nombre": "Curl inclinado con mancuernas",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Incline_Dumbbell_Curl",
+    "dibujos": [
+      "dibujos/0214-relaxation.svg",
+      "dibujos/0214-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-en-banco-scott",
+    "nombre": "Curl en banco Scott",
+    "grupo": "Brazos",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Preacher_Curl",
+    "dibujos": [
+      "dibujos/0239-relaxation.svg",
+      "dibujos/0239-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-scott-en-maquina",
+    "nombre": "Curl Scott en máquina",
+    "grupo": "Brazos",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Machine_Preacher_Curls",
+    "dibujos": [
+      "dibujos/0236-relaxation.svg",
+      "dibujos/0236-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-de-biceps-en-polea",
+    "nombre": "Curl de bíceps en polea",
+    "grupo": "Brazos",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Standing_Biceps_Cable_Curl",
+    "dibujos": [
+      "dibujos/0212-relaxation.svg",
+      "dibujos/0212-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-martillo-en-polea-con-cuerda",
+    "nombre": "Curl martillo en polea con cuerda",
+    "grupo": "Brazos",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Cable_Hammer_Curls_-_Rope_Attachment",
+    "dibujos": [
+      "dibujos/0216-relaxation.svg",
+      "dibujos/0216-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-invertido-con-barra",
+    "nombre": "Curl invertido con barra",
+    "grupo": "Brazos",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Bíceps",
+    "musculosSecundarios": [
+      "Antebrazos"
+    ],
+    "idOriginal": "Reverse_Barbell_Curl",
+    "dibujos": []
+  },
+  {
+    "id": "extension-de-triceps-en-polea",
+    "nombre": "Extensión de tríceps en polea",
+    "grupo": "Brazos",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Triceps_Pushdown",
+    "dibujos": [
+      "dibujos/0205-relaxation.svg",
+      "dibujos/0205-tension.svg"
+    ]
+  },
+  {
+    "id": "extension-de-triceps-en-polea-con-cuerda",
+    "nombre": "Extensión de tríceps en polea con cuerda",
+    "grupo": "Brazos",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Triceps_Pushdown_-_Rope_Attachment",
+    "dibujos": [
+      "dibujos/0206-relaxation.svg",
+      "dibujos/0206-tension.svg"
+    ]
+  },
+  {
+    "id": "extension-de-triceps-tras-nuca-en-polea",
+    "nombre": "Extensión de tríceps tras nuca en polea",
+    "grupo": "Brazos",
+    "equipo": "Polea",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Triceps_Overhead_Extension_with_Rope",
+    "dibujos": []
+  },
+  {
+    "id": "press-frances-con-barra-z",
+    "nombre": "Press francés con barra Z",
+    "grupo": "Brazos",
+    "equipo": "Barra Z",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [
+      "Antebrazos"
+    ],
+    "idOriginal": "EZ-Bar_Skullcrusher",
+    "dibujos": [
+      "dibujos/0183-relaxation.svg",
+      "dibujos/0183-tension.svg"
+    ]
+  },
+  {
+    "id": "press-frances-con-mancuernas",
+    "nombre": "Press francés con mancuernas",
+    "grupo": "Brazos",
+    "equipo": "Mancuernas",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros"
+    ],
+    "idOriginal": "Lying_Dumbbell_Tricep_Extension",
+    "dibujos": [
+      "dibujos/0181-relaxation.svg",
+      "dibujos/0181-tension.svg"
+    ]
+  },
+  {
+    "id": "extension-de-triceps-en-maquina",
+    "nombre": "Extensión de tríceps en máquina",
+    "grupo": "Brazos",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [],
+    "idOriginal": "Machine_Triceps_Extension",
+    "dibujos": [
+      "dibujos/0210-relaxation.svg",
+      "dibujos/0210-tension.svg"
+    ]
+  },
+  {
+    "id": "fondos-para-triceps",
+    "nombre": "Fondos para tríceps",
+    "grupo": "Brazos",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros"
+    ],
+    "idOriginal": "Dips_-_Triceps_Version",
+    "dibujos": [
+      "dibujos/0172-relaxation.svg",
+      "dibujos/0172-tension.svg"
+    ]
+  },
+  {
+    "id": "flexiones-cerradas",
+    "nombre": "Flexiones cerradas",
+    "grupo": "Brazos",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Tríceps",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros"
+    ],
+    "idOriginal": "Push-Ups_-_Close_Triceps_Position",
+    "dibujos": [
+      "dibujos/0188-relaxation.svg",
+      "dibujos/0188-tension.svg"
+    ]
+  },
+  {
+    "id": "curl-de-muneca-con-barra",
+    "nombre": "Curl de muñeca con barra",
+    "grupo": "Brazos",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Antebrazos",
+    "musculosSecundarios": [],
+    "idOriginal": "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench",
+    "dibujos": []
+  },
+  {
+    "id": "curl-de-muneca-invertido-con-barra",
+    "nombre": "Curl de muñeca invertido con barra",
+    "grupo": "Brazos",
+    "equipo": "Barra",
+    "tipo": "pesas",
+    "musculoPrincipal": "Antebrazos",
+    "musculosSecundarios": [],
+    "idOriginal": "Palms-Down_Wrist_Curl_Over_A_Bench",
+    "dibujos": []
+  },
+  {
+    "id": "abdominales-crunch",
+    "nombre": "Abdominales (crunch)",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Crunches",
+    "dibujos": [
+      "dibujos/0291-relaxation.svg",
+      "dibujos/0291-tension.svg"
+    ]
+  },
+  {
+    "id": "abdominales-completos-sit-up",
+    "nombre": "Abdominales completos (sit-up)",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Sit-Up",
+    "dibujos": []
+  },
+  {
+    "id": "crunch-invertido",
+    "nombre": "Crunch invertido",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Reverse_Crunch",
+    "dibujos": []
+  },
+  {
+    "id": "crunch-oblicuo",
+    "nombre": "Crunch oblicuo",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Oblique_Crunches_-_On_The_Floor",
+    "dibujos": []
+  },
+  {
+    "id": "bicicleta-abdominal",
+    "nombre": "Bicicleta abdominal",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Air_Bike",
+    "dibujos": [
+      "dibujos/0284-relaxation.svg",
+      "dibujos/0284-tension.svg"
+    ]
+  },
+  {
+    "id": "abdominal-en-v-navaja",
+    "nombre": "Abdominal en V (navaja)",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Jackknife_Sit-Up",
+    "dibujos": []
+  },
+  {
+    "id": "crunch-en-maquina",
+    "nombre": "Crunch en máquina",
+    "grupo": "Core",
+    "equipo": "Máquina",
+    "tipo": "pesas",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Ab_Crunch_Machine",
+    "dibujos": []
+  },
+  {
+    "id": "elevacion-de-piernas-colgado",
+    "nombre": "Elevación de piernas colgado",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Hanging_Leg_Raise",
+    "dibujos": []
+  },
+  {
+    "id": "elevacion-de-rodillas-en-paralelas",
+    "nombre": "Elevación de rodillas en paralelas",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Knee_Hip_Raise_On_Parallel_Bars",
+    "dibujos": []
+  },
+  {
+    "id": "elevacion-de-piernas-en-banco",
+    "nombre": "Elevación de piernas en banco",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Flat_Bench_Lying_Leg_Raise",
+    "dibujos": [
+      "dibujos/0021-relaxation.svg",
+      "dibujos/0021-tension.svg"
+    ]
+  },
+  {
+    "id": "plancha",
+    "nombre": "Plancha",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "tiempo",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [],
+    "idOriginal": "Plank",
+    "dibujos": []
+  },
+  {
+    "id": "plancha-lateral",
+    "nombre": "Plancha lateral",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "tiempo",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [
+      "Hombros"
+    ],
+    "idOriginal": "Side_Bridge",
+    "dibujos": [
+      "dibujos/0113-relaxation.svg",
+      "dibujos/0113-tension.svg"
+    ]
+  },
+  {
+    "id": "escaladores-mountain-climbers",
+    "nombre": "Escaladores (mountain climbers)",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [
+      "Hombros",
+      "Cuádriceps",
+      "Pecho"
+    ],
+    "idOriginal": "Mountain_Climbers",
+    "dibujos": []
+  },
+  {
+    "id": "giros-rusos",
+    "nombre": "Giros rusos",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [
+      "Espalda baja"
+    ],
+    "idOriginal": "Russian_Twist",
+    "dibujos": []
+  },
+  {
+    "id": "rueda-abdominal",
+    "nombre": "Rueda abdominal",
+    "grupo": "Core",
+    "equipo": "Rueda abdominal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Abdominales",
+    "musculosSecundarios": [
+      "Hombros"
+    ],
+    "idOriginal": "Ab_Roller",
+    "dibujos": []
+  },
+  {
+    "id": "burpees",
+    "nombre": "Burpees",
+    "grupo": "Core",
+    "equipo": "Peso corporal",
+    "tipo": "peso_corporal",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pecho",
+      "Hombros",
+      "Abdominales"
+    ],
+    "idOriginal": null,
+    "dibujos": []
+  },
+  {
+    "id": "trotar-al-aire-libre",
+    "nombre": "Trotar al aire libre",
+    "grupo": "Cardio",
+    "equipo": "Ninguno",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Trail_Running_Walking",
+    "dibujos": []
+  },
+  {
+    "id": "trotar-en-trotadora",
+    "nombre": "Trotar en trotadora",
+    "grupo": "Cardio",
+    "equipo": "Trotadora",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Jogging_Treadmill",
+    "dibujos": []
+  },
+  {
+    "id": "correr-en-trotadora",
+    "nombre": "Correr en trotadora",
+    "grupo": "Cardio",
+    "equipo": "Trotadora",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Running_Treadmill",
+    "dibujos": []
+  },
+  {
+    "id": "bicicleta-estatica",
+    "nombre": "Bicicleta estática",
+    "grupo": "Cardio",
+    "equipo": "Máquina",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Bicycling_Stationary",
+    "dibujos": []
+  },
+  {
+    "id": "eliptica",
+    "nombre": "Elíptica",
+    "grupo": "Cardio",
+    "equipo": "Máquina",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Elliptical_Trainer",
+    "dibujos": []
+  },
+  {
+    "id": "escaladora",
+    "nombre": "Escaladora",
+    "grupo": "Cardio",
+    "equipo": "Máquina",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Glúteos",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Stairmaster",
+    "dibujos": []
+  },
+  {
+    "id": "saltar-la-cuerda",
+    "nombre": "Saltar la cuerda",
+    "grupo": "Cardio",
+    "equipo": "Cuerda",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Pantorrillas",
+      "Isquiotibiales"
+    ],
+    "idOriginal": "Rope_Jumping",
+    "dibujos": []
+  },
+  {
+    "id": "nadar",
+    "nombre": "Nadar",
+    "grupo": "Cardio",
+    "equipo": "Piscina",
+    "tipo": "cardio",
+    "musculoPrincipal": "Dorsales",
+    "musculosSecundarios": [
+      "Hombros",
+      "Pecho",
+      "Tríceps",
+      "Abdominales"
+    ],
+    "idOriginal": null,
+    "dibujos": []
+  }
+]

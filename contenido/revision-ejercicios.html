@@ -1,0 +1,650 @@
+<title>Templum Ejercicios</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: una columna estrecha como la Biblioteca de la app; barra fija con pestañas y filas compactas para renombrar, más una comparación de estilos de imagen. */
+:root {
+  --bg: #0D0A10;
+  --surface: #16111A;
+  --raised: #1F1826;
+  --line: #2F2539;
+  --fg: #EEE7DC;
+  --muted: #A3969F;
+  --purple: #6B3A9E;
+  --purple-ink: #B892E0;
+  --purple-faint: rgba(184,146,224,.10);
+  --crimson: #9B1E33;
+  --crimson-ink: #E35C70;
+  --crimson-faint: rgba(227,92,112,.10);
+  --gold: #CFA54E;
+  --gold-faint: rgba(207,165,78,.16);
+  --on-accent: #F7F1E6;
+  --font-display: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-ui: "Jost", "Futura", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #E4D9C6; --surface: #EDE4D3; --raised: #D8CAB2; --line: #C6B396;
+    --fg: #1D1421; --muted: #5A4C55; --purple: #4B2275; --purple-ink: #4B2275;
+    --purple-faint: rgba(75,34,117,.09); --crimson: #7D1628; --crimson-ink: #8F1A2E;
+    --crimson-faint: rgba(143,26,46,.08); --gold: #85631A; --gold-faint: rgba(133,99,26,.14);
+    --on-accent: #F3ECDF; color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #E4D9C6; --surface: #EDE4D3; --raised: #D8CAB2; --line: #C6B396;
+  --fg: #1D1421; --muted: #5A4C55; --purple: #4B2275; --purple-ink: #4B2275;
+  --purple-faint: rgba(75,34,117,.09); --crimson: #7D1628; --crimson-ink: #8F1A2E;
+  --crimson-faint: rgba(143,26,46,.08); --gold: #85631A; --gold-faint: rgba(133,99,26,.14);
+  --on-accent: #F3ECDF; color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-block: 32px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 24px;
+}
+h1, h2, h3 { margin: 0; text-wrap: balance; font-weight: 500; }
+p { margin: 0; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.brand { display: flex; align-items: center; gap: 10px; color: var(--gold); }
+.brand svg { width: 28px; height: 28px; }
+.brand span { font-family: var(--font-display); font-weight: 600; letter-spacing: .3em; text-transform: uppercase; color: var(--fg); }
+header.top { display: grid; gap: 14px; }
+header.top h1 { font-family: var(--font-display); font-size: 2.4rem; line-height: 1.1; }
+.lede { color: var(--muted); max-width: 60ch; }
+.howto { display: grid; gap: 6px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; font-size: .9375rem; }
+.howto b { font-weight: 600; }
+
+/* Barra fija */
+.bar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  background: var(--bg);
+  padding-block: 12px;
+  display: grid;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.progress-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; font-variant-numeric: tabular-nums; font-size: .9375rem; }
+.progress-row .n { font-weight: 600; }
+.progress-row .nt { color: var(--gold); }
+.progress-row .rm { color: var(--crimson-ink); }
+.progress-row .save { margin-left: auto; font-size: .8125rem; color: var(--muted); }
+.tabs { display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 4px; }
+.tab { flex: 1; border: 0; background: transparent; color: var(--muted); border-radius: 7px; height: 38px; font-size: .9375rem; }
+.tab[aria-selected="true"] { background: var(--raised); color: var(--fg); font-weight: 500; }
+.filters { display: grid; gap: 10px; }
+.search { width: 100%; height: 42px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); font-size: .9375rem; }
+.search::placeholder { color: var(--muted); }
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-size: .8125rem; white-space: nowrap; }
+.chip[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); color: var(--on-accent); }
+
+.notice { padding: 12px 14px; border: 1px solid var(--crimson-ink); background: var(--crimson-faint); border-radius: 10px; font-size: .9375rem; }
+.empty { color: var(--muted); text-align: center; padding: 24px 0; }
+
+/* Filas para renombrar */
+.list { display: grid; gap: 8px; }
+.group-h { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); padding-top: 14px; }
+.row {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 8px 14px;
+  align-items: start;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.row.renamed { border-color: var(--gold); }
+.row[data-d="remove"] { border-color: var(--crimson-ink); background: linear-gradient(var(--crimson-faint), var(--crimson-faint)), var(--surface); }
+.row[data-d="remove"] .head, .row[data-d="remove"] .alias, .row[data-d="remove"] .pic { opacity: .5; }
+.row .pic { grid-row: span 2; width: 76px; }
+.row-body { display: contents; }
+.head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.name { font-weight: 500; line-height: 1.3; margin-right: auto; min-width: 0; }
+.row.renamed .name { text-decoration: line-through; text-decoration-color: var(--muted); color: var(--muted); font-weight: 400; }
+.meta { font-size: .8125rem; color: var(--muted); }
+.alias { display: flex; gap: 8px; align-items: center; }
+.alias input { flex: 1; min-width: 0; height: 38px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--raised); font-size: .9375rem; }
+.alias input::placeholder { color: var(--muted); }
+.row.renamed .alias input { border-color: var(--gold); color: var(--fg); }
+.act { flex: none; display: inline-flex; align-items: center; gap: 6px; height: 38px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-size: .8125rem; color: var(--muted); }
+.act svg { width: 14px; height: 14px; }
+.act[aria-pressed="true"] { background: var(--crimson); border-color: var(--crimson); color: var(--on-accent); }
+
+/* Estilos de imagen */
+.styles { display: grid; gap: 18px; }
+.style { display: grid; gap: 14px; padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.style.chosen { border-color: var(--purple-ink); background: linear-gradient(var(--purple-faint), var(--purple-faint)), var(--surface); }
+.style-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.style-head h2 { font-family: var(--font-display); font-size: 1.6rem; line-height: 1.1; margin-right: auto; }
+.tag { font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.samples { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.sample { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.pic { aspect-ratio: 1; max-width: 100%; border-radius: 10px; background: var(--raised); display: grid; place-items: center; overflow: hidden; color: var(--gold); }
+.pic .drawing {
+  width: 84%; height: 84%;
+  background: var(--gold);
+  -webkit-mask: var(--src) center / contain no-repeat;
+  mask: var(--src) center / contain no-repeat;
+}
+.pic .map { display: flex; gap: 2px; height: 84%; }
+.pic .map svg { height: 100%; width: auto; }
+.pic.blank { background: transparent; border: 1px dashed var(--line); }
+.sample span { font-size: .75rem; line-height: 1.3; color: var(--muted); }
+.style p { font-size: .9375rem; color: var(--muted); max-width: 60ch; }
+.choose { justify-self: start; height: 42px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--purple-ink); background: transparent; color: var(--purple-ink); font-weight: 500; font-size: .9375rem; }
+.style.chosen .choose { background: var(--purple); border-color: var(--purple); color: var(--on-accent); }
+.m { fill: var(--line); }
+.m1 { fill: var(--crimson-ink); }
+.m2 { fill: var(--purple-ink); opacity: .55; }
+
+/* Faltantes */
+form.add { display: grid; gap: 12px; padding: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+form.add h2 { font-family: var(--font-display); font-size: 1.5rem; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: .8125rem; color: var(--muted); }
+.field input, .field textarea, .field select { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--raised); font-size: 1rem; }
+.field textarea { min-height: 72px; resize: vertical; }
+.primary { height: 46px; border: 0; border-radius: 10px; background: var(--purple); color: var(--on-accent); font-weight: 500; }
+.primary:disabled { opacity: .5; cursor: default; }
+.form-msg { font-size: .875rem; color: var(--muted); }
+.miss { display: grid; gap: 4px; padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.miss-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.miss-head .name { margin-right: auto; }
+.del { height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--crimson-ink); font-size: .8125rem; }
+
+footer { text-align: center; color: var(--muted); font-size: .875rem; display: grid; gap: 4px; }
+footer i { font-family: var(--font-display); font-size: 1.1rem; color: var(--fg); }
+
+@media (max-width: 480px) {
+  .samples { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="chirho" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="square"><path d="M50 20 V82"/><path d="M50 20 H58 a13 13 0 0 1 0 26 H50"/><path d="M31 46 L69 82"/><path d="M69 46 L31 82"/></g></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><svg><use href="#chirho"/></svg><span>Templum</span></div>
+    <h1>Biblioteca de ejercicios</h1>
+    <p class="lede">Ya apliqué tus cambios. Quedan 112 ejercicios, cada uno con su dibujo de línea o, si no hay dibujo, con su mapa de músculos.</p>
+    <div class="howto">
+      <span><b>Último repaso:</b> mira que cada dibujo corresponda al ejercicio. Si alguno no calza, márcalo con <b>Quitar</b> o escríbelo en la casilla, y yo le pongo el mapa de músculos en su lugar.</span>
+      <span>Si quieres cambiarle el nombre a otro, escribe el tuyo en la casilla "Yo le digo…".</span>
+    </div>
+  </header>
+
+  <div class="bar">
+    <div class="progress-row">
+      <span><span class="n" id="total">0</span> ejercicios</span>
+      <span class="nt" id="nt-count" hidden></span>
+      <span class="rm" id="rm-count" hidden></span>
+      <span class="save" id="save-state">Cargando…</span>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Secciones">
+      <button class="tab" role="tab" id="tab-n" aria-selected="true" aria-controls="panel-n">Nombres</button>
+      <button class="tab" role="tab" id="tab-i" aria-selected="false" aria-controls="panel-i">Imágenes</button>
+      <button class="tab" role="tab" id="tab-f" aria-selected="false" aria-controls="panel-f">Faltan</button>
+    </div>
+    <div class="filters" id="filters">
+      <input class="search" id="search" type="search" placeholder="Buscar ejercicio" aria-label="Buscar ejercicio">
+      <div class="chips" id="chips" aria-label="Filtrar por grupo"></div>
+    </div>
+  </div>
+
+  <div class="notice" id="no-db" hidden>En esta vista no se pueden guardar tus respuestas. Abre la página desde claude.ai con tu cuenta para que queden guardadas.</div>
+
+  <section id="panel-n" role="tabpanel" aria-labelledby="tab-n">
+    <div class="list" id="list-n"><p class="empty">Cargando ejercicios…</p></div>
+    <p class="empty" id="no-match" hidden>No hay ejercicios con ese nombre. Si te falta, agrégalo en la pestaña Faltan.</p>
+  </section>
+
+  <section id="panel-i" role="tabpanel" aria-labelledby="tab-i" hidden>
+    <div class="styles">
+      <article class="style" id="style-dibujo">
+        <div class="style-head"><h2>Dibujo de línea</h2><span class="tag">Recomendado</span></div>
+        <div class="samples" id="samples-dibujo"></div>
+        <p>Un dibujo simple, en dorado, que muestra cómo se hace el movimiento. 61 de los 112 tienen dibujo. Los que no lo tienen, como la plancha, muestran el mapa de músculos.</p>
+        <button class="choose" type="button" data-estilo="dibujo">Elegir este</button>
+      </article>
+      <article class="style" id="style-mapa">
+        <div class="style-head"><h2>Mapa de músculos</h2></div>
+        <div class="samples" id="samples-mapa"></div>
+        <p>Todos con la misma silueta: el músculo principal en carmesí y los secundarios en púrpura. Es parejo y sobrio, pero no muestra cómo se hace el ejercicio.</p>
+        <button class="choose" type="button" data-estilo="mapa">Elegir este</button>
+      </article>
+      <article class="style" id="style-nada">
+        <div class="style-head"><h2>Sin imagen en la lista</h2></div>
+        <div class="samples" id="samples-nada"></div>
+        <p>La lista queda limpia, solo con nombres. El mapa de músculos aparece solo al abrir el detalle de cada ejercicio.</p>
+        <button class="choose" type="button" data-estilo="nada">Elegir este</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="panel-f" role="tabpanel" aria-labelledby="tab-f" hidden>
+    <div class="list">
+      <form class="add" id="add-form">
+        <h2>¿Te falta alguno?</h2>
+        <p class="lede">Escribe el ejercicio como tú le dices. Si sabes con qué se hace o qué músculo trabaja, agrégalo en el detalle.</p>
+        <div class="field">
+          <label for="f-name">Nombre</label>
+          <input id="f-name" required placeholder="Ej.: Remo Gironda, Sentadilla sissy">
+        </div>
+        <div class="field">
+          <label for="f-group">Grupo</label>
+          <select id="f-group"></select>
+        </div>
+        <div class="field">
+          <label for="f-note">Detalle (opcional)</label>
+          <textarea id="f-note" placeholder="Ej.: en máquina, para pecho bajo"></textarea>
+        </div>
+        <button class="primary" id="f-submit" type="submit">Agregar</button>
+        <p class="form-msg" id="f-msg" hidden></p>
+      </form>
+      <div class="list" id="list-f"></div>
+    </div>
+  </section>
+
+  <footer>
+    <i>Ad maiorem Dei gloriam</i>
+    <span>Templum · Etapa 1, contenido · Dibujos de Everkinetic (CC BY-SA 4.0)</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var GRUPOS = ['Pecho', 'Espalda', 'Pierna', 'Hombro', 'Brazos', 'Core', 'Cardio'];
+  var TIPO_LABEL = { pesas: 'Peso y repeticiones', peso_corporal: 'Solo repeticiones', cardio: 'Distancia y tiempo', tiempo: 'Solo tiempo' };
+  var MUESTRAS = ['press-banca', 'dominadas', 'curl-martillo', 'plancha'];
+
+  // Silueta de la maqueta "Detalle del ejercicio"; cada forma lleva los músculos que pinta.
+  var FRENTE = [
+    ['circle', { cx: 50, cy: 16, r: 10 }, []],
+    ['rect', { x: 45, y: 26, width: 10, height: 8, rx: 2 }, ['Cuello']],
+    ['ellipse', { cx: 29, cy: 42, rx: 8, ry: 7 }, ['Hombros']],
+    ['ellipse', { cx: 71, cy: 42, rx: 8, ry: 7 }, ['Hombros']],
+    ['rect', { x: 34, y: 36, width: 15.5, height: 20, rx: 6 }, ['Pecho']],
+    ['rect', { x: 50.5, y: 36, width: 15.5, height: 20, rx: 6 }, ['Pecho']],
+    ['rect', { x: 40, y: 58, width: 20, height: 32, rx: 5 }, ['Abdominales']],
+    ['rect', { x: 33, y: 60, width: 6, height: 26, rx: 3 }, ['Abdominales']],
+    ['rect', { x: 61, y: 60, width: 6, height: 26, rx: 3 }, ['Abdominales']],
+    ['ellipse', { cx: 23, cy: 61, rx: 5, ry: 11 }, ['Bíceps']],
+    ['ellipse', { cx: 77, cy: 61, rx: 5, ry: 11 }, ['Bíceps']],
+    ['ellipse', { cx: 19, cy: 87, rx: 4, ry: 12 }, ['Antebrazos']],
+    ['ellipse', { cx: 81, cy: 87, rx: 4, ry: 12 }, ['Antebrazos']],
+    ['rect', { x: 36, y: 92, width: 28, height: 14, rx: 6 }, ['Aductores', 'Abductores']],
+    ['ellipse', { cx: 42, cy: 130, rx: 7.5, ry: 22 }, ['Cuádriceps']],
+    ['ellipse', { cx: 58, cy: 130, rx: 7.5, ry: 22 }, ['Cuádriceps']],
+    ['ellipse', { cx: 42, cy: 176, rx: 5, ry: 15 }, []],
+    ['ellipse', { cx: 58, cy: 176, rx: 5, ry: 15 }, []]
+  ];
+  var ESPALDA = [
+    ['circle', { cx: 50, cy: 16, r: 10 }, []],
+    ['rect', { x: 38, y: 28, width: 24, height: 14, rx: 6 }, ['Trapecio']],
+    ['ellipse', { cx: 29, cy: 42, rx: 8, ry: 7 }, ['Hombros']],
+    ['ellipse', { cx: 71, cy: 42, rx: 8, ry: 7 }, ['Hombros']],
+    ['rect', { x: 34, y: 44, width: 15, height: 30, rx: 6 }, ['Dorsales', 'Espalda media']],
+    ['rect', { x: 51, y: 44, width: 15, height: 30, rx: 6 }, ['Dorsales', 'Espalda media']],
+    ['rect', { x: 42, y: 75, width: 16, height: 15, rx: 4 }, ['Espalda baja']],
+    ['ellipse', { cx: 23, cy: 61, rx: 5, ry: 11 }, ['Tríceps']],
+    ['ellipse', { cx: 77, cy: 61, rx: 5, ry: 11 }, ['Tríceps']],
+    ['ellipse', { cx: 19, cy: 87, rx: 4, ry: 12 }, ['Antebrazos']],
+    ['ellipse', { cx: 81, cy: 87, rx: 4, ry: 12 }, ['Antebrazos']],
+    ['rect', { x: 36, y: 92, width: 13.5, height: 18, rx: 6 }, ['Glúteos']],
+    ['rect', { x: 50.5, y: 92, width: 13.5, height: 18, rx: 6 }, ['Glúteos']],
+    ['ellipse', { cx: 42, cy: 134, rx: 7.5, ry: 20 }, ['Isquiotibiales']],
+    ['ellipse', { cx: 58, cy: 134, rx: 7.5, ry: 20 }, ['Isquiotibiales']],
+    ['ellipse', { cx: 42, cy: 176, rx: 5.5, ry: 15 }, ['Pantorrillas']],
+    ['ellipse', { cx: 58, cy: 176, rx: 5.5, ry: 15 }, ['Pantorrillas']]
+  ];
+
+  var ejercicios = [];
+  var reviews = {};          // id -> {decision}
+  var nombres = {};          // id -> nombre propio
+  var rows = {};             // id -> {el, apply, grupo, texto}
+  var estilo = null;
+  var db = null;
+  var filter = 'todos';
+  var query = '';
+
+  var $ = function (id) { return document.getElementById(id); };
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function icon(id) {
+    var s = document.createElementNS(SVGNS, 'svg');
+    s.setAttribute('aria-hidden', 'true');
+    var u = document.createElementNS(SVGNS, 'use');
+    u.setAttribute('href', '#' + id);
+    s.appendChild(u);
+    return s;
+  }
+  function plain(s) {
+    return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  }
+  function setSave(text) { $('save-state').textContent = text; }
+  function guardar(promesa) {
+    setSave('Guardando…');
+    promesa.then(function () { setSave('Guardado'); })
+      .catch(function (e) { setSave(e && e.code === 'quota_exceeded' ? 'No hay espacio para guardar' : 'No se pudo guardar, intenta otra vez'); });
+  }
+
+  // Mapa de músculos
+  function silueta(formas, ex) {
+    var svg = document.createElementNS(SVGNS, 'svg');
+    svg.setAttribute('viewBox', '0 0 100 210');
+    svg.setAttribute('aria-hidden', 'true');
+    formas.forEach(function (f) {
+      var s = document.createElementNS(SVGNS, f[0]);
+      Object.keys(f[1]).forEach(function (k) { s.setAttribute(k, f[1][k]); });
+      var cls = 'm';
+      if (f[2].indexOf(ex.musculoPrincipal) !== -1) cls = 'm1';
+      else if (f[2].some(function (m) { return ex.musculosSecundarios.indexOf(m) !== -1; })) cls = 'm2';
+      s.setAttribute('class', cls);
+      svg.appendChild(s);
+    });
+    return svg;
+  }
+  function mapa(ex) {
+    var w = el('div', 'map');
+    w.appendChild(silueta(FRENTE, ex));
+    w.appendChild(silueta(ESPALDA, ex));
+    return w;
+  }
+
+  // Imagen de un ejercicio: su dibujo (en la fase de esfuerzo) o, si no tiene, el mapa de músculos.
+  function imagen(ex, estiloPic) {
+    var pic = el('div', 'pic');
+    if (estiloPic === 'nada') {
+      pic.className = 'pic blank';
+    } else if (estiloPic === 'dibujo' && ex.dibujos.length) {
+      var d = el('div', 'drawing');
+      d.style.setProperty('--src', 'url("' + ex.dibujos[ex.dibujos.length - 1] + '")');
+      pic.appendChild(d);
+    } else {
+      pic.appendChild(mapa(ex));
+    }
+    pic.setAttribute('role', 'img');
+    pic.setAttribute('aria-label', ex.nombre);
+    return pic;
+  }
+
+  // Estilos de imagen
+  function renderMuestras() {
+    var porId = {};
+    ejercicios.forEach(function (e) { porId[e.id] = e; });
+    [['dibujo', 'samples-dibujo'], ['mapa', 'samples-mapa'], ['nada', 'samples-nada']].forEach(function (s) {
+      var wrap = $(s[1]);
+      wrap.textContent = '';
+      MUESTRAS.forEach(function (id) {
+        var ex = porId[id];
+        if (!ex) return;
+        var item = el('div', 'sample');
+        item.appendChild(imagen(ex, s[0]));
+        item.appendChild(el('span', null, ex.nombre));
+        wrap.appendChild(item);
+      });
+    });
+  }
+  function applyEstilo() {
+    ['dibujo', 'mapa', 'nada'].forEach(function (k) {
+      var card = $('style-' + k);
+      var on = estilo === k;
+      card.classList.toggle('chosen', on);
+      var b = card.querySelector('.choose');
+      b.textContent = on ? 'Elegido' : 'Elegir este';
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.choose'), function (b) {
+    b.addEventListener('click', function () {
+      estilo = b.dataset.estilo;
+      applyEstilo();
+      if (db) guardar(db.doc('preferencias/imagen').set({ estilo: estilo, updatedAt: new Date().toISOString() }));
+    });
+  });
+
+  // Filas para renombrar
+  function buildRow(ex) {
+    var row = el('article', 'row');
+    row.appendChild(imagen(ex, 'dibujo'));
+    var head = el('div', 'head');
+    head.appendChild(el('span', 'name', ex.nombre));
+    head.appendChild(el('span', 'meta', ex.equipo + ' · ' + TIPO_LABEL[ex.tipo]));
+    row.appendChild(head);
+
+    var alias = el('div', 'alias');
+    var input = el('input');
+    input.id = 'alias-' + ex.id;
+    input.placeholder = 'Yo le digo…';
+    input.setAttribute('aria-label', 'Cómo le dices tú a ' + ex.nombre);
+    var rem = el('button', 'act'); rem.type = 'button'; rem.appendChild(icon('i-x')); rem.appendChild(document.createTextNode('Quitar'));
+    alias.appendChild(input); alias.appendChild(rem);
+    row.appendChild(alias);
+
+    var timer = null;
+    function guardarNombre() {
+      var v = input.value.trim();
+      if ((nombres[ex.id] || '') === v) return;
+      nombres[ex.id] = v;
+      apply(); updateCounts();
+      if (db) guardar(db.doc('nombres/' + ex.id).set({ nombre: v, original: ex.nombre, updatedAt: new Date().toISOString() }));
+    }
+    input.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(guardarNombre, 700);
+    });
+    input.addEventListener('blur', function () { clearTimeout(timer); guardarNombre(); });
+    rem.addEventListener('click', function () {
+      var d = (reviews[ex.id] || {}).decision === 'remove' ? null : 'remove';
+      reviews[ex.id] = { decision: d };
+      apply(); updateCounts();
+      if (db) guardar(db.doc('revision/' + ex.id).set({ decision: d, note: '', updatedAt: new Date().toISOString() }));
+    });
+
+    function apply() {
+      var n = nombres[ex.id] || '';
+      row.classList.toggle('renamed', !!n);
+      if (document.activeElement !== input) input.value = n;
+      var r = (reviews[ex.id] || {}).decision === 'remove';
+      row.dataset.d = r ? 'remove' : '';
+      rem.setAttribute('aria-pressed', r ? 'true' : 'false');
+    }
+    rows[ex.id] = {
+      el: row, apply: apply, grupo: ex.grupo,
+      texto: plain(ex.nombre + ' ' + ex.equipo)
+    };
+    apply();
+    return row;
+  }
+
+  function render() {
+    var list = $('list-n');
+    list.textContent = '';
+    GRUPOS.forEach(function (g) {
+      var items = ejercicios.filter(function (e) { return e.grupo === g; });
+      if (!items.length) return;
+      var h = el('h2', 'group-h', g + ' · ' + items.length);
+      h.dataset.grupo = g;
+      list.appendChild(h);
+      items.forEach(function (e) { list.appendChild(buildRow(e)); });
+    });
+    applyFilter();
+  }
+  function renderChips() {
+    var wrap = $('chips');
+    wrap.textContent = '';
+    var opts = [['todos', 'Todos']].concat(GRUPOS.map(function (g) { return [g, g]; })).concat([['renombrados', 'Con tu nombre']]);
+    opts.forEach(function (o) {
+      var b = el('button', 'chip', o[1]);
+      b.type = 'button';
+      b.setAttribute('aria-pressed', filter === o[0] ? 'true' : 'false');
+      b.addEventListener('click', function () { filter = o[0]; renderChips(); applyFilter(); });
+      wrap.appendChild(b);
+    });
+  }
+  function applyFilter() {
+    var visibles = {};
+    var any = false;
+    Object.keys(rows).forEach(function (id) {
+      var r = rows[id];
+      var texto = r.texto + ' ' + plain(nombres[id] || '');
+      var show = (filter === 'todos' || filter === r.grupo || (filter === 'renombrados' && nombres[id])) &&
+        (!query || texto.indexOf(query) !== -1);
+      r.el.hidden = !show;
+      if (show) { visibles[r.grupo] = true; any = true; }
+    });
+    Array.prototype.forEach.call($('list-n').querySelectorAll('.group-h'), function (h) {
+      h.hidden = !visibles[h.dataset.grupo];
+    });
+    $('no-match').hidden = any || !ejercicios.length;
+  }
+  function updateCounts() {
+    var nt = 0, rm = 0;
+    ejercicios.forEach(function (e) {
+      if (nombres[e.id]) nt++;
+      if ((reviews[e.id] || {}).decision === 'remove') rm++;
+    });
+    $('total').textContent = ejercicios.length;
+    $('nt-count').hidden = nt === 0;
+    $('nt-count').textContent = nt === 1 ? '1 con tu nombre' : nt + ' con tu nombre';
+    $('rm-count').hidden = rm === 0;
+    $('rm-count').textContent = rm === 1 ? '1 para quitar' : rm + ' para quitar';
+  }
+
+  $('search').addEventListener('input', function () {
+    query = plain(this.value.trim());
+    applyFilter();
+  });
+
+  // Pestañas
+  var tabs = [['tab-n', 'panel-n'], ['tab-i', 'panel-i'], ['tab-f', 'panel-f']];
+  tabs.forEach(function (t) {
+    $(t[0]).addEventListener('click', function () {
+      tabs.forEach(function (u) {
+        var on = u[0] === t[0];
+        $(u[0]).setAttribute('aria-selected', on ? 'true' : 'false');
+        $(u[1]).hidden = !on;
+      });
+      $('filters').hidden = t[0] !== 'tab-n';
+    });
+  });
+
+  // Faltantes
+  GRUPOS.forEach(function (g) { var o = el('option', null, g); o.value = g; $('f-group').appendChild(o); });
+  var faltantes = [];
+  function renderFaltantes() {
+    var list = $('list-f');
+    list.textContent = '';
+    if (!faltantes.length) { list.appendChild(el('p', 'empty', 'Todavía no agregas ejercicios.')); return; }
+    faltantes.forEach(function (f) {
+      var card = el('article', 'miss');
+      var head = el('div', 'miss-head');
+      head.appendChild(el('span', 'name', f.nombre));
+      head.appendChild(el('span', 'meta', f.grupo));
+      var del = el('button', 'del', 'Eliminar'); del.type = 'button';
+      del.addEventListener('click', function () {
+        if (!db) return;
+        db.doc('faltantes/' + f.id).delete().catch(function () { setSave('No se pudo eliminar'); });
+      });
+      head.appendChild(del);
+      card.appendChild(head);
+      if (f.nota) card.appendChild(el('p', 'meta', f.nota));
+      list.appendChild(card);
+    });
+  }
+  $('add-form').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var nombre = $('f-name').value.trim();
+    var msg = $('f-msg');
+    if (!nombre) { msg.hidden = false; msg.textContent = 'Escribe el nombre antes de agregarlo.'; return; }
+    if (!db) { msg.hidden = false; msg.textContent = 'En esta vista no se puede guardar.'; return; }
+    $('f-submit').disabled = true;
+    db.collection('faltantes').add({ nombre: nombre, grupo: $('f-group').value, nota: $('f-note').value.trim(), createdAt: new Date().toISOString() })
+      .then(function () {
+        $('f-name').value = ''; $('f-note').value = '';
+        msg.hidden = false; msg.textContent = 'Agregado. Lo sumo cuando lea tus respuestas.';
+      })
+      .catch(function () { msg.hidden = false; msg.textContent = 'No se pudo agregar. Intenta otra vez.'; })
+      .then(function () { $('f-submit').disabled = false; });
+  });
+
+  // Carga
+  fetch('ejercicios.json').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (data) {
+    ejercicios = data;
+    renderChips(); render(); renderMuestras(); applyEstilo(); renderFaltantes(); updateCounts();
+  }).catch(function () {
+    $('list-n').textContent = '';
+    $('list-n').appendChild(el('p', 'empty', 'No se pudo cargar la lista. Recarga la página.'));
+  });
+
+  // Guardado
+  if (!window.claude || !window.claude.use) { $('no-db').hidden = false; setSave('Sin guardado'); return; }
+  window.claude.use('db').then(function (d) {
+    if (!d) { $('no-db').hidden = false; setSave('Sin guardado'); return; }
+    db = d;
+    setSave('Listo');
+    db.collection('nombres').onSnapshot(function (snap) {
+      snap.docs.forEach(function (doc) {
+        nombres[doc.id] = (doc.data() || {}).nombre || '';
+        if (rows[doc.id]) rows[doc.id].apply();
+      });
+      updateCounts(); applyFilter();
+    }, function () { setSave('Se perdió la conexión; recarga la página'); });
+    db.collection('revision').onSnapshot(function (snap) {
+      snap.docs.forEach(function (doc) {
+        reviews[doc.id] = { decision: (doc.data() || {}).decision || null };
+        if (rows[doc.id]) rows[doc.id].apply();
+      });
+      updateCounts();
+    }, function () {});
+    db.doc('preferencias/imagen').onSnapshot(function (doc) {
+      var b = doc && doc.exists ? doc.data() : null;
+      estilo = b && b.estilo ? b.estilo : estilo;
+      applyEstilo();
+    }, function () {});
+    db.collection('faltantes').orderBy('createdAt').onSnapshot(function (snap) {
+      faltantes = snap.docs.map(function (doc) { var b = doc.data() || {}; return { id: doc.id, nombre: b.nombre, grupo: b.grupo, nota: b.nota }; });
+      renderFaltantes();
+    }, function () {});
+  });
+})();
+</script>

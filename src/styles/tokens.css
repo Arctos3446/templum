@@ -1,0 +1,83 @@
+/* Colores y medidas de Templum (de diseno/guia-de-estilo.html).
+   Oscuro es el principal; el claro es pergamino envejecido, nunca blanco. */
+
+:root {
+  --bg: #0D0A10;
+  --surface: #16111A;
+  --raised: #1F1826;
+  --line: #2F2539;
+  --fg: #EEE7DC;
+  --muted: #A3969F;
+  --purple: #6B3A9E;
+  --purple-ink: #B892E0;
+  --purple-faint: rgba(184, 146, 224, .12);
+  --crimson: #9B1E33;
+  --crimson-ink: #E35C70;
+  --gold: #CFA54E;
+  --gold-faint: rgba(207, 165, 78, .16);
+  --on-accent: #F7F1E6;
+  --good: #6FB07C;
+  --warn: #D9A441;
+  --lit-green: #5C9B69;
+  --knob: #A3969F;
+  --shadow: 0 24px 60px rgba(0, 0, 0, .55);
+
+  --font-display: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-ui: "Jost", "Futura", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+
+  --radius-s: 8px;
+  --radius-m: 10px;
+  --radius-l: 12px;
+  --tabbar-h: 64px;
+  --column: 560px;
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #E4D9C6;
+    --surface: #EDE4D3;
+    --raised: #D8CAB2;
+    --line: #C6B396;
+    --fg: #1D1421;
+    --muted: #5A4C55;
+    --purple: #4B2275;
+    --purple-ink: #4B2275;
+    --purple-faint: rgba(75, 34, 117, .12);
+    --crimson: #7D1628;
+    --crimson-ink: #8F1A2E;
+    --gold: #85631A;
+    --gold-faint: rgba(133, 99, 26, .14);
+    --on-accent: #F3ECDF;
+    --good: #2F6A3D;
+    --warn: #8E6514;
+    --lit-green: #3C7049;
+    --knob: #8A7B70;
+    --shadow: 0 24px 50px rgba(60, 40, 20, .18);
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg: #E4D9C6;
+  --surface: #EDE4D3;
+  --raised: #D8CAB2;
+  --line: #C6B396;
+  --fg: #1D1421;
+  --muted: #5A4C55;
+  --purple: #4B2275;
+  --purple-ink: #4B2275;
+  --purple-faint: rgba(75, 34, 117, .12);
+  --crimson: #7D1628;
+  --crimson-ink: #8F1A2E;
+  --gold: #85631A;
+  --gold-faint: rgba(133, 99, 26, .14);
+  --on-accent: #F3ECDF;
+  --good: #2F6A3D;
+  --warn: #8E6514;
+  --lit-green: #3C7049;
+  --knob: #8A7B70;
+  --shadow: 0 24px 50px rgba(60, 40, 20, .18);
+  color-scheme: light;
+}

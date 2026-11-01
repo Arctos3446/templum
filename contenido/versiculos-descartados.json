@@ -1,0 +1,170 @@
+{
+  "nota": "Quitados por el usuario en la revisión del 2026-10-25",
+  "versiculos": [
+    {
+      "id": "v010",
+      "tema": "cuerpo",
+      "ref": "Génesis 1, 31",
+      "texto": "Dios miró todo lo que había hecho, y vio que era muy bueno.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v012",
+      "tema": "cuerpo",
+      "ref": "3 Juan 1, 2",
+      "texto": "Querido hermano, deseo que te vaya bien en todo y que goces de buena salud, así como prospera tu alma.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v015",
+      "tema": "cuerpo",
+      "ref": "Proverbios 31, 17",
+      "texto": "Se ciñe de fuerza la cintura y robustece sus brazos.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v025",
+      "tema": "fortaleza",
+      "ref": "Salmo 46, 2",
+      "texto": "El Señor es nuestro refugio y nuestra fuerza, una ayuda siempre pronta en el peligro.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v026",
+      "tema": "fortaleza",
+      "ref": "Nehemías 8, 10",
+      "texto": "La alegría del Señor es su fortaleza.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v028",
+      "tema": "fortaleza",
+      "ref": "2 Corintios 12, 10",
+      "texto": "Cuando soy débil, entonces soy fuerte.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v031",
+      "tema": "fortaleza",
+      "ref": "Habacuc 3, 19",
+      "texto": "El Señor es mi fuerza: él hace mis pies ágiles como los de las ciervas y me hace caminar por las alturas.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v041",
+      "tema": "carrera",
+      "ref": "1 Corintios 9, 24",
+      "texto": "¿No saben que en el estadio todos corren, pero uno solo gana el premio? Corran, entonces, de manera que lo ganen.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v045",
+      "tema": "carrera",
+      "ref": "2 Timoteo 4, 8",
+      "texto": "Y ya me está preparada la corona de justicia.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v046",
+      "tema": "carrera",
+      "ref": "2 Timoteo 2, 5",
+      "texto": "El atleta no recibe la corona si no ha competido según las reglas.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v051",
+      "tema": "carrera",
+      "ref": "Filipenses 3, 13-14",
+      "texto": "Olvidando lo que queda atrás, me lanzo hacia adelante y corro en dirección a la meta, para alcanzar el premio.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v056",
+      "tema": "carrera",
+      "ref": "Romanos 5, 3-4",
+      "texto": "La tribulación produce la constancia; la constancia, la virtud probada; la virtud probada, la esperanza.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v061",
+      "tema": "carrera",
+      "ref": "Apocalipsis 3, 11",
+      "texto": "Conserva firmemente lo que tienes, para que nadie te quite tu corona.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v066",
+      "tema": "carrera",
+      "ref": "Isaías 50, 7",
+      "texto": "El Señor me ayuda; por eso no quedo confundido, por eso endurecí mi rostro como el pedernal.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v084",
+      "tema": "descanso",
+      "ref": "Mateo 11, 29-30",
+      "texto": "Aprendan de mí, porque soy paciente y humilde de corazón. Mi yugo es suave y mi carga liviana.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v087",
+      "tema": "descanso",
+      "ref": "Marcos 6, 31",
+      "texto": "Vengan ustedes solos a un lugar apartado, para descansar un poco.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v088",
+      "tema": "descanso",
+      "ref": "Salmo 127, 2",
+      "texto": "El Señor da el pan a sus amigos mientras duermen.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    }
+  ]
+}

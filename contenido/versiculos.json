@@ -1,0 +1,890 @@
+{
+  "temas": {
+    "cuerpo": "El cuerpo, templo",
+    "fortaleza": "Fortaleza",
+    "carrera": "La carrera y el combate",
+    "disciplina": "Disciplina y templanza",
+    "descanso": "Descanso",
+    "gratitud": "Todo es de Dios"
+  },
+  "momentos": {
+    "inicio": "Versículo del día",
+    "cierre": "Al terminar",
+    "record": "Récord",
+    "descanso": "Durante el descanso"
+  },
+  "versiculos": [
+    {
+      "id": "v001",
+      "tema": "cuerpo",
+      "ref": "1 Corintios 6, 19",
+      "texto": "¿No saben que su cuerpo es templo del Espíritu Santo, que habita en ustedes y que han recibido de Dios?",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v002",
+      "tema": "cuerpo",
+      "ref": "1 Corintios 6, 20",
+      "texto": "Ustedes han sido comprados, ¡y a qué precio! Glorifiquen, entonces, a Dios en su cuerpo.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v003",
+      "tema": "cuerpo",
+      "ref": "1 Corintios 3, 16",
+      "texto": "¿No saben que ustedes son templo de Dios y que el Espíritu de Dios habita en ustedes?",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v004",
+      "tema": "cuerpo",
+      "ref": "Romanos 12, 1",
+      "texto": "Les ruego, hermanos, por la misericordia de Dios, que se ofrezcan ustedes mismos como una ofrenda viva, santa y agradable a Dios.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v005",
+      "tema": "cuerpo",
+      "ref": "Salmo 139, 14",
+      "texto": "Te doy gracias porque fui formado de manera tan admirable. ¡Qué maravillosas son tus obras!",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v006",
+      "tema": "cuerpo",
+      "ref": "1 Corintios 10, 31",
+      "texto": "Sea que coman, sea que beban, o cualquier otra cosa que hagan, háganlo todo para la gloria de Dios.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v007",
+      "tema": "cuerpo",
+      "ref": "Colosenses 3, 23",
+      "texto": "Cualquiera sea el trabajo de ustedes, háganlo de todo corazón, como para el Señor y no para los hombres.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v008",
+      "tema": "cuerpo",
+      "ref": "Colosenses 3, 17",
+      "texto": "Todo lo que digan o hagan, háganlo en nombre del Señor Jesús, dando gracias por él a Dios Padre.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v009",
+      "tema": "cuerpo",
+      "ref": "Génesis 1, 27",
+      "texto": "Dios creó al hombre a su imagen; lo creó a imagen de Dios.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v011",
+      "tema": "cuerpo",
+      "ref": "1 Timoteo 4, 8",
+      "texto": "Los ejercicios corporales son de poca utilidad; la piedad, en cambio, es útil para todo, porque tiene la promesa de la vida presente y de la futura.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v013",
+      "tema": "cuerpo",
+      "ref": "1 Tesalonicenses 5, 23",
+      "texto": "Que el Dios de la paz los santifique plenamente, y que todo su ser, espíritu, alma y cuerpo, se conserve irreprochable.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v014",
+      "tema": "cuerpo",
+      "ref": "Filipenses 1, 20",
+      "texto": "Cristo será glorificado en mi cuerpo, tanto si vivo como si muero.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v016",
+      "tema": "fortaleza",
+      "ref": "Filipenses 4, 13",
+      "texto": "Todo lo puedo en aquel que me fortalece.",
+      "momentos": [
+        "inicio",
+        "record",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v017",
+      "tema": "fortaleza",
+      "ref": "Isaías 40, 31",
+      "texto": "Los que esperan en el Señor renuevan sus fuerzas, despliegan alas como las águilas; corren y no se fatigan, avanzan y no se agotan.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v018",
+      "tema": "fortaleza",
+      "ref": "Isaías 40, 29",
+      "texto": "Él da fuerza al que está cansado y acrecienta el vigor del que no tiene fuerzas.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v019",
+      "tema": "fortaleza",
+      "ref": "Isaías 41, 10",
+      "texto": "No temas, porque yo estoy contigo; no te inquietes, porque yo soy tu Dios. Yo te fortalezco y te ayudo.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v020",
+      "tema": "fortaleza",
+      "ref": "Josué 1, 9",
+      "texto": "Sé fuerte y valiente. No temas ni te acobardes, porque el Señor, tu Dios, estará contigo dondequiera que vayas.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v021",
+      "tema": "fortaleza",
+      "ref": "Salmo 18, 33",
+      "texto": "Él es el Dios que me ciñe de valor y hace perfecto mi camino.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v022",
+      "tema": "fortaleza",
+      "ref": "Salmo 18, 35",
+      "texto": "Él adiestra mis manos para la lucha y mis brazos para tensar el arco de bronce.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v023",
+      "tema": "fortaleza",
+      "ref": "Salmo 144, 1",
+      "texto": "Bendito sea el Señor, mi Roca, que adiestra mis manos para el combate.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v024",
+      "tema": "fortaleza",
+      "ref": "Salmo 28, 7",
+      "texto": "El Señor es mi fuerza y mi escudo; en él confía mi corazón.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v027",
+      "tema": "fortaleza",
+      "ref": "2 Corintios 12, 9",
+      "texto": "Te basta mi gracia, porque mi poder triunfa en la debilidad.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v029",
+      "tema": "fortaleza",
+      "ref": "Efesios 6, 10",
+      "texto": "Fortalézcanse en el Señor con la fuerza de su poder.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v030",
+      "tema": "fortaleza",
+      "ref": "2 Timoteo 1, 7",
+      "texto": "Dios no nos ha dado un espíritu de temor, sino de fortaleza, de amor y de dominio de sí.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v032",
+      "tema": "fortaleza",
+      "ref": "Salmo 73, 26",
+      "texto": "Aunque mi carne y mi corazón se consuman, Dios es la roca de mi corazón y mi herencia para siempre.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v033",
+      "tema": "fortaleza",
+      "ref": "Isaías 12, 2",
+      "texto": "Él es el Dios de mi salvación: confío y no temo, porque el Señor es mi fuerza y mi canto.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v034",
+      "tema": "fortaleza",
+      "ref": "Éxodo 15, 2",
+      "texto": "El Señor es mi fuerza y mi canto, él fue mi salvación.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v035",
+      "tema": "fortaleza",
+      "ref": "1 Corintios 16, 13",
+      "texto": "Estén alerta, permanezcan firmes en la fe, sean valientes y fuertes.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v036",
+      "tema": "fortaleza",
+      "ref": "Deuteronomio 31, 6",
+      "texto": "Sean fuertes y valientes, no teman, porque el Señor, tu Dios, va contigo: él no te dejará ni te abandonará.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v037",
+      "tema": "fortaleza",
+      "ref": "Salmo 27, 1",
+      "texto": "El Señor es mi luz y mi salvación, ¿a quién temeré? El Señor es el baluarte de mi vida, ¿ante quién temblaré?",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v038",
+      "tema": "fortaleza",
+      "ref": "Salmo 31, 25",
+      "texto": "Sean fuertes y valerosos, todos los que esperan en el Señor.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v039",
+      "tema": "fortaleza",
+      "ref": "Mateo 19, 26",
+      "texto": "Para los hombres es imposible, pero para Dios todo es posible.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v040",
+      "tema": "fortaleza",
+      "ref": "Lucas 1, 37",
+      "texto": "No hay nada imposible para Dios.",
+      "momentos": [
+        "inicio",
+        "record",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v042",
+      "tema": "carrera",
+      "ref": "1 Corintios 9, 25",
+      "texto": "Los atletas se privan de todo; ellos lo hacen por una corona que se marchita; nosotros, por una corona que no se marchita.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v043",
+      "tema": "carrera",
+      "ref": "1 Corintios 9, 26-27",
+      "texto": "Yo corro, pero no sin rumbo; peleo, pero no dando golpes al aire. Al contrario, someto mi cuerpo y lo tengo bajo control.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v044",
+      "tema": "carrera",
+      "ref": "2 Timoteo 4, 7",
+      "texto": "He peleado el buen combate, he terminado la carrera, he conservado la fe.",
+      "momentos": [
+        "inicio",
+        "cierre",
+        "record"
+      ]
+    },
+    {
+      "id": "v047",
+      "tema": "carrera",
+      "ref": "Hebreos 12, 1-2",
+      "texto": "Corramos con constancia la carrera que se nos presenta, con la mirada fija en Jesús.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v048",
+      "tema": "carrera",
+      "ref": "Hebreos 12, 11",
+      "texto": "Toda disciplina, en el momento, parece causa de tristeza y no de alegría; pero después produce un fruto apacible de justicia.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v049",
+      "tema": "carrera",
+      "ref": "Hebreos 12, 12",
+      "texto": "Levanten las manos que desfallecen y fortalezcan las rodillas que vacilan.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v050",
+      "tema": "carrera",
+      "ref": "Hebreos 10, 36",
+      "texto": "Ustedes necesitan constancia para cumplir la voluntad de Dios y alcanzar así la promesa.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v052",
+      "tema": "carrera",
+      "ref": "Filipenses 3, 12",
+      "texto": "No es que ya haya alcanzado la meta, pero sigo corriendo para alcanzarla.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v053",
+      "tema": "carrera",
+      "ref": "Gálatas 6, 9",
+      "texto": "No nos cansemos de hacer el bien, porque a su debido tiempo cosecharemos, si no desfallecemos.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v054",
+      "tema": "carrera",
+      "ref": "Santiago 1, 12",
+      "texto": "¡Feliz el hombre que soporta la prueba! Porque, después de probado, recibirá la corona de la Vida.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v055",
+      "tema": "carrera",
+      "ref": "Santiago 1, 3",
+      "texto": "La fe, al ser puesta a prueba, produce la constancia.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v057",
+      "tema": "carrera",
+      "ref": "Romanos 8, 37",
+      "texto": "En todo esto obtenemos una amplia victoria, gracias a aquel que nos amó.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v058",
+      "tema": "carrera",
+      "ref": "1 Corintios 15, 58",
+      "texto": "Permanezcan firmes e inconmovibles, progresando siempre en la obra del Señor, sabiendo que su esfuerzo no es en vano.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v059",
+      "tema": "carrera",
+      "ref": "1 Corintios 15, 57",
+      "texto": "¡Demos gracias a Dios, que nos da la victoria por nuestro Señor Jesucristo!",
+      "momentos": [
+        "inicio",
+        "cierre",
+        "record"
+      ]
+    },
+    {
+      "id": "v060",
+      "tema": "carrera",
+      "ref": "Apocalipsis 2, 10",
+      "texto": "Sé fiel hasta la muerte, y te daré la corona de la Vida.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v062",
+      "tema": "carrera",
+      "ref": "Lucas 9, 23",
+      "texto": "El que quiera venir detrás de mí, que renuncie a sí mismo, que cargue con su cruz cada día y me siga.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v063",
+      "tema": "carrera",
+      "ref": "Lucas 21, 19",
+      "texto": "Gracias a la constancia salvarán sus vidas.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v064",
+      "tema": "carrera",
+      "ref": "Proverbios 24, 16",
+      "texto": "El justo cae siete veces, pero se vuelve a levantar.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v065",
+      "tema": "carrera",
+      "ref": "Miqueas 7, 8",
+      "texto": "Si caí, me levantaré; si estoy en tinieblas, el Señor es mi luz.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v067",
+      "tema": "carrera",
+      "ref": "Eclesiástico 2, 1-2",
+      "texto": "Hijo, si te decides a servir al Señor, prepárate para la prueba. Endereza tu corazón y mantente firme.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v068",
+      "tema": "carrera",
+      "ref": "2 Crónicas 15, 7",
+      "texto": "Sean fuertes y no se desanimen, porque su trabajo tendrá su recompensa.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v069",
+      "tema": "disciplina",
+      "ref": "Proverbios 12, 1",
+      "texto": "El que ama la disciplina ama el saber.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v070",
+      "tema": "disciplina",
+      "ref": "Proverbios 16, 32",
+      "texto": "Más vale ser paciente que valiente, y dominarse a sí mismo que conquistar una ciudad.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v071",
+      "tema": "disciplina",
+      "ref": "Gálatas 5, 22-23",
+      "texto": "El fruto del Espíritu es amor, alegría, paz, paciencia, bondad, fidelidad, mansedumbre y dominio de sí.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v072",
+      "tema": "disciplina",
+      "ref": "2 Pedro 1, 5-6",
+      "texto": "Pongan todo empeño en unir a la fe la virtud, a la virtud el conocimiento, al conocimiento la templanza y a la templanza la constancia.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v073",
+      "tema": "disciplina",
+      "ref": "Tito 2, 12",
+      "texto": "La gracia de Dios nos enseña a vivir en este mundo con sobriedad, justicia y piedad.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v074",
+      "tema": "disciplina",
+      "ref": "Proverbios 6, 6",
+      "texto": "Mira a la hormiga, perezoso, observa sus costumbres y aprende.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v075",
+      "tema": "disciplina",
+      "ref": "Proverbios 13, 4",
+      "texto": "El perezoso desea y no consigue nada; el deseo de los diligentes queda satisfecho.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v076",
+      "tema": "disciplina",
+      "ref": "Proverbios 14, 23",
+      "texto": "Todo esfuerzo trae ganancia; las puras palabras solo traen pobreza.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v077",
+      "tema": "disciplina",
+      "ref": "Eclesiastés 9, 10",
+      "texto": "Todo lo que esté a tu alcance hacer, hazlo con todas tus fuerzas.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v078",
+      "tema": "disciplina",
+      "ref": "Eclesiastés 3, 1",
+      "texto": "Hay un momento para todo y un tiempo para cada cosa bajo el sol.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v079",
+      "tema": "disciplina",
+      "ref": "1 Pedro 5, 8",
+      "texto": "Sean sobrios y estén siempre alerta.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v080",
+      "tema": "disciplina",
+      "ref": "Mateo 26, 41",
+      "texto": "Estén prevenidos y oren. El espíritu está dispuesto, pero la carne es débil.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v081",
+      "tema": "disciplina",
+      "ref": "Mateo 6, 33",
+      "texto": "Busquen primero el Reino de Dios y su justicia, y todo lo demás se les dará por añadidura.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v082",
+      "tema": "disciplina",
+      "ref": "Marcos 12, 30",
+      "texto": "Amarás al Señor, tu Dios, con todo tu corazón, con toda tu alma, con todo tu espíritu y con todas tus fuerzas.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v083",
+      "tema": "descanso",
+      "ref": "Mateo 11, 28",
+      "texto": "Vengan a mí todos los que están afligidos y agobiados, y yo los aliviaré.",
+      "momentos": [
+        "inicio",
+        "cierre",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v085",
+      "tema": "descanso",
+      "ref": "Salmo 23, 1-3",
+      "texto": "El Señor es mi pastor, nada me puede faltar. Me hace descansar en verdes praderas, me conduce a aguas tranquilas y repara mis fuerzas.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v086",
+      "tema": "descanso",
+      "ref": "Salmo 4, 9",
+      "texto": "En paz me acuesto y enseguida me duermo, porque solo tú, Señor, me haces vivir tranquilo.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v089",
+      "tema": "descanso",
+      "ref": "Éxodo 33, 14",
+      "texto": "Yo mismo iré contigo y te daré descanso.",
+      "momentos": [
+        "inicio",
+        "cierre",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v090",
+      "tema": "descanso",
+      "ref": "Génesis 2, 2",
+      "texto": "El séptimo día, Dios descansó de todo el trabajo que había hecho.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v091",
+      "tema": "descanso",
+      "ref": "Lamentaciones 3, 22-23",
+      "texto": "El amor del Señor no se agota ni se acaba su compasión; se renuevan cada mañana.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v092",
+      "tema": "gratitud",
+      "ref": "Santiago 1, 17",
+      "texto": "Todo lo bueno y todo don perfecto viene de lo alto y desciende del Padre de las luces.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v093",
+      "tema": "gratitud",
+      "ref": "1 Corintios 4, 7",
+      "texto": "¿Qué tienes que no hayas recibido?",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v094",
+      "tema": "gratitud",
+      "ref": "1 Tesalonicenses 5, 18",
+      "texto": "Den gracias a Dios en toda ocasión: esto es lo que Dios quiere de ustedes en Cristo Jesús.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v095",
+      "tema": "gratitud",
+      "ref": "Salmo 118, 24",
+      "texto": "Este es el día que hizo el Señor: alegrémonos y regocijémonos en él.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v096",
+      "tema": "gratitud",
+      "ref": "Salmo 103, 2",
+      "texto": "Bendice al Señor, alma mía, y no olvides ninguno de sus beneficios.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v097",
+      "tema": "gratitud",
+      "ref": "Salmo 103, 5",
+      "texto": "Él colma de bienes tu vida y tu juventud se renueva como el águila.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v098",
+      "tema": "gratitud",
+      "ref": "Salmo 136, 1",
+      "texto": "¡Den gracias al Señor, porque es bueno, porque es eterno su amor!",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v099",
+      "tema": "gratitud",
+      "ref": "Romanos 11, 36",
+      "texto": "Porque todo viene de él, ha sido hecho por él y es para él. ¡A él sea la gloria eternamente!",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v100",
+      "tema": "gratitud",
+      "ref": "Hechos 17, 28",
+      "texto": "En él vivimos, nos movemos y existimos.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v101",
+      "tema": "gratitud",
+      "ref": "Juan 15, 5",
+      "texto": "Yo soy la vid, ustedes los sarmientos. Separados de mí, nada pueden hacer.",
+      "momentos": [
+        "inicio",
+        "descanso"
+      ]
+    },
+    {
+      "id": "v102",
+      "tema": "gratitud",
+      "ref": "Deuteronomio 8, 18",
+      "texto": "Acuérdate del Señor, tu Dios, porque es él quien te da la fuerza.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v103",
+      "tema": "gratitud",
+      "ref": "1 Crónicas 29, 12",
+      "texto": "En tu mano están el poder y la fuerza; tu mano engrandece y fortalece a todos.",
+      "momentos": [
+        "inicio",
+        "record"
+      ]
+    },
+    {
+      "id": "v104",
+      "tema": "gratitud",
+      "ref": "Salmo 90, 17",
+      "texto": "Que la bondad del Señor esté sobre nosotros; haz prosperar la obra de nuestras manos.",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    },
+    {
+      "id": "v105",
+      "tema": "gratitud",
+      "ref": "Salmo 37, 5",
+      "texto": "Encomienda tu camino al Señor, confía en él, y él hará su obra.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v106",
+      "tema": "gratitud",
+      "ref": "Proverbios 16, 3",
+      "texto": "Encomienda tus obras al Señor, y tus proyectos se cumplirán.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v107",
+      "tema": "gratitud",
+      "ref": "Jeremías 29, 11",
+      "texto": "Yo conozco los planes que tengo para ustedes, dice el Señor: planes de paz y no de desgracia, para darles un futuro y una esperanza.",
+      "momentos": [
+        "inicio"
+      ]
+    },
+    {
+      "id": "v108",
+      "tema": "gratitud",
+      "ref": "Salmo 150, 6",
+      "texto": "¡Que todo lo que respira alabe al Señor!",
+      "momentos": [
+        "inicio",
+        "cierre"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Progreso</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&amp;family=Jost:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.t-dark{--bg:#0D0A10;--surface:#16111A;--raised:#1F1826;--line:#2F2539;--fg:#EEE7DC;--muted:#A3969F;--purple:#6B3A9E;--purple-ink:#B892E0;--purple-faint:rgba(184,146,224,.12);--crimson:#9B1E33;--crimson-ink:#E35C70;--gold:#CFA54E;--gold-faint:rgba(207,165,78,.16);--on-accent:#F7F1E6;--good:#6FB07C;--warn:#D9A441;--grid:rgba(238,231,220,.08)}
+.t-light{--bg:#E4D9C6;--surface:#EDE4D3;--raised:#D8CAB2;--line:#C6B396;--fg:#1D1421;--muted:#5A4C55;--purple:#4B2275;--purple-ink:#4B2275;--purple-faint:rgba(75,34,117,.12);--crimson:#7D1628;--crimson-ink:#8F1A2E;--gold:#85631A;--gold-faint:rgba(133,99,26,.14);--on-accent:#F3ECDF;--good:#2F6A3D;--warn:#8E6514;--grid:rgba(29,20,33,.09)}
+a{color:var(--purple-ink)}a:hover{color:var(--gold)}
+.ax{fill:var(--muted);font-size:11px;font-family:Jost,system-ui,sans-serif}
+.gl{stroke:var(--grid);stroke-width:1}
+.seg{font:inherit;font-size:13px;height:36px;padding:0 12px;border:0;border-radius:8px;background:transparent;color:var(--muted);cursor:pointer;flex:1}
+.seg-on{background:var(--raised);color:var(--fg);font-weight:500}
+.chip{font:inherit;font-size:13px;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.chip-on{background:var(--purple);border-color:var(--purple);color:var(--on-accent)}
+</style>
+</helmet>
+<div class="{{themeClass}}" style="width: 390px; height: 1080px; box-sizing: border-box; background: var(--bg); color: var(--fg); font-family: Jost, 'Century Gothic', system-ui, sans-serif; font-size: 15px; line-height: 1.45; display: flex; flex-direction: column; overflow: hidden">
+
+  <div style="flex-grow: 1; padding: 24px 20px 16px; display: flex; flex-direction: column; gap: 16px; overflow: hidden">
+    <h1 style="margin: 0; font-size: 26px; font-weight: 500">Progreso</h1>
+
+    <button type="button" style="font: inherit; font-size: 16px; font-weight: 500; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 10px; height: 48px; padding: 0 14px; display: flex; align-items: center; gap: 10px; cursor: pointer">
+      <span style="flex-grow: 1; text-align: left">Press banca</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--muted)"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div style="display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 4px">
+      <button type="button" class="seg seg-on">1RM estimado</button>
+      <button type="button" class="seg">Peso máximo</button>
+      <button type="button" class="seg">Volumen</button>
+    </div>
+
+    <div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 0 10px; display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; padding: 0 16px">
+        <div style="display: flex; flex-direction: column">
+          <span style="font-size: 12px; color: var(--muted)">1RM estimado hoy</span>
+          <span style="font-size: 28px; font-weight: 500; line-height: 1.15; font-variant-numeric: tabular-nums">78,3 kg</span>
+        </div>
+        <span style="display: flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 500; color: var(--good); font-variant-numeric: tabular-nums">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          +8,3 kg en 3 meses
+        </span>
+      </div>
+      <svg width="350" height="184" viewBox="0 0 350 184" role="img" aria-label="Gráfico de 1RM estimado en press banca durante las últimas 12 semanas: sube de 70 a 78,3 kilos" style="display: block; max-width: 100%">
+        <line class="gl" x1="30" y1="12" x2="342" y2="12"/>
+        <line class="gl" x1="30" y1="69.5" x2="342" y2="69.5"/>
+        <line class="gl" x1="30" y1="127" x2="342" y2="127"/>
+        <line x1="30" y1="150" x2="342" y2="150" style="stroke: var(--line); stroke-width: 1"/>
+        <text class="ax" x="6" y="16">80</text>
+        <text class="ax" x="6" y="73.5">75</text>
+        <text class="ax" x="6" y="131">70</text>
+        <path d="M30 127 L58 113.2 L86 113.2 L114 98.25 L142 92.5 L170 79.85 L198 79.85 L226 69.5 L254 60.3 L282 49.95 L310 46.5 L338 31.55 L338 150 L30 150 Z" style="fill: var(--purple-ink); fill-opacity: .12"/>
+        <path d="M30 127 L58 113.2 L86 113.2 L114 98.25 L142 92.5 L170 79.85 L198 79.85 L226 69.5 L254 60.3 L282 49.95 L310 46.5 L338 31.55" style="fill: none; stroke: var(--purple-ink); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round"/>
+        <circle cx="338" cy="31.55" r="6" style="fill: var(--gold); stroke: var(--surface); stroke-width: 2"/>
+        <text class="ax" x="326" y="26" text-anchor="end" style="fill: var(--fg); font-weight: 500">78,3</text>
+        <text class="ax" x="30" y="170">ago</text>
+        <text class="ax" x="142" y="170" text-anchor="middle">sep</text>
+        <text class="ax" x="254" y="170" text-anchor="middle">oct</text>
+        <text class="ax" x="338" y="170" text-anchor="end">hoy</text>
+      </svg>
+      <div style="display: flex; gap: 8px; padding: 0 16px">
+        <button type="button" class="chip chip-on">3 meses</button>
+        <button type="button" class="chip">6 meses</button>
+        <button type="button" class="chip">1 año</button>
+        <button type="button" class="chip">Todo</button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <span style="font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding-bottom: 4px">Récords personales</span>
+      <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums"><span>Peso máximo</span><span style="font-weight: 500">65 kg × 3</span></div>
+      <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums"><span>Mejor serie</span><span style="font-weight: 500; color: var(--gold)">62,5 kg × 8 · hoy</span></div>
+      <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums"><span>Más reps con 60 kg</span><span style="font-weight: 500">12</span></div>
+      <div style="display: flex; justify-content: space-between; padding: 8px 0; font-variant-numeric: tabular-nums"><span>Mayor volumen en una sesión</span><span style="font-weight: 500">2.340 kg</span></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span style="font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted)">Avisos</span>
+      <div style="display: flex; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--good); flex-shrink: 0; margin-top: 2px"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-5 4 3 7-8"/><path d="M15 7h5v5"/></g></svg>
+        <span style="font-size: 14px; color: var(--muted)"><b style="color: var(--fg); font-weight: 600">Vas muy bien en press banca.</b> Subiste de forma constante 10 de las últimas 12 semanas.</span>
+      </div>
+      <div style="display: flex; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--warn); flex-shrink: 0; margin-top: 2px"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15h16"/><path d="M12 4l9 16H3z"/></g></svg>
+        <span style="font-size: 14px; color: var(--muted)"><b style="color: var(--fg); font-weight: 600">Sentadilla estancada.</b> Llevas 3 semanas con 80 kg × 6. Prueba 82,5 kg × 5 o agrega una serie.</span>
+      </div>
+    </div>
+
+    <button type="button" style="font: inherit; font-size: 14px; font-weight: 500; color: var(--purple-ink); background: transparent; border: 1px solid var(--line); border-radius: 10px; height: 46px; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer">
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></g></svg>
+      Copiar resumen para Claude
+    </button>
+  </div>
+
+  <nav aria-label="Navegación principal" style="display: flex; justify-content: space-around; padding: 10px 8px 18px; border-top: 1px solid var(--line); background: var(--surface); font-size: 11px; color: var(--muted)">
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--muted); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6.5 8 6.5V20h-5v-5.5h-6V20H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Inicio</a>
+    <a href="Biblioteca.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--muted); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r=".6"/><circle cx="4.5" cy="12" r=".6"/><circle cx="4.5" cy="17.5" r=".6"/></g></svg>Rutinas</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--purple-ink); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 20V12M10 20V6M15 20v-9M20 20V9"/></g></svg>Progreso</a>
+    <a href="Historial.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--muted); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5.5" width="16" height="14.5" rx="2"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" stroke-linecap="round"/></g></svg>Historial</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--muted); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4L18 18M6 18l1.6-1.6M16.4 7.6L18 6" stroke-linecap="round"/></g></svg>Ajustes</a>
+  </nav>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Oscuro","Claro"],"default":"Oscuro"},"$preview":{"width":390,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { themeClass: (this.props.modo ?? 'Oscuro') === 'Claro' ? 't-light' : 't-dark' };
+  }
+}
+</script>
+</body>
+</html>

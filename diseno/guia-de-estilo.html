@@ -1,0 +1,931 @@
+<title>Templum Guía de Estilo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: una sola columna sobria, como un misal: secciones separadas por filetes dorados finos; la vista previa del celular se sienta sobre un panel elevado. */
+:root {
+  /* Oscuro primero: Noche, Púrpura, Carmesí, Oro, Pergamino */
+  --bg: #0D0A10;
+  --surface: #16111A;
+  --raised: #1F1826;
+  --line: #2F2539;
+  --fg: #EEE7DC;
+  --muted: #A3969F;
+  --purple: #6B3A9E;
+  --purple-ink: #B892E0;
+  --crimson: #9B1E33;
+  --crimson-ink: #E35C70;
+  --gold: #CFA54E;
+  --gold-faint: rgba(207,165,78,.16);
+  --on-accent: #F7F1E6;
+  --lit-green: #5C9B69;
+  --warn: #D9A441;
+  --shadow: 0 24px 60px rgba(0,0,0,.55);
+
+  /* Colores fijos del ícono de la app (iguales en ambos temas) */
+  --icon-night: #120D16;
+  --icon-purple: #3E1C5E;
+  --icon-crimson: #6A1121;
+  --icon-gold: #D6AE57;
+
+  --font-display: "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-ui: "Jost", "Futura", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+
+  --step--1: .8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.75rem;
+  --step-3: 2.75rem;
+
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #E4D9C6;
+    --surface: #EDE4D3;
+    --raised: #D8CAB2;
+    --line: #C6B396;
+    --fg: #1D1421;
+    --muted: #5A4C55;
+    --purple: #4B2275;
+    --purple-ink: #4B2275;
+    --crimson: #7D1628;
+    --crimson-ink: #8F1A2E;
+    --gold: #85631A;
+    --gold-faint: rgba(133,99,26,.14);
+    --on-accent: #F3ECDF;
+    --lit-green: #3C7049;
+    --warn: #8E6514;
+    --shadow: 0 24px 50px rgba(60,40,20,.18);
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #E4D9C6;
+  --surface: #EDE4D3;
+  --raised: #D8CAB2;
+  --line: #C6B396;
+  --fg: #1D1421;
+  --muted: #5A4C55;
+  --purple: #4B2275;
+  --purple-ink: #4B2275;
+  --crimson: #7D1628;
+  --crimson-ink: #8F1A2E;
+  --gold: #85631A;
+  --gold-faint: rgba(133,99,26,.14);
+  --on-accent: #F3ECDF;
+  --lit-green: #3C7049;
+  --warn: #8E6514;
+  --shadow: 0 24px 50px rgba(60,40,20,.18);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 64px;
+}
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 500; }
+p { margin: 0; }
+.eyebrow {
+  font-size: var(--step--1);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+.lede { color: var(--muted); max-width: 62ch; }
+
+/* ---------- Encabezado ---------- */
+header.top {
+  display: grid;
+  gap: 28px;
+}
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.brand svg { width: 44px; height: 44px; flex: none; }
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  padding-left: .1em;
+}
+.theme-btn {
+  font: inherit;
+  font-size: var(--step--1);
+  letter-spacing: .06em;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.theme-btn:hover { border-color: var(--gold); }
+.theme-btn svg { width: 16px; height: 16px; }
+.hero-verse {
+  display: grid;
+  gap: 14px;
+  max-width: 44rem;
+}
+.hero-verse blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-3);
+  line-height: 1.12;
+  font-weight: 400;
+  text-wrap: balance;
+}
+.ref {
+  font-size: var(--step--1);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.intro { color: var(--muted); max-width: 60ch; }
+
+/* ---------- Secciones ---------- */
+section { display: grid; gap: 28px; }
+.sec-head {
+  display: grid;
+  gap: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gold-faint);
+}
+.sec-head h2 {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 500;
+}
+
+/* ---------- Logos ---------- */
+.logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.logo-opt {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.logo-opt .tiles { display: flex; gap: 14px; align-items: end; }
+.app-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+.app-icon svg { width: 64px; height: 64px; }
+.app-icon.small { width: 48px; height: 48px; border-radius: 11px; }
+.app-icon.small svg { width: 32px; height: 32px; }
+.logo-opt h3 { font-size: var(--step-1); font-family: var(--font-display); font-weight: 600; }
+.logo-opt p { color: var(--muted); font-size: .9375rem; }
+.chosen {
+  font-family: var(--font-ui);
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.letter {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--gold);
+  margin-right: 6px;
+}
+
+/* ---------- Paleta ---------- */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+}
+.swatch {
+  display: grid;
+  grid-template-rows: 96px auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.swatch .chip { border-bottom: 1px solid var(--line); }
+.swatch .info { padding: 12px 14px 14px; display: grid; gap: 2px; }
+.swatch .name { font-family: var(--font-display); font-size: var(--step-1); font-weight: 600; }
+.swatch .role { font-size: .875rem; color: var(--muted); }
+
+/* ---------- Tipografía ---------- */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.type-card {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+.type-card .sample-serif {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+.type-card .sample-sans {
+  font-family: var(--font-ui);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.type-card .nums {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.125rem;
+  color: var(--muted);
+}
+.type-card .use { font-size: .875rem; color: var(--muted); }
+
+/* ---------- Componentes + vista previa ---------- */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+}
+.components { display: grid; gap: 28px; min-width: 0; }
+.comp { display: grid; gap: 12px; }
+.comp-label {
+  font-size: var(--step--1);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+.btn {
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: .02em;
+  border-radius: 10px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn-primary { background: var(--purple); color: var(--on-accent); }
+.btn-ghost { background: transparent; color: var(--fg); border-color: var(--line); }
+.btn-danger { background: var(--crimson); color: var(--on-accent); }
+.btn:focus-visible, .theme-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+/* Tarjeta de ejercicio */
+.ex-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+}
+.ex-head { display: flex; align-items: center; gap: 12px; }
+.ex-thumb {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--raised);
+  display: grid; place-items: center;
+  color: var(--purple-ink);
+  flex: none;
+}
+.ex-thumb svg { width: 26px; height: 26px; }
+.ex-name { font-weight: 600; font-size: 1.0625rem; }
+.ex-muscle { font-size: .8125rem; color: var(--muted); }
+.ex-head .more { margin-left: auto; color: var(--muted); }
+.ex-note { font-size: .8125rem; color: var(--muted); font-style: italic; }
+.sets {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr 3.5rem 3rem 2.25rem;
+  gap: 6px 10px;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+.sets .h {
+  font-size: .6875rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sets .c { text-align: center; }
+.sets .prev { color: var(--muted); font-size: .9375rem; }
+.sets .val {
+  background: var(--raised);
+  border-radius: 6px;
+  padding: 4px 0;
+  text-align: center;
+  font-weight: 500;
+}
+.check {
+  width: 28px; height: 28px;
+  border-radius: 7px;
+  display: grid; place-items: center;
+  border: 1px solid var(--line);
+  color: transparent;
+  justify-self: center;
+}
+.check.on { background: var(--purple); border-color: var(--purple); color: var(--on-accent); }
+.check svg { width: 16px; height: 16px; }
+.done-row { opacity: .92; }
+.add-set {
+  font: inherit;
+  font-size: .9375rem;
+  color: var(--fg);
+  background: var(--raised);
+  border: 0;
+  border-radius: 8px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+/* Temporizador */
+.timer {
+  max-width: 520px;
+  display: grid;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.timer-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.timer-time {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+.timer-label { font-size: .8125rem; color: var(--muted); }
+.timer-btns { margin-left: auto; display: flex; gap: 8px; }
+.pill-btn {
+  font: inherit;
+  font-size: .875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+  background: var(--raised);
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.bar { height: 4px; border-radius: 4px; background: var(--raised); overflow: hidden; }
+.bar span { display: block; height: 100%; width: 62%; background: var(--purple-ink); border-radius: 4px; }
+
+/* Récord */
+.pr {
+  max-width: 520px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 14px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: var(--gold-faint);
+}
+.pr .medal { grid-row: span 3; color: var(--gold); }
+.pr .medal svg { width: 40px; height: 40px; }
+.pr .k { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.pr .v { font-weight: 600; font-variant-numeric: tabular-nums; }
+.pr .phrase { font-family: var(--font-display); font-style: italic; font-size: 1.125rem; color: var(--muted); }
+
+/* Aviso */
+.insight {
+  max-width: 520px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.insight svg { width: 22px; height: 22px; color: var(--warn); margin-top: 2px; }
+.insight b { font-weight: 600; }
+.insight p { font-size: .9375rem; color: var(--muted); }
+.insight p b { color: var(--fg); }
+
+/* ---------- Teléfono ---------- */
+.phone-col {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 0px) + 16px);
+}
+@media (max-width: 860px) { .phone-col { position: static; } }
+.phone {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 40px;
+  padding: 10px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.screen {
+  border-radius: 31px;
+  background: var(--bg);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 640px;
+}
+.status {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 22px 4px;
+  font-size: .75rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.scr-body { padding: 10px 18px 16px; display: grid; gap: 16px; align-content: start; }
+.scr-top { display: flex; align-items: center; gap: 10px; }
+.scr-top svg { width: 26px; height: 26px; }
+.scr-top .wm {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.scr-date { display: grid; gap: 2px; }
+.scr-date .d { font-size: 1.375rem; font-weight: 500; line-height: 1.2; }
+.lit { display: flex; align-items: center; gap: 8px; font-size: .8125rem; color: var(--muted); }
+.lit i { width: 8px; height: 8px; border-radius: 50%; background: var(--lit-green); flex: none; }
+.verse-card {
+  padding: 18px 16px 16px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold-faint);
+  display: grid;
+  gap: 10px;
+}
+.verse-card .k { font-size: .6875rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.verse-card q {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3125rem;
+  line-height: 1.25;
+  quotes: "“" "”";
+}
+.verse-card .r { font-size: .75rem; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+.scr-body .btn-primary { justify-content: center; width: 100%; padding: 14px; }
+.mini-h {
+  font-size: .6875rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+.mini-h a { color: var(--purple-ink); text-decoration: none; letter-spacing: .06em; text-transform: none; font-size: .8125rem; }
+.routines { display: grid; gap: 8px; }
+.routine {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.routine .n { font-weight: 500; }
+.routine .m { font-size: .75rem; color: var(--muted); }
+.routine svg { margin-left: auto; width: 16px; height: 16px; color: var(--muted); flex: none; }
+.week {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.stat { display: grid; gap: 0; }
+.stat .v { font-size: 1.125rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+.stat .l { font-size: .6875rem; color: var(--muted); }
+.days { display: flex; justify-content: space-between; gap: 4px; }
+.day { display: grid; justify-items: center; gap: 4px; font-size: .6875rem; color: var(--muted); }
+.day i { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); display: block; }
+.day.on i { background: var(--purple); border-color: var(--purple); }
+.day.today i { border-color: var(--gold); }
+.tabbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 8px 16px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+.tab { display: grid; justify-items: center; gap: 3px; font-size: .625rem; color: var(--muted); }
+.tab svg { width: 22px; height: 22px; }
+.tab.on { color: var(--purple-ink); }
+.sample-note { font-size: .8125rem; color: var(--muted); text-align: center; }
+
+/* ---------- Decisiones ---------- */
+.asks {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  max-width: 720px;
+}
+.ask {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.ask .num { font-family: var(--font-display); font-size: 1.375rem; color: var(--gold); line-height: 1.2; }
+.ask b { font-weight: 600; }
+.ask p { color: var(--muted); }
+.ask p b { color: var(--fg); }
+
+footer { color: var(--muted); font-size: .875rem; text-align: center; }
+footer span { font-family: var(--font-display); font-style: italic; font-size: 1.125rem; }
+
+@media (max-width: 480px) {
+  .hero-verse blockquote { font-size: 2rem; }
+  .wordmark { font-size: 1.3rem; letter-spacing: .26em; }
+  .timer-btns { margin-left: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn, .theme-btn, .pill-btn { transition: filter .15s ease, border-color .15s ease; }
+  .btn:hover { filter: brightness(1.12); }
+}
+</style>
+
+<!-- Símbolos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo-cruz" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <rect x="46" y="22" width="8" height="58" fill="currentColor"/>
+      <rect x="31" y="38" width="38" height="8" fill="currentColor"/>
+    </symbol>
+    <symbol id="logo-chirho" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="square">
+        <path d="M50 20 V82"/>
+        <path d="M50 20 H58 a13 13 0 0 1 0 26 H50"/>
+        <path d="M31 46 L69 82"/>
+        <path d="M69 46 L31 82"/>
+      </g>
+    </symbol>
+    <symbol id="logo-arco" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="4">
+        <path d="M26 84 V48 a24 24 0 0 1 48 0 V84"/>
+        <path d="M20 84 H80"/>
+      </g>
+      <rect x="47.5" y="38" width="5" height="30" fill="currentColor"/>
+      <rect x="40" y="46" width="20" height="5" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z" fill="currentColor"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6.5 7v10M4 9v6M17.5 7v10M20 9v6M6.5 12h11"/></g></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/></g></symbol>
+    <symbol id="i-laurel" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 38c-7-4-10-12-8-21"/><path d="M31 38c7-4 10-12 8-21"/><path d="M11 30c-3 0-5-2-6-4 3-1 5 0 6 2M9 23c-3-1-4-3-4-6 3 0 5 2 5 4M10 16c-2-2-2-4-1-7 2 1 3 4 2 6M37 30c3 0 5-2 6-4-3-1-5 0-6 2M39 23c3-1 4-3 4-6-3 0-5 2-5 4M38 16c2-2 2-4 1-7-2 1-3 4-2 6"/></g><path d="M24 13l2.6 5.4 5.9.8-4.3 4.1 1 5.8L24 26.4l-5.2 2.7 1-5.8-4.3-4.1 5.9-.8z" fill="currentColor"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17h16"/><path d="M4 13l5-3 4 3 7-6"/></g></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5V20h-5v-5.5h-6V20H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r=".6"/><circle cx="4.5" cy="12" r=".6"/><circle cx="4.5" cy="17.5" r=".6"/></g></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 20V12M10 20V6M15 20v-9M20 20V9"/></g></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5.5" width="16" height="14.5" rx="2"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4L18 18M6 18l1.6-1.6M16.4 7.6L18 6" stroke-linecap="round"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="top-bar">
+      <div class="brand">
+        <svg style="color:var(--gold)" aria-hidden="true"><use href="#logo-chirho"/></svg>
+        <span class="wordmark">Templum</span>
+      </div>
+      <button class="theme-btn" id="theme-toggle" type="button">
+        <svg aria-hidden="true"><use href="#i-moon"/></svg>
+        <span id="theme-label">Ver en modo claro</span>
+      </button>
+    </div>
+    <div class="hero-verse">
+      <p class="eyebrow">Guía de estilo · Propuesta 2</p>
+      <blockquote>¿No saben que su cuerpo es templo del Espíritu Santo?</blockquote>
+      <p class="ref">1 Corintios 6, 19</p>
+    </div>
+    <p class="intro">Así se vería Templum. La idea es un estilo sobrio y elegante, como un misal antiguo o una iglesia de noche: fondos profundos, mucho espacio y detalles dorados finos. El morado se usa para la acción, el carmesí para el esfuerzo y el oro para lo que merece honrarse. Usa el botón de arriba para ver también el modo claro.</p>
+  </header>
+
+  <!-- LOGOS -->
+  <section aria-labelledby="h-logos">
+    <div class="sec-head">
+      <p class="eyebrow">Para elegir</p>
+      <h2 id="h-logos">Tres propuestas de logo</h2>
+      <p class="lede">Así se vería cada una como ícono en la pantalla de tu celular, en tamaño grande y pequeño. El color de fondo de cada ícono también se puede cambiar.</p>
+    </div>
+    <div class="logos">
+      <article class="logo-opt">
+        <div class="tiles">
+          <div class="app-icon" style="background:var(--icon-night);color:var(--icon-gold)"><svg aria-hidden="true"><use href="#logo-cruz"/></svg></div>
+          <div class="app-icon small" style="background:var(--icon-night);color:var(--icon-gold)"><svg aria-hidden="true"><use href="#logo-cruz"/></svg></div>
+        </div>
+        <h3><span class="letter">A</span>Cruz en círculo</h3>
+        <p>Una cruz latina dentro de un aro de oro. La más simple y reconocible.</p>
+      </article>
+      <article class="logo-opt">
+        <div class="tiles">
+          <div class="app-icon" style="background:var(--icon-purple);color:var(--icon-gold)"><svg aria-hidden="true"><use href="#logo-chirho"/></svg></div>
+          <div class="app-icon small" style="background:var(--icon-purple);color:var(--icon-gold)"><svg aria-hidden="true"><use href="#logo-chirho"/></svg></div>
+        </div>
+        <h3><span class="letter">B</span>Chi-Rho <span class="chosen">Elegido</span></h3>
+        <p>El monograma de Cristo (☧), las letras griegas X y P. Antiguo y con carácter.</p>
+      </article>
+      <article class="logo-opt">
+        <div class="tiles">
+          <div class="app-icon" style="background:var(--icon-crimson);color:var(--icon-gold)"><svg aria-hidden="true"><use href="#logo-arco"/></svg></div>
+          <div class="app-icon small" style="background:var(--icon-crimson);color:var(--icon-gold)"><svg aria-hidden="true"><use href="#logo-arco"/></svg></div>
+        </div>
+        <h3><span class="letter">C</span>Puerta del templo</h3>
+        <p>Un arco románico con una cruz adentro. Une el nombre <em>Templum</em> con la fe.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PALETA -->
+  <section aria-labelledby="h-paleta">
+    <div class="sec-head">
+      <p class="eyebrow">Colores</p>
+      <h2 id="h-paleta">La paleta</h2>
+      <p class="lede">Son los cinco colores que pediste, oscurecidos para que se vean elegantes. Cada uno tiene una función fija, así la app se entiende de un vistazo. En modo claro cambian de tono, pero mantienen esa función.</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:var(--bg)"></div><div class="info"><span class="name">Noche</span><span class="role">Fondo de la app</span></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--purple)"></div><div class="info"><span class="name">Púrpura</span><span class="role">Botones, series completadas, navegación</span></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--crimson)"></div><div class="info"><span class="name">Carmesí</span><span class="role">Esfuerzo, intensidad y terminar entrenamiento</span></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--gold)"></div><div class="info"><span class="name">Oro</span><span class="role">Récords, versículos y detalles finos</span></div></div>
+      <div class="swatch"><div class="chip" style="background:var(--fg)"></div><div class="info"><span class="name">Pergamino</span><span class="role">Textos (en modo claro es el fondo)</span></div></div>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFÍA -->
+  <section aria-labelledby="h-tipo">
+    <div class="sec-head">
+      <p class="eyebrow">Letras</p>
+      <h2 id="h-tipo">Dos tipografías, cada una con su lugar</h2>
+      <p class="lede">La letra clásica se reserva para la Palabra y el nombre de la app. Todo lo de entrenar va con una letra moderna y limpia, fácil de leer rápido entre series.</p>
+    </div>
+    <div class="type-grid">
+      <div class="type-card">
+        <p class="comp-label">Clásica · Cormorant</p>
+        <p class="sample-serif">Todo lo puedo en Aquel que me fortalece.</p>
+        <p class="use">Versículos, oraciones y el nombre Templum.</p>
+      </div>
+      <div class="type-card">
+        <p class="comp-label">Moderna · Jost</p>
+        <p class="sample-sans">Press banca</p>
+        <p class="nums">4 × 8 · 62,5 kg · 1:30 descanso</p>
+        <p class="use">Ejercicios, números, botones y menús.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTES + TELÉFONO -->
+  <section aria-labelledby="h-comp">
+    <div class="sec-head">
+      <p class="eyebrow">Piezas de la app</p>
+      <h2 id="h-comp">Cómo se ven las piezas</h2>
+      <p class="lede">Estos son algunos de los elementos con los que se arma cada pantalla. A la derecha (o abajo, en el celular) está la pantalla de Inicio completa. Todos los números son de ejemplo.</p>
+    </div>
+
+    <div class="split">
+      <div class="components">
+
+        <div class="comp">
+          <p class="comp-label">Botones</p>
+          <div class="row">
+            <button class="btn btn-primary" type="button"><svg aria-hidden="true"><use href="#i-play"/></svg>Empezar entrenamiento</button>
+            <button class="btn btn-ghost" type="button"><svg aria-hidden="true"><use href="#i-plus"/></svg>Agregar ejercicio</button>
+            <button class="btn btn-danger" type="button">Terminar</button>
+          </div>
+        </div>
+
+        <div class="comp">
+          <p class="comp-label">Ejercicio durante el entrenamiento</p>
+          <div class="ex-card">
+            <div class="ex-head">
+              <div class="ex-thumb"><svg aria-hidden="true"><use href="#i-dumbbell"/></svg></div>
+              <div>
+                <div class="ex-name">Press banca</div>
+                <div class="ex-muscle">Pecho · Tríceps · Hombro</div>
+              </div>
+              <svg class="more" width="20" height="20" aria-hidden="true"><use href="#i-dots"/></svg>
+            </div>
+            <div class="sets" role="table" aria-label="Series de press banca">
+              <span class="h c" role="columnheader">Serie</span>
+              <span class="h" role="columnheader">Anterior</span>
+              <span class="h c" role="columnheader">kg</span>
+              <span class="h c" role="columnheader">Reps</span>
+              <span class="h c" role="columnheader">✓</span>
+
+              <span class="c">1</span><span class="prev">60 × 10</span><span class="val">60</span><span class="val">10</span><span class="check on"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+              <span class="c">2</span><span class="prev">60 × 10</span><span class="val">60</span><span class="val">10</span><span class="check on"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+              <span class="c">3</span><span class="prev">60 × 8</span><span class="val">62,5</span><span class="val">8</span><span class="check"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+            </div>
+            <p class="ex-note">"Anterior" muestra lo que hiciste la última vez, para que intentes superarlo.</p>
+            <button class="add-set" type="button">+ Agregar serie</button>
+          </div>
+        </div>
+
+        <div class="comp">
+          <p class="comp-label">Temporizador de descanso</p>
+          <div class="timer">
+            <div class="timer-top">
+              <div>
+                <div class="timer-time">1:24</div>
+                <div class="timer-label">Descanso · siguiente: serie 3</div>
+              </div>
+              <div class="timer-btns">
+                <button class="pill-btn" type="button">−15 s</button>
+                <button class="pill-btn" type="button">+15 s</button>
+                <button class="pill-btn" type="button">Saltar</button>
+              </div>
+            </div>
+            <div class="bar"><span></span></div>
+          </div>
+        </div>
+
+        <div class="comp">
+          <p class="comp-label">Nuevo récord personal</p>
+          <div class="pr">
+            <div class="medal"><svg aria-hidden="true"><use href="#i-laurel"/></svg></div>
+            <span class="k">Nuevo récord</span>
+            <span class="v">Press banca · 62,5 kg × 8</span>
+            <span class="phrase">"Corran de tal manera que lo ganen." — 1 Cor 9, 24</span>
+          </div>
+        </div>
+
+        <div class="comp">
+          <p class="comp-label">Aviso automático de progreso</p>
+          <div class="insight">
+            <svg aria-hidden="true"><use href="#i-trend"/></svg>
+            <div>
+              <b>Sentadilla estancada</b>
+              <p>Llevas <b>3 semanas</b> con 80 kg × 6. Prueba subir a 82,5 kg y bajar a 5 reps, o agrega una serie.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Vista previa: Inicio -->
+      <div class="phone-col">
+        <div class="phone" role="img" aria-label="Vista previa de la pantalla de Inicio de Templum">
+          <div class="screen">
+            <div class="status"><span>9:41</span><span>●●● 100%</span></div>
+            <div class="scr-body">
+              <div class="scr-top">
+                <svg style="color:var(--gold)" aria-hidden="true"><use href="#logo-chirho"/></svg>
+                <span class="wm">Templum</span>
+              </div>
+              <div class="scr-date">
+                <span class="d">Domingo 25 de octubre</span>
+                <span class="lit"><i></i>Domingo XXX del Tiempo Ordinario</span>
+              </div>
+              <div class="verse-card">
+                <span class="k">Versículo del día</span>
+                <q>Los que esperan en el Señor renuevan sus fuerzas; corren y no se fatigan.</q>
+                <span class="r">Isaías 40, 31</span>
+              </div>
+              <button class="btn btn-primary" type="button"><svg aria-hidden="true"><use href="#i-play"/></svg>Empezar entrenamiento</button>
+              <div class="mini-h"><span>Mis rutinas</span><a href="#h-comp">Ver todas</a></div>
+              <div class="routines">
+                <div class="routine"><div><div class="n">Empuje</div><div class="m">Pecho · Hombro · Tríceps · 6 ejercicios</div></div><svg aria-hidden="true"><use href="#i-chev"/></svg></div>
+                <div class="routine"><div><div class="n">Pierna</div><div class="m">Cuádriceps · Glúteo · Femoral · 5 ejercicios</div></div><svg aria-hidden="true"><use href="#i-chev"/></svg></div>
+              </div>
+              <div class="mini-h"><span>Esta semana</span></div>
+              <div class="days">
+                <span class="day on"><i></i>L</span>
+                <span class="day"><i></i>M</span>
+                <span class="day on"><i></i>M</span>
+                <span class="day"><i></i>J</span>
+                <span class="day on"><i></i>V</span>
+                <span class="day"><i></i>S</span>
+                <span class="day today"><i></i>D</span>
+              </div>
+              <div class="week">
+                <div class="stat"><span class="v">3</span><span class="l">entrenamientos</span></div>
+                <div class="stat"><span class="v">12,4 t</span><span class="l">volumen</span></div>
+                <div class="stat"><span class="v">2 h 45</span><span class="l">tiempo</span></div>
+              </div>
+            </div>
+            <nav class="tabbar" aria-label="Navegación de ejemplo">
+              <span class="tab on"><svg aria-hidden="true"><use href="#i-home"/></svg>Inicio</span>
+              <span class="tab"><svg aria-hidden="true"><use href="#i-list"/></svg>Rutinas</span>
+              <span class="tab"><svg aria-hidden="true"><use href="#i-chart"/></svg>Progreso</span>
+              <span class="tab"><svg aria-hidden="true"><use href="#i-cal"/></svg>Historial</span>
+              <span class="tab"><svg aria-hidden="true"><use href="#i-gear"/></svg>Ajustes</span>
+            </nav>
+          </div>
+        </div>
+        <p class="sample-note">Pantalla de Inicio · datos de ejemplo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECISIONES -->
+  <section aria-labelledby="h-dec">
+    <div class="sec-head">
+      <p class="eyebrow">Tu turno</p>
+      <h2 id="h-dec">Lo que necesito que me digas</h2>
+      <p class="lede">Ya elegiste el logo B, la paleta, las letras y el modo oscuro como principal. Queda una sola cosa por revisar.</p>
+    </div>
+    <div class="asks">
+      <div class="ask"><span class="num">1</span><div><b>El nuevo modo claro</b><p>Ahora es un <b>pergamino envejecido</b> en vez de blanco. ¿Te gusta así, o prefieres que la app sea solo oscura?</p></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Ad maiorem Dei gloriam</span><br>
+    Templum · Etapa 0, diseño visual · Propuesta 2
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  var label = document.getElementById('theme-label');
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: light)') : null;
+
+  function isLight() {
+    var t = root.getAttribute('data-theme');
+    if (t) return t === 'light';
+    return !!(mq && mq.matches);
+  }
+  function sync() {
+    label.textContent = isLight() ? 'Ver en modo oscuro' : 'Ver en modo claro';
+  }
+  btn.addEventListener('click', function () {
+    root.setAttribute('data-theme', isLight() ? 'dark' : 'light');
+    sync();
+  });
+  if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+  sync();
+})();
+</script>

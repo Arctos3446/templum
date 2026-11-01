@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historial</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&amp;family=Jost:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.t-dark{--bg:#0D0A10;--surface:#16111A;--raised:#1F1826;--line:#2F2539;--fg:#EEE7DC;--muted:#A3969F;--purple:#6B3A9E;--purple-ink:#B892E0;--purple-faint:rgba(184,146,224,.12);--crimson:#9B1E33;--crimson-ink:#E35C70;--gold:#CFA54E;--gold-faint:rgba(207,165,78,.16);--on-accent:#F7F1E6;--good:#6FB07C;--warn:#D9A441}
+.t-light{--bg:#E4D9C6;--surface:#EDE4D3;--raised:#D8CAB2;--line:#C6B396;--fg:#1D1421;--muted:#5A4C55;--purple:#4B2275;--purple-ink:#4B2275;--purple-faint:rgba(75,34,117,.12);--crimson:#7D1628;--crimson-ink:#8F1A2E;--gold:#85631A;--gold-faint:rgba(133,99,26,.14);--on-accent:#F3ECDF;--good:#2F6A3D;--warn:#8E6514}
+a{color:var(--purple-ink)}a:hover{color:var(--gold)}
+.d{height:40px;display:flex;align-items:center;justify-content:center;font-size:14px;font-variant-numeric:tabular-nums}
+.d span{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+.d-on span{background:var(--purple);color:var(--on-accent);font-weight:500}
+.d-today span{border:1.5px solid var(--gold);color:var(--gold);font-weight:600}
+.d-future span{color:var(--muted)}
+</style>
+</helmet>
+<div class="{{themeClass}}" style="width: 390px; height: 980px; box-sizing: border-box; background: var(--bg); color: var(--fg); font-family: Jost, 'Century Gothic', system-ui, sans-serif; font-size: 15px; line-height: 1.45; display: flex; flex-direction: column; overflow: hidden">
+
+  <div style="flex-grow: 1; padding: 24px 20px 16px; display: flex; flex-direction: column; gap: 18px; overflow: hidden">
+    <h1 style="margin: 0; font-size: 26px; font-weight: 500">Historial</h1>
+
+    <div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px 14px; display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; align-items: center; gap: 4px">
+        <button type="button" aria-label="Mes anterior" style="width: 44px; height: 44px; background: transparent; border: 0; color: var(--muted); cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <span style="flex-grow: 1; text-align: center; font-family: 'Cormorant Garamond', Garamond, serif; font-size: 22px; font-weight: 600">Octubre 2026</span>
+        <button type="button" aria-label="Mes siguiente" style="width: 44px; height: 44px; background: transparent; border: 0; color: var(--muted); cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-align: center">
+        <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr))">
+        <sc-for list="{{days}}" as="d" hint-placeholder-count="35">
+          <div class="{{d.cls}}"><span>{{d.label}}</span></div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; font-variant-numeric: tabular-nums">
+      <div style="display: flex; flex-direction: column"><span style="font-size: 20px; font-weight: 500">10</span><span style="font-size: 12px; color: var(--muted)">entrenamientos</span></div>
+      <div style="display: flex; flex-direction: column"><span style="font-size: 20px; font-weight: 500">8 h 40</span><span style="font-size: 12px; color: var(--muted)">tiempo total</span></div>
+      <div style="display: flex; flex-direction: column"><span style="font-size: 20px; font-weight: 500">4 semanas</span><span style="font-size: 12px; color: var(--muted)">de constancia</span></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span style="font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted)">Esta semana</span>
+      <sc-for list="{{sessions}}" as="s" hint-placeholder-count="3">
+        <a href="Resumen.dc.html" style="display: flex; align-items: center; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; text-decoration: none; color: var(--fg)">
+          <span style="width: 44px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; line-height: 1.1">
+            <span style="font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted)">{{s.dow}}</span>
+            <span style="font-size: 22px; font-weight: 500; font-variant-numeric: tabular-nums">{{s.day}}</span>
+          </span>
+          <span style="display: flex; flex-direction: column; flex-grow: 1; min-width: 0">
+            <span style="font-weight: 500">{{s.name}}</span>
+            <span style="font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums">{{s.meta}}</span>
+          </span>
+          <sc-if value="{{s.hasPr}}" hint-placeholder-val="{{false}}">
+            <span style="display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; color: var(--gold); flex-shrink: 0">
+              <svg width="14" height="14" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 9l3.6 7.4 8.2 1.2-5.9 5.7 1.4 8.1L24 27.6l-7.3 3.8 1.4-8.1-5.9-5.7 8.2-1.2z" fill="currentColor"/></svg>
+              {{s.pr}}
+            </span>
+          </sc-if>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <nav aria-label="Navegación principal" style="display: flex; justify-content: space-around; padding: 10px 8px 18px; border-top: 1px solid var(--line); background: var(--surface); font-size: 11px; color: var(--muted)">
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--muted); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6.5 8 6.5V20h-5v-5.5h-6V20H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Inicio</a>
+    <a href="Biblioteca.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--muted); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r=".6"/><circle cx="4.5" cy="12" r=".6"/><circle cx="4.5" cy="17.5" r=".6"/></g></svg>Rutinas</a>
+    <a href="Progreso.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--muted); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 20V12M10 20V6M15 20v-9M20 20V9"/></g></svg>Progreso</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--purple-ink); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5.5" width="16" height="14.5" rx="2"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" stroke-linecap="round"/></g></svg>Historial</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; color: var(--muted); text-decoration: none"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4L18 18M6 18l1.6-1.6M16.4 7.6L18 6" stroke-linecap="round"/></g></svg>Ajustes</a>
+  </nav>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Oscuro","Claro"],"default":"Oscuro"},"$preview":{"width":390,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    // Octubre 2026 empieza en jueves; hoy es el 25
+    const trained = [2, 5, 7, 9, 12, 14, 16, 19, 21, 23];
+    const today = 25;
+    const days = [];
+    for (let i = 0; i < 3; i++) days.push({ label: '', cls: 'd' });
+    for (let n = 1; n <= 31; n++) {
+      let cls = 'd';
+      if (trained.includes(n)) cls = 'd d-on';
+      else if (n === today) cls = 'd d-today';
+      else if (n > today) cls = 'd d-future';
+      days.push({ label: String(n), cls });
+    }
+    return {
+      themeClass: (this.props.modo ?? 'Oscuro') === 'Claro' ? 't-light' : 't-dark',
+      days,
+      sessions: [
+        { dow: 'Vie', day: '23', name: 'Pierna', meta: '58 min · 9.870 kg · 5 ejercicios', hasPr: true, pr: '1 récord' },
+        { dow: 'Mié', day: '21', name: 'Tirón', meta: '52 min · 7.420 kg · 6 ejercicios', hasPr: false, pr: '' },
+        { dow: 'Lun', day: '19', name: 'Empuje', meta: '61 min · 8.150 kg · 6 ejercicios', hasPr: true, pr: '2 récords' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

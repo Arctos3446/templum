@@ -1,0 +1,216 @@
+/* Estilos generales y piezas reutilizables de Templum. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3 { margin: 0; font-weight: 500; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--purple-ink); }
+a:hover { color: var(--gold); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.num { font-variant-numeric: tabular-nums; }
+.display { font-family: var(--font-display); }
+
+/* ---------- Estructura: una columna centrada con el menú abajo ---------- */
+.app {
+  min-height: 100dvh;
+  max-width: var(--column);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 600px) {
+  .app { border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+}
+
+.screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: calc(env(safe-area-inset-top, 0px) + 24px) 20px calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 24px);
+}
+
+.screen-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+}
+.screen-head h1 { font-size: 26px; flex: 1; }
+
+.sec {
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec-gold { color: var(--gold); }
+
+/* ---------- Menú de abajo ---------- */
+.tabbar {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--column);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 8px calc(env(safe-area-inset-bottom, 0px) + 12px);
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  z-index: 10;
+}
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 56px;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.tab svg { width: 22px; height: 22px; }
+.tab:hover { color: var(--fg); }
+.tab.active { color: var(--purple-ink); }
+
+/* ---------- Botones ---------- */
+.btn {
+  font-weight: 500;
+  letter-spacing: .02em;
+  border-radius: var(--radius-m);
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn-primary { background: var(--purple); color: var(--on-accent); }
+.btn-ghost { background: transparent; color: var(--purple-ink); border-color: var(--line); }
+.btn-danger { background: var(--crimson); color: var(--on-accent); }
+.btn-block { width: 100%; min-height: 50px; }
+.btn-primary:hover, .btn-danger:hover { color: var(--on-accent); filter: brightness(1.12); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--purple-ink); }
+@media (prefers-reduced-motion: no-preference) {
+  .btn { transition: filter .15s ease, border-color .15s ease; }
+}
+
+/* ---------- Tarjetas y grupos ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  padding: 14px;
+}
+
+.grp {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  display: flex;
+  flex-direction: column;
+  padding: 0 14px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.row:last-child { border-bottom: 0; }
+.row-t { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.row-s { font-size: 12px; color: var(--muted); }
+
+/* Selector de opciones (Automático · Oscuro · Claro) */
+.seg-group {
+  display: flex;
+  gap: 4px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 4px;
+}
+.seg {
+  font-size: 13px;
+  height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  flex: 1;
+}
+.seg[aria-pressed="true"] { background: var(--raised); color: var(--fg); font-weight: 500; }
+
+/* ---------- Versículo ---------- */
+.verse-card {
+  padding: 18px 4px 16px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold-faint);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.verse-card .k { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.verse-card q {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.25;
+  quotes: "“" "”";
+}
+.verse-card .r { font-size: 12px; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+
+/* ---------- Estado vacío ---------- */
+.empty {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-l);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  color: var(--muted);
+}
+.empty svg { width: 32px; height: 32px; color: var(--purple-ink); opacity: .8; }
+.empty b { color: var(--fg); font-weight: 500; font-size: 16px; }
+.empty .soon {
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-faint);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-top: 4px;
+}
+.btn:disabled { opacity: .45; cursor: default; }
+.btn-ghost:disabled:hover { border-color: var(--line); }

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Fin del entrenamiento</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&amp;family=Jost:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+.t-dark{--bg:#0D0A10;--surface:#16111A;--raised:#1F1826;--line:#2F2539;--fg:#EEE7DC;--muted:#A3969F;--purple:#6B3A9E;--purple-ink:#B892E0;--purple-faint:rgba(184,146,224,.12);--crimson:#9B1E33;--crimson-ink:#E35C70;--gold:#CFA54E;--gold-faint:rgba(207,165,78,.16);--on-accent:#F7F1E6;--good:#6FB07C;--warn:#D9A441}
+.t-light{--bg:#E4D9C6;--surface:#EDE4D3;--raised:#D8CAB2;--line:#C6B396;--fg:#1D1421;--muted:#5A4C55;--purple:#4B2275;--purple-ink:#4B2275;--purple-faint:rgba(75,34,117,.12);--crimson:#7D1628;--crimson-ink:#8F1A2E;--gold:#85631A;--gold-faint:rgba(133,99,26,.14);--on-accent:#F3ECDF;--good:#2F6A3D;--warn:#8E6514}
+a{color:var(--purple-ink)}a:hover{color:var(--gold)}
+</style>
+</helmet>
+<div class="{{themeClass}}" style="width: 390px; height: 900px; box-sizing: border-box; background: var(--bg); color: var(--fg); font-family: Jost, 'Century Gothic', system-ui, sans-serif; font-size: 15px; line-height: 1.45; display: flex; flex-direction: column; gap: 22px; padding: 36px 20px 28px; overflow: hidden">
+
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
+    <svg width="44" height="44" viewBox="0 0 100 100" aria-hidden="true" style="color: var(--gold)"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="square"><path d="M50 20 V82"/><path d="M50 20 H58 a13 13 0 0 1 0 26 H50"/><path d="M31 46 L69 82"/><path d="M69 46 L31 82"/></g></svg>
+    <h1 style="margin: 0; font-size: 26px; font-weight: 500; line-height: 1.2">Entrenamiento terminado</h1>
+    <span style="font-size: 14px; color: var(--muted)">Empuje · domingo 25 de octubre</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; font-variant-numeric: tabular-nums">
+    <div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column"><span style="font-size: 24px; font-weight: 500">58 min</span><span style="font-size: 12px; color: var(--muted)">duración</span></div>
+    <div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column"><span style="font-size: 24px; font-weight: 500">8.640 kg</span><span style="font-size: 12px; color: var(--muted)">volumen total</span></div>
+    <div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column"><span style="font-size: 24px; font-weight: 500">15</span><span style="font-size: 12px; color: var(--muted)">series</span></div>
+    <div style="background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column"><span style="font-size: 24px; font-weight: 500; color: var(--gold)">2</span><span style="font-size: 12px; color: var(--muted)">récords nuevos</span></div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <span style="font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted)">Récords de hoy</span>
+    <div style="border: 1px solid var(--gold); background: var(--gold-faint); border-radius: 12px; padding: 4px 16px; display: flex; flex-direction: column">
+      <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--gold-faint)">
+        <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true" style="color: var(--gold); flex-shrink: 0"><path d="M24 9l3.6 7.4 8.2 1.2-5.9 5.7 1.4 8.1L24 27.6l-7.3 3.8 1.4-8.1-5.9-5.7 8.2-1.2z" fill="currentColor"/></svg>
+        <span style="flex-grow: 1; font-weight: 500">Press banca</span>
+        <span style="font-variant-numeric: tabular-nums">62,5 kg × 8</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0">
+        <svg width="22" height="22" viewBox="0 0 48 48" aria-hidden="true" style="color: var(--gold); flex-shrink: 0"><path d="M24 9l3.6 7.4 8.2 1.2-5.9 5.7 1.4 8.1L24 27.6l-7.3 3.8 1.4-8.1-5.9-5.7 8.2-1.2z" fill="currentColor"/></svg>
+        <span style="flex-grow: 1; font-weight: 500">Press militar</span>
+        <span style="font-variant-numeric: tabular-nums">40 kg × 6</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px 4px 16px; border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold-faint); text-align: center">
+    <p style="margin: 0; font-family: 'Cormorant Garamond', Garamond, serif; font-style: italic; font-size: 23px; line-height: 1.25">“He peleado el buen combate, he terminado la carrera, he conservado la fe.”</p>
+    <span style="font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted)">2 Timoteo 4, 7</span>
+  </div>
+
+  <button type="button" style="font: inherit; font-size: 14px; color: var(--fg); background: transparent; border: 1px solid var(--line); border-radius: 10px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px">
+    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--gold)"><path d="M12 3v18M7 8h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    Oración de acción de gracias
+  </button>
+
+  <div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto">
+    <button type="button" style="font: inherit; font-weight: 500; color: var(--on-accent); background: var(--purple); border: 0; border-radius: 10px; height: 50px; cursor: pointer">Guardar entrenamiento</button>
+    <label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); padding: 4px 2px; cursor: pointer">
+      <input type="checkbox" checked style="width: 18px; height: 18px; accent-color: var(--purple)">
+      Actualizar la rutina "Empuje" con los cambios de hoy
+    </label>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"modo":{"editor":"enum","options":["Oscuro","Claro"],"default":"Oscuro"},"$preview":{"width":390,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { themeClass: (this.props.modo ?? 'Oscuro') === 'Claro' ? 't-light' : 't-dark' };
+  }
+}
+</script>
+</body>
+</html>
