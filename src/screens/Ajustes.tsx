@@ -43,6 +43,21 @@ export function Ajustes() {
         </span>
         <span className="display">Ad maiorem Dei gloriam</span>
         <span>Templum · versión {__APP_VERSION__}</span>
+        <span className="creditos">
+          Dibujos de ejercicios:{' '}
+          <a href="https://github.com/everkinetic/data" target="_blank" rel="noreferrer">
+            Everkinetic
+          </a>
+          , licencia{' '}
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noreferrer">
+            CC BY-SA 4.0
+          </a>
+          , recoloreados en dorado. Músculos de cada ejercicio:{' '}
+          <a href="https://github.com/yuhonas/free-exercise-db" target="_blank" rel="noreferrer">
+            free-exercise-db
+          </a>
+          .
+        </span>
       </div>
       </div>
     </main>

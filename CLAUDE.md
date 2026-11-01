@@ -15,7 +15,7 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Parte 1 |
+| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Parte 1 ✅ aprobada el 2026-11-01 · Parte 2 hecha el 2026-11-01, espera la prueba del usuario |
 | 3 · Publicar e instalar en el celular | Pendiente |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
@@ -79,8 +79,10 @@ src/
   styles/base.css              Piezas comunes: botones, tarjetas, grupos, menú, versículo, estado vacío
   components/                  Icon, Logo (ChiRho, Wordmark), TabBar, Empty
   screens/                     Inicio, Rutinas, Progreso, Historial, Ajustes
-  lib/                         tema.ts (Automático/Oscuro/Claro, se guarda en localStorage) y fechas.ts
-  db/                          Capa de datos (Dexie), desde la parte 2
+  lib/                         tema.ts (Automático/Oscuro/Claro, en localStorage), fechas.ts, tiempo.ts (m:ss), rutinas.ts, useSesion.ts
+  db/                          Capa de datos (Dexie). tipos.ts, db.ts, ejercicios.ts y rutinas.ts, con hooks useLiveQuery
+  styles/parte2.css            Estilos de la biblioteca, el detalle, los editores, el selector y los avisos
+public/dibujos/                Copia de contenido/dibujos que usa la app (si cambia un dibujo, copiarlo aquí)
 diseno/
   guia-de-estilo.html          Guía de estilo aprobada (paleta, letras, logos, piezas)
   pantallas/project/*.dc.html  Maquetas de las 8 pantallas (lienzo Design)
@@ -108,6 +110,17 @@ contenido/
 - Revisión de versículos: https://claude.ai/artifact/Lcm6pxLmcWWP2AvXaw59D8. Las respuestas están en su base de datos, colecciones `revision` y `propuestas`, ya aplicadas a los JSON.
 - Calendario litúrgico: https://claude.ai/artifact/EB1tJjjY4ovJrW2r6CyVtL (sin base de datos; el usuario responde en el chat).
 - Revisión de ejercicios: https://claude.ai/artifact/YPLDZoMXWhMtcrpRzpwPCs. Las respuestas quedan en su base de datos: `revision` (id → `decision: remove`; la primera ronda de 55 ya está aplicada), `nombres` (id → `nombre` como le dice el usuario), `preferencias/imagen` (`estilo`: dibujo | mapa | nada) y `faltantes` (`nombre`, `grupo`, `nota`). Todo está aplicado.
+
+## Cómo quedó construida la Parte 2 (2026-11-01)
+
+- Los 112 ejercicios de la biblioteca se leen directo de `contenido/ejercicios.json` (`CATALOGO`) y no se pueden editar. En la base de datos (IndexedDB `templum`) solo se guardan `ejerciciosPropios` (id `propio-…`) y `rutinas`.
+- Rutas (createHashRouter): `/rutinas`, `/rutinas/nueva`, `/rutinas/:id`, `/ejercicios`, `/ejercicios/nuevo`, `/ejercicios/:id` y `/ejercicios/:id/editar`. La pestaña Rutinas también queda marcada en `/ejercicios/*`. Los editores llevan `handle: {enfoque: true}`, que esconde el menú de abajo en el celular.
+- En cada rutina, un ejercicio guarda `series`, `objetivo` (texto libre: "8–10", "30 s", "20 min"), `descanso` en segundos y `nota`. Las rutinas se reordenan arrastrando ⋮⋮ (@dnd-kit) y los días van de 0 = lunes a 6 = domingo.
+- Inicio muestra hasta 4 rutinas; las del día van primero, con la etiqueta "Hoy".
+- `useAvisoSalida` pregunta "¿Salir sin guardar?" al cancelar, al tocar el menú o al cerrar la pestaña. Después de guardar se sale con `sinAviso()`.
+- El detalle del ejercicio alterna las dos fases del dibujo cada 1,4 s. Los récords que muestra dependen del tipo y se llenan en la parte 5.
+- Los créditos de Everkinetic (CC BY-SA 4.0) y de free-exercise-db ya están al pie de Ajustes.
+- Prueba automática: puppeteer-core con Brave (`executablePath: '/usr/bin/brave'`), instalado en una carpeta temporal y no en el proyecto. Crea una rutina, agrega ejercicios, los reordena, la guarda, prueba los avisos y crea un ejercicio propio, sin errores en la consola.
 
 ## Plan técnico (Etapa 2)
 
