@@ -15,7 +15,7 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Parte 5 ✅ aceptada el 2026-11-01 · El usuario pidió terminar las partes 6 y 7 y publicar, para probar con uso real en el celular |
+| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Partes 5, 6 y 7 hechas el 2026-11-01. El usuario pidió publicar para probar con uso real en el celular e ir reportando errores y cambios |
 | 3 · Publicar e instalar en el celular | Pendiente |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
@@ -96,6 +96,9 @@ src/
   styles/parte5.css            Progreso, gráfico, récords y avisos
   lib/liturgia.ts              Calendario litúrgico (traído de contenido/liturgia.js; igual en 2.191 días comprobados) y la línea del santo
   styles/parte6.css            Santo del día, frases de récord y descanso, oraciones
+  lib/exportImport.ts          Respaldo JSON (exportar/importar, reemplaza todo), planilla CSV (; y coma decimal), borrar todo
+  lib/summary.ts               "Copiar resumen para Claude" (últimas 8 semanas, rutinas, ejercicios, récords y avisos)
+  styles/parte7.css            Tus datos y el mensaje breve (toast)
 public/dibujos/                Copia de contenido/dibujos que usa la app (si cambia un dibujo, copiarlo aquí)
 diseno/
   guia-de-estilo.html          Guía de estilo aprobada (paleta, letras, logos, piezas)
@@ -184,6 +187,13 @@ contenido/
 - **Versículo y oración al terminar:** en la pantalla de fin.
 - Ajustes guarda cada interruptor en `templum.ajustes` (localStorage), con los valores por defecto aprobados en el diseño, más el "Descanso por defecto" (1:30, de 15 en 15 s).
 - "Mis versículos" (agregar o quitar frases propias), que está en la maqueta de Ajustes, quedó pendiente para después de publicar.
+
+## Cómo quedó construida la Parte 7 (2026-11-01)
+
+- Ajustes → Tus datos: exportar respaldo (`templum-respaldo-AAAA-MM-DD.json`, con rutinas, ejercicios propios, entrenamientos, ajustes y tema), planilla CSV (una fila por serie), importar respaldo (revisa el archivo y pide confirmar; reemplaza todo y recarga), "Copiar resumen para Claude" y "Borrar todos los datos".
+- Aviso de último respaldo (`templum.ultimoRespaldo`): sale en ámbar si hay datos y pasó más de una semana o nunca se respaldó.
+- "Copiar resumen para Claude" también está al final de Progreso, como en la maqueta.
+- Prueba automática: `pruebas/parte7.mjs` (descarga los archivos, borra todo e importa de vuelta).
 
 ## Plan técnico (Etapa 2)
 

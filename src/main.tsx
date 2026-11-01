@@ -17,6 +17,7 @@ import './styles/parte3.css'
 import './styles/parte4.css'
 import './styles/parte5.css'
 import './styles/parte6.css'
+import './styles/parte7.css'
 import { App } from './App'
 import { pedirAlmacenamientoPersistente } from './db/db'
 

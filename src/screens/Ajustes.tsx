@@ -1,5 +1,11 @@
+import { useRef, useState } from 'react'
 import { ChiRho } from '../components/Logo'
-import { Empty } from '../components/Empty'
+import { Dialogo } from '../components/Dialogo'
+import { CopiarResumen } from '../components/CopiarResumen'
+import { useToast } from '../components/Toast'
+import { borrarTodo, exportarCSV, exportarRespaldo, importarRespaldo, leerRespaldo, ultimoRespaldo, type Respaldo } from '../lib/exportImport'
+import { haceCuanto } from '../lib/fechas'
+import { useEntrenamientos } from '../db/entrenamientos'
 import { useTema, type Tema } from '../lib/tema'
 import { cambiarAjuste, puedeVibrar, useAjustes, type Ajustes as TAjustes } from '../lib/ajustes'
 import { mmss } from '../lib/tiempo'
@@ -16,6 +22,17 @@ const OPCIONES: { valor: Tema; texto: string }[] = [
 export function Ajustes() {
   const [tema, setTema] = useTema()
   const a = useAjustes()
+  const toast = useToast()
+  const historial = useEntrenamientos()
+  const archivo = useRef<HTMLInputElement>(null)
+  const [respaldo, setRespaldo] = useState(ultimoRespaldo())
+  const [importar, setImportar] = useState<Respaldo | null>(null)
+  const [borrar, setBorrar] = useState(false)
+  const [error, setError] = useState('')
+
+  // Aviso de respaldo: si hay datos y pasó más de una semana (o nunca se respaldó).
+  const hayDatos = !!historial?.length
+  const atrasado = hayDatos && (!respaldo || Date.now() - respaldo > 7 * 86400000)
 
   return (
     <main className="screen">
@@ -82,11 +99,117 @@ export function Ajustes() {
       </div>
       <span className="row-s ajustes-nota">{VERSICULOS.length} versículos y {ORACIONES.length} oraciones, revisados por ti.</span>
 
-      <div style={{ marginTop: 14 }}>
-        <Empty icon="gear" title="Tus datos" soon="Llega en la parte 7">
-          Respaldo de tus datos, planilla y resumen para Claude.
-        </Empty>
+      <span className="sec" style={{ marginTop: 14 }}>Tus datos</span>
+      <div className="grp">
+        <div className="row" data-atrasado={atrasado}>
+          <span className="respaldo-icono">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <g fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M12 7.5V12l3 2" />
+              </g>
+            </svg>
+          </span>
+          <span className="row-t">
+            <span>{respaldo ? `Último respaldo: ${haceCuanto(respaldo)}` : 'Aún no has hecho un respaldo'}</span>
+            <span className="row-s">Tus datos viven solo en este dispositivo. Respalda cada semana y guarda el archivo en Drive o envíatelo.</span>
+          </span>
+        </div>
+        <div className="row">
+          <button
+            type="button"
+            className="act"
+            onClick={async () => {
+              await exportarRespaldo()
+              setRespaldo(ultimoRespaldo())
+              toast.mostrar('Respaldo descargado.')
+            }}
+          >
+            Exportar respaldo completo
+          </button>
+        </div>
+        <div className="row">
+          <button
+            type="button"
+            className="act"
+            onClick={async () => {
+              await exportarCSV()
+              toast.mostrar('Planilla descargada.')
+            }}
+          >
+            Exportar a planilla (CSV)
+          </button>
+        </div>
+        <div className="row">
+          <button type="button" className="act" onClick={() => archivo.current?.click()}>
+            Importar respaldo
+          </button>
+          <input
+            ref={archivo}
+            type="file"
+            accept=".json,application/json"
+            hidden
+            onChange={async (e) => {
+              const f = e.target.files?.[0]
+              e.target.value = ''
+              if (!f) return
+              try {
+                setImportar(await leerRespaldo(f))
+              } catch (err) {
+                setError((err as Error).message)
+              }
+            }}
+          />
+        </div>
+        <div className="row">
+          <CopiarResumen className="act act-icono" onListo={toast.mostrar} />
+        </div>
       </div>
+      {error && (
+        <p className="error-caja" role="alert">
+          {error}
+        </p>
+      )}
+
+      <div className="grp" style={{ marginTop: 6 }}>
+        <div className="row">
+          <button type="button" className="act peligro" onClick={() => setBorrar(true)}>
+            Borrar todos los datos
+          </button>
+        </div>
+      </div>
+
+      <Dialogo
+        abierto={!!importar}
+        titulo="¿Importar este respaldo?"
+        confirmar="Importar"
+        peligro
+        onConfirmar={async () => {
+          await importarRespaldo(importar!)
+          // Se recarga para tomar también los ajustes del respaldo.
+          window.location.reload()
+        }}
+        onCerrar={() => setImportar(null)}
+      >
+        {importar &&
+          `Es del ${new Date(importar.exportado).toLocaleDateString('es-CL')} y trae ${plural(importar.entrenamientos.length, 'entrenamiento', 'entrenamientos')}, ${plural(importar.rutinas.length, 'rutina', 'rutinas')} y ${plural(importar.ejerciciosPropios.length, 'ejercicio creado', 'ejercicios creados')}. Reemplaza todo lo que tienes ahora en este dispositivo.`}
+      </Dialogo>
+      <Dialogo
+        abierto={borrar}
+        titulo="¿Borrar todos tus datos?"
+        confirmar="Borrar todo"
+        peligro
+        onConfirmar={async () => {
+          await borrarTodo()
+          setBorrar(false)
+          setRespaldo(null)
+          toast.mostrar('Datos borrados.')
+        }}
+        onCerrar={() => setBorrar(false)}
+      >
+        Se borran tus rutinas, entrenamientos y ejercicios creados de este dispositivo. No se puede deshacer: si quieres conservarlos, exporta un respaldo antes.
+      </Dialogo>
+      {toast.elemento}
 
       <div className="pie">
         <span style={{ color: 'var(--gold)' }}>
@@ -145,3 +268,5 @@ function Interruptor({
     </label>
   )
 }
+
+const plural = (n: number, uno: string, varios: string) => `${n} ${n === 1 ? uno : varios}`

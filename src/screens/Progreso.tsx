@@ -10,6 +10,8 @@ import { Empty } from '../components/Empty'
 import { GraficoLinea } from '../components/GraficoLinea'
 import { Icon } from '../components/Icon'
 import { SelectorEjercicios } from '../components/SelectorEjercicios'
+import { CopiarResumen } from '../components/CopiarResumen'
+import { useToast } from '../components/Toast'
 
 const RANGOS = [
   { clave: '3m', nombre: '3 meses', meses: 3 },
@@ -26,6 +28,7 @@ export function Progreso() {
   const [rango, setRango] = useSesion<string>('progreso.rango', '3m')
   const [eligiendo, setEligiendo] = useState(false)
   const cerrar = useCallback(() => setEligiendo(false), [])
+  const toast = useToast()
 
   // Ejercicios que has hecho, del más reciente al más antiguo.
   const hechos = useMemo(() => {
@@ -211,9 +214,12 @@ export function Progreso() {
           ) : (
             <p className="sin-avisos">Sin avisos por ahora. Cuando lleves algunas semanas entrenando, aquí te diré qué va bien y qué conviene ajustar.</p>
           )}
+          <CopiarResumen className="btn btn-ghost copiar-resumen" onListo={toast.mostrar} />
+          <span className="row-s copiar-nota">Copia un resumen de tus últimas 8 semanas para pegarlo en un chat con Claude y pedirle un análisis más a fondo.</span>
         </div>
       </div>
 
+      {toast.elemento}
       {eligiendo && (
         <SelectorEjercicios
           titulo="Elegir ejercicio"
