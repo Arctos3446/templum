@@ -12,7 +12,8 @@ export function Ajustes() {
   const [tema, setTema] = useTema()
 
   return (
-    <main className="screen" style={{ gap: 10 }}>
+    <main className="screen">
+      <div className="ajustes">
       <div className="screen-head" style={{ marginBottom: 6 }}>
         <h1>Ajustes</h1>
       </div>
@@ -36,14 +37,13 @@ export function Ajustes() {
         </Empty>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, paddingTop: 20, color: 'var(--muted)', fontSize: 12 }}>
+      <div className="pie">
         <span style={{ color: 'var(--gold)' }}>
           <ChiRho size={26} />
         </span>
-        <span className="display" style={{ fontStyle: 'italic', fontSize: 17, color: 'var(--fg)' }}>
-          Ad maiorem Dei gloriam
-        </span>
+        <span className="display">Ad maiorem Dei gloriam</span>
         <span>Templum · versión {__APP_VERSION__}</span>
+      </div>
       </div>
     </main>
   )

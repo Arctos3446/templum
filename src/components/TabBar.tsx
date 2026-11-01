@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { Icon, type IconName } from './Icon'
+import { Wordmark } from './Logo'
 
 const tabs: { to: string; label: string; icon: IconName }[] = [
   { to: '/', label: 'Inicio', icon: 'home' },
@@ -12,6 +13,7 @@ const tabs: { to: string; label: string; icon: IconName }[] = [
 export function TabBar() {
   return (
     <nav className="tabbar" aria-label="Navegación principal">
+      <Wordmark className="only-pc" />
       {tabs.map((t) => (
         <NavLink key={t.to} to={t.to} end={t.to === '/'} className={({ isActive }) => (isActive ? 'tab active' : 'tab')}>
           <Icon name={t.icon} />

@@ -10,6 +10,7 @@ export function App() {
   return (
     <HashRouter>
       <div className="app">
+        <TabBar />
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/rutinas" element={<Rutinas />} />
@@ -18,7 +19,6 @@ export function App() {
           <Route path="/ajustes" element={<Ajustes />} />
           <Route path="*" element={<Inicio />} />
         </Routes>
-        <TabBar />
       </div>
     </HashRouter>
   )

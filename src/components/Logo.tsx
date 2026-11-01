@@ -13,22 +13,11 @@ export function ChiRho({ size = 26, strokeWidth = 5.5 }: { size?: number; stroke
   )
 }
 
-export function Wordmark() {
+export function Wordmark({ className = '' }: { className?: string }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--gold)' }}>
-      <ChiRho size={28} />
-      <span
-        style={{
-          fontFamily: 'var(--font-display)',
-          fontWeight: 600,
-          letterSpacing: '.3em',
-          textTransform: 'uppercase',
-          fontSize: 17,
-          color: 'var(--fg)',
-        }}
-      >
-        Templum
-      </span>
+    <div className={`wordmark ${className}`}>
+      <ChiRho size={30} />
+      <span>Templum</span>
     </div>
   )
 }

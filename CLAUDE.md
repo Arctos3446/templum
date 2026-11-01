@@ -58,6 +58,8 @@ El usuario todavía **no tiene rutinas** armadas. Las creará él en la app, as�
 
   Las variantes "ink" para texto sobre fondo oscuro son `#B892E0` (púrpura) y `#E35C70` (carmesí). El resto de los tokens está en los archivos de diseño.
 - Tipografías: **Cormorant Garamond** solo para versículos, oraciones y el nombre "Templum"; **Jost** para todo lo demás.
+- **Tamaño de letra (2026-11-01):** el usuario la encontró pequeña, sobre todo la de los versículos. La base es de 16 px en el celular y 17 px en el computador. Los versículos van a 28 px en el celular y 40 px en el computador. No volver a achicarla.
+- **Computador (2026-11-01):** usa todo el ancho, con el menú como barra lateral a la izquierda (logo arriba) y el contenido en columnas (Inicio en dos). En el celular el menú va abajo. El cambio ocurre a los 900 px (`@media (min-width: 900px)` en `base.css`).
 - En los ejercicios, el **mapa de músculos** pinta el principal en carmesí y los secundarios en púrpura más tenue.
 
 **Elementos de fe** (cada uno con su interruptor en Ajustes)

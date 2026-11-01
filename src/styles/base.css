@@ -1,4 +1,5 @@
-/* Estilos generales y piezas reutilizables de Templum. */
+/* Estilos generales y piezas reutilizables de Templum.
+   Celular: una columna con el menú abajo. Computador (desde 900 px): todo el ancho con el menú a la izquierda. */
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -8,8 +9,8 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-ui);
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
@@ -24,24 +25,20 @@ button { font: inherit; color: inherit; }
 .num { font-variant-numeric: tabular-nums; }
 .display { font-family: var(--font-display); }
 
-/* ---------- Estructura: una columna centrada con el menú abajo ---------- */
+/* ---------- Estructura ---------- */
 .app {
   min-height: 100dvh;
-  max-width: var(--column);
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-}
-@media (min-width: 600px) {
-  .app { border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
 }
 
 .screen {
   flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: calc(env(safe-area-inset-top, 0px) + 24px) 20px calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 24px);
+  gap: 18px;
+  padding: calc(env(safe-area-inset-top, 0px) + 24px) 20px calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 28px);
 }
 
 .screen-head {
@@ -50,10 +47,10 @@ button { font: inherit; color: inherit; }
   gap: 12px;
   min-height: 44px;
 }
-.screen-head h1 { font-size: 26px; flex: 1; }
+.screen-head h1 { font-size: 28px; flex: 1; }
 
 .sec {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--muted);
@@ -62,16 +59,33 @@ button { font: inherit; color: inherit; }
   justify-content: space-between;
   align-items: center;
 }
+.sec a { font-size: 14px; letter-spacing: .04em; text-transform: none; text-decoration: none; }
 .sec-gold { color: var(--gold); }
 
-/* ---------- Menú de abajo ---------- */
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+}
+.wordmark span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: var(--fg);
+}
+
+/* Solo se ve en el celular / solo en el computador */
+.only-pc { display: none !important; }
+
+/* ---------- Menú (abajo en el celular) ---------- */
 .tabbar {
   position: fixed;
-  left: 50%;
+  left: 0;
+  right: 0;
   bottom: 0;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: var(--column);
   display: flex;
   justify-content: space-around;
   padding: 10px 8px calc(env(safe-area-inset-bottom, 0px) + 12px);
@@ -85,11 +99,11 @@ button { font: inherit; color: inherit; }
   align-items: center;
   gap: 3px;
   min-width: 56px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   text-decoration: none;
 }
-.tab svg { width: 22px; height: 22px; }
+.tab svg { width: 24px; height: 24px; }
 .tab:hover { color: var(--fg); }
 .tab.active { color: var(--purple-ink); }
 
@@ -98,7 +112,7 @@ button { font: inherit; color: inherit; }
   font-weight: 500;
   letter-spacing: .02em;
   border-radius: var(--radius-m);
-  min-height: 44px;
+  min-height: 46px;
   padding: 0 20px;
   border: 1px solid transparent;
   cursor: pointer;
@@ -112,11 +126,13 @@ button { font: inherit; color: inherit; }
 .btn-primary { background: var(--purple); color: var(--on-accent); }
 .btn-ghost { background: transparent; color: var(--purple-ink); border-color: var(--line); }
 .btn-danger { background: var(--crimson); color: var(--on-accent); }
-.btn-block { width: 100%; min-height: 50px; }
+.btn-block { width: 100%; min-height: 54px; font-size: 17px; }
 .btn-primary:hover, .btn-danger:hover { color: var(--on-accent); filter: brightness(1.12); }
 .btn-ghost:hover { border-color: var(--gold); color: var(--purple-ink); }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn-ghost:disabled:hover { border-color: var(--line); }
 @media (prefers-reduced-motion: no-preference) {
-  .btn { transition: filter .15s ease, border-color .15s ease; }
+  .btn, .tab { transition: filter .15s ease, border-color .15s ease, background-color .15s ease, color .15s ease; }
 }
 
 /* ---------- Tarjetas y grupos ---------- */
@@ -124,7 +140,7 @@ button { font: inherit; color: inherit; }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-l);
-  padding: 14px;
+  padding: 16px;
 }
 
 .grp {
@@ -133,19 +149,19 @@ button { font: inherit; color: inherit; }
   border-radius: var(--radius-l);
   display: flex;
   flex-direction: column;
-  padding: 0 14px;
+  padding: 0 16px;
 }
 .row {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 52px;
+  min-height: 54px;
   padding: 6px 0;
   border-bottom: 1px solid var(--line);
 }
 .row:last-child { border-bottom: 0; }
 .row-t { display: flex; flex-direction: column; flex: 1; min-width: 0; }
-.row-s { font-size: 12px; color: var(--muted); }
+.row-s { font-size: 13px; color: var(--muted); }
 
 /* Selector de opciones (Automático · Oscuro · Claro) */
 .seg-group {
@@ -157,8 +173,8 @@ button { font: inherit; color: inherit; }
   padding: 4px;
 }
 .seg {
-  font-size: 13px;
-  height: 36px;
+  font-size: 15px;
+  height: 40px;
   padding: 0 10px;
   border: 0;
   border-radius: var(--radius-s);
@@ -171,28 +187,44 @@ button { font: inherit; color: inherit; }
 
 /* ---------- Versículo ---------- */
 .verse-card {
-  padding: 18px 4px 16px;
+  padding: 20px 4px 18px;
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold-faint);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
-.verse-card .k { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.verse-card .k { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
 .verse-card q {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 22px;
-  line-height: 1.25;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.22;
   quotes: "“" "”";
+  text-wrap: balance;
 }
-.verse-card .r { font-size: 12px; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+.verse-card .r { font-size: 13px; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+
+/* ---------- Inicio ---------- */
+.inicio { display: flex; flex-direction: column; gap: 18px; }
+.inicio-col { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.fecha { font-size: 24px; font-weight: 500; line-height: 1.2; }
+.semana { display: flex; justify-content: space-between; gap: 4px; }
+.semana span { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); }
+.semana i { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); display: block; }
+.semana .hoy { color: var(--gold); }
+.semana .hoy i { border-color: var(--gold); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.stat { display: flex; flex-direction: column; }
+.stat .v { font-size: 20px; font-weight: 500; }
+.stat .l { font-size: 13px; color: var(--muted); }
 
 /* ---------- Estado vacío ---------- */
 .empty {
   border: 1px dashed var(--line);
   border-radius: var(--radius-l);
-  padding: 28px 20px;
+  padding: 30px 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -200,17 +232,87 @@ button { font: inherit; color: inherit; }
   gap: 10px;
   color: var(--muted);
 }
-.empty svg { width: 32px; height: 32px; color: var(--purple-ink); opacity: .8; }
-.empty b { color: var(--fg); font-weight: 500; font-size: 16px; }
+.empty svg { width: 34px; height: 34px; color: var(--purple-ink); opacity: .8; }
+.empty b { color: var(--fg); font-weight: 500; font-size: 18px; }
+.empty p { max-width: 46ch; }
 .empty .soon {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--gold);
   border: 1px solid var(--gold-faint);
   border-radius: 999px;
-  padding: 3px 10px;
+  padding: 3px 12px;
   margin-top: 4px;
 }
-.btn:disabled { opacity: .45; cursor: default; }
-.btn-ghost:disabled:hover { border-color: var(--line); }
+
+.ajustes { display: flex; flex-direction: column; gap: 10px; }
+.cards-pc { display: flex; flex-direction: column; gap: 18px; }
+.pie { display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 24px; color: var(--muted); font-size: 13px; }
+.pie .display { font-style: italic; font-size: 20px; color: var(--fg); }
+
+/* ================= Computador ================= */
+@media (min-width: 900px) {
+  body { font-size: 17px; }
+
+  .only-pc { display: flex !important; }
+  .only-phone { display: none !important; }
+
+  .app {
+    display: grid;
+    grid-template-columns: 248px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  /* El menú pasa a ser una barra lateral */
+  .tabbar {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 32px 16px;
+    border-top: 0;
+    border-right: 1px solid var(--line);
+  }
+  .tabbar .wordmark { padding: 0 12px 28px; }
+  .tab {
+    flex-direction: row;
+    gap: 14px;
+    min-width: 0;
+    padding: 11px 14px;
+    border-radius: var(--radius-m);
+    font-size: 16px;
+  }
+  .tab:hover { background: var(--raised); }
+  .tab.active { background: var(--purple-faint); font-weight: 500; }
+
+  .screen {
+    padding: 44px 56px 56px;
+    gap: 22px;
+    max-width: 1280px;
+  }
+  .screen-head h1 { font-size: 36px; }
+
+  /* Inicio en dos columnas */
+  .inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 28px 56px;
+    align-items: start;
+  }
+  .fecha { font-size: 36px; }
+  .verse-card { padding: 28px 4px 24px; }
+  .verse-card q { font-size: 40px; line-height: 1.18; }
+  .verse-card .r { font-size: 14px; }
+  .btn-block { max-width: 420px; }
+  .semana i { width: 40px; height: 40px; }
+  .semana span { font-size: 13px; }
+  .stat .v { font-size: 26px; }
+
+  /* Pantallas con tarjetas: en filas */
+  .cards-pc { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+
+  .ajustes { max-width: 720px; }
+}

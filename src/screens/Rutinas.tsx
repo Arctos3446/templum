@@ -11,12 +11,14 @@ export function Rutinas() {
           Crear
         </button>
       </div>
+      <div className="cards-pc">
       <Empty icon="list" title="Aún no tienes rutinas" soon="Llega en la parte 2">
         Aquí vas a crear y editar tus rutinas, y ver la biblioteca de 112 ejercicios.
       </Empty>
       <Empty icon="dumbbell" title="Biblioteca de ejercicios" soon="Llega en la parte 2">
         Con sus dibujos dorados y el mapa de músculos.
       </Empty>
+      </div>
     </main>
   )
 }
