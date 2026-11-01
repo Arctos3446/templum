@@ -19,6 +19,8 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 | 3 · Publicar e instalar en el celular | ✅ Publicada el 2026-11-01 en **https://arctos3446.github.io/templum/**. El usuario la prueba con uso real y va reportando errores y cambios |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
+**Rutina del usuario (2026-11-01):** se cargó como plantilla. Para agregarla a la app se abre https://arctos3446.github.io/templum/#/plantilla/concurrente-4-dias en el navegador del celular y se toca "Agregar estas 4 rutinas": Inferior A (lunes), Superior A (martes), Inferior B (jueves) y Superior B (viernes). El RIR y los sustitutos van en la nota de cada ejercicio. El 4×4 son 4 series de "4 min" con 3:00 de descanso (recuperación activa). En cardio, los km son opcionales.
+
 **Próxima sesión:** el usuario instaló la app en su Samsung A16 con **Firefox** (2026-11-01) y la está probando en el gimnasio. Hay que empezar preguntándole qué errores o cambios encontró. Quedan pendientes "Mis versículos" (frases propias, está en la maqueta de Ajustes) y los dibujos de los 51 ejercicios que no tienen. Todavía no se ha probado la app instalada en Firefox para Android.
 
 El usuario todavía **no tiene rutinas** armadas. Las creará él en la app, así que no hay que precargarlas.
@@ -100,7 +102,10 @@ src/
   styles/parte6.css            Santo del día, frases de récord y descanso, oraciones
   lib/exportImport.ts          Respaldo JSON (exportar/importar, reemplaza todo), planilla CSV (; y coma decimal), borrar todo
   lib/summary.ts               "Copiar resumen para Claude" (últimas 8 semanas, rutinas, ejercicios, récords y avisos)
-  styles/parte7.css            Tus datos y el mensaje breve (toast)
+  styles/parte7.css            Tus datos, el mensaje breve (toast) y las plantillas
+  screens/Plantilla.tsx        Rutinas preparadas: /#/plantilla/:id lee public/plantillas/:id.json y las agrega con un toque
+public/plantillas/             concurrente-4-dias.json: la rutina del usuario (4 días), adaptada desde Rutina.md
+Rutina.md                      Rutina que Claude le armó al usuario en claude.ai. Tiene datos personales: está en .gitignore y NUNCA se publica
 public/dibujos/                Copia de contenido/dibujos que usa la app (si cambia un dibujo, copiarlo aquí)
 diseno/
   guia-de-estilo.html          Guía de estilo aprobada (paleta, letras, logos, piezas)
@@ -109,7 +114,7 @@ contenido/
   versiculos.json              91 versículos aprobados: id, tema, ref, texto, momentos[]
   versiculos-descartados.json  17 que quitó el usuario (no usar)
   oraciones.json               9 oraciones aprobadas: id, momento (inicio|cierre), tipo, titulo, texto
-  ejercicios.json              112 ejercicios aprobados: id, nombre, grupo, equipo, tipo, musculoPrincipal, musculosSecundarios, idOriginal, dibujos[]
+  ejercicios.json              114 ejercicios (112 aprobados + máquina de remo y caminata, agregados el 2026-11-01 para la rutina del usuario): id, nombre, grupo, equipo, tipo, musculoPrincipal, musculosSecundarios, idOriginal, dibujos[]
   ejercicios-descartados.json  58 que quitó el usuario (no usar)
   instrucciones.json           "Cómo hacerlo" de los 112 ejercicios: id → pasos[] y consejo. Los escribió Claude; el usuario no quiso revisarlos uno por uno
   dibujos/                     Dibujos de línea de Everkinetic (relaxation y tension), en currentColor

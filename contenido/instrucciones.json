@@ -1005,5 +1005,23 @@
       "Termina con unos largos lentos."
     ],
     "consejo": "Si te cansas, descansa en el borde; cuenta el tiempo total de nado."
+  },
+  "maquina-de-remo": {
+    "pasos": [
+      "Siéntate, ajusta las correas sobre la parte ancha del pie y toma la manilla.",
+      "Empuja primero con las piernas, después echa el torso un poco atrás y al final tira la manilla hacia la parte baja del pecho.",
+      "Vuelve en el orden contrario: brazos, torso y por último dobla las rodillas.",
+      "Mantén un ritmo parejo; la fuerza sale sobre todo de las piernas."
+    ],
+    "consejo": "La espalda va recta todo el tiempo: no te encorves al ir adelante."
+  },
+  "caminata": {
+    "pasos": [
+      "Camina a paso firme, más rápido que un paseo.",
+      "Mantén la espalda derecha y deja que los brazos se balanceen.",
+      "Busca un ritmo en que puedas conversar, pero notes que respiras más.",
+      "Anota los kilómetros y el tiempo al terminar."
+    ],
+    "consejo": "Un buen calzado basta. Sirve como descanso activo en los días sin gimnasio."
   }
 }

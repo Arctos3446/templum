@@ -1545,7 +1545,6 @@
       "Hombros",
       "Abdominales"
     ],
-    "idOriginal": null,
     "dibujos": []
   },
   {
@@ -1664,7 +1663,34 @@
       "Tríceps",
       "Abdominales"
     ],
-    "idOriginal": null,
+    "dibujos": []
+  },
+  {
+    "id": "maquina-de-remo",
+    "nombre": "Máquina de remo",
+    "grupo": "Cardio",
+    "equipo": "Máquina",
+    "tipo": "cardio",
+    "musculoPrincipal": "Espalda media",
+    "musculosSecundarios": [
+      "Cuádriceps",
+      "Glúteos",
+      "Dorsales",
+      "Bíceps"
+    ],
+    "dibujos": []
+  },
+  {
+    "id": "caminata",
+    "nombre": "Caminata",
+    "grupo": "Cardio",
+    "equipo": "Ninguno",
+    "tipo": "cardio",
+    "musculoPrincipal": "Cuádriceps",
+    "musculosSecundarios": [
+      "Glúteos",
+      "Pantorrillas"
+    ],
     "dibujos": []
   }
 ]

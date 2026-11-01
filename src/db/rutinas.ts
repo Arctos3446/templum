@@ -21,3 +21,10 @@ export async function guardarRutina(r: Omit<Rutina, 'id' | 'creada' | 'actualiza
 export async function eliminarRutina(id: string) {
   await db.rutinas.delete(id)
 }
+
+/** Agrega varias rutinas de una vez (por ejemplo, desde una plantilla), en el orden dado. */
+export async function agregarRutinas(lista: Omit<Rutina, 'id' | 'creada' | 'actualizada'>[]) {
+  const ahora = Date.now()
+  // La lista de rutinas se ordena por "actualizada" (más nueva primero): se restan milisegundos para respetar el orden.
+  await db.rutinas.bulkPut(lista.map((r, i) => ({ ...r, id: nuevoId(), creada: ahora - i, actualizada: ahora - i })))
+}

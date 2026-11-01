@@ -14,7 +14,11 @@
 .entreno-fila .icon-btn { margin-left: -10px; }
 .entreno-titulo { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 .entreno-k { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
-.entreno-titulo h1 { font-size: 24px; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.entreno-titulo h1 {
+  font-size: 24px; line-height: 1.2; overflow-wrap: anywhere;
+  /* Nombres largos: hasta dos líneas */
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+}
 .entreno-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .entreno-stats .v { font-size: 19px; }
 

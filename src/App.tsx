@@ -12,6 +12,7 @@ import { Ajustes } from './screens/Ajustes'
 import { Entrenamiento } from './screens/Entrenamiento'
 import { FinEntrenamiento } from './screens/FinEntrenamiento'
 import { Empezar } from './screens/Empezar'
+import { Plantilla } from './screens/Plantilla'
 import { SesionDetalle } from './screens/SesionDetalle'
 import { SesionEditor } from './screens/SesionEditor'
 import { useEnCurso } from './db/entrenamientos'
@@ -46,6 +47,7 @@ const router = createHashRouter([
       { path: '/ejercicios/:id', element: <EjercicioDetalle /> },
       { path: '/ejercicios/:id/editar', element: <EjercicioForm />, handle: enfoque },
       { path: '/empezar', element: <Empezar /> },
+      { path: '/plantilla/:id', element: <Plantilla /> },
       { path: '/entrenamiento', element: <Entrenamiento />, handle: enfoque },
       { path: '/entrenamiento/fin', element: <FinEntrenamiento />, handle: enfoque },
       { path: '/progreso', element: <Progreso /> },

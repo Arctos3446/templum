@@ -1,0 +1,255 @@
+{
+ "id": "concurrente-4-dias",
+ "nombre": "Rutina concurrente 4 días",
+ "descripcion": "Fuerza primero y cardio después. Inferior A (lunes) y Superior A (martes) son de fuerza; Inferior B (jueves) combina bisagra e hipertrofia, y Superior B (viernes) es de hipertrofia. Cada día termina con su cardio.",
+ "consejos": [
+  "Calentamiento: 5 min de cardio suave y 2 a 4 series de aproximación en el primer ejercicio.",
+  "RIR = repeticiones que te quedarían con buena técnica al terminar la serie. Va en la nota de cada ejercicio.",
+  "Semana 1 (reintroducción): haz una serie menos por ejercicio, con cargas cómodas. Semana 6: descarga, más o menos la mitad de las series.",
+  "Si un ejercicio está ocupado, usa el sustituto de la nota (en el entrenamiento: ⋯ → Reemplazar ejercicio)."
+ ],
+ "rutinas": [
+  {
+   "nombre": "Inferior A",
+   "dias": [
+    0
+   ],
+   "ejercicios": [
+    {
+     "ejercicioId": "sentadilla-con-barra",
+     "series": 4,
+     "objetivo": "4–6",
+     "descanso": 210,
+     "nota": "RIR 2–3. Sustituto: sentadilla en Smith o hack."
+    },
+    {
+     "ejercicioId": "peso-muerto-rumano",
+     "series": 3,
+     "objetivo": "6–8",
+     "descanso": 150,
+     "nota": "RIR 2. Sustituto: rumano con mancuernas."
+    },
+    {
+     "ejercicioId": "prensa-de-piernas",
+     "series": 3,
+     "objetivo": "8–12",
+     "descanso": 120,
+     "nota": "RIR 1–2. Sustituto: sentadilla hack."
+    },
+    {
+     "ejercicioId": "curl-femoral-sentado",
+     "series": 3,
+     "objetivo": "8–12",
+     "descanso": 105,
+     "nota": "RIR 0–1. Sustituto: curl femoral acostado."
+    },
+    {
+     "ejercicioId": "pantorrillas-de-pie-en-maquina",
+     "series": 3,
+     "objetivo": "8–12",
+     "descanso": 90,
+     "nota": "RIR 0–1. Sustituto: pantorrillas en prensa."
+    },
+    {
+     "ejercicioId": "rueda-abdominal",
+     "series": 2,
+     "objetivo": "8–12",
+     "descanso": 60,
+     "nota": "RIR 1–2. O plancha de 30–45 s. Sustituto: crunch en máquina."
+    },
+    {
+     "ejercicioId": "bicicleta-estatica",
+     "series": 1,
+     "objetivo": "25–30 min",
+     "descanso": 0,
+     "nota": "Zona 2: 115–134 pulsaciones; puedes hablar en frases completas (esfuerzo 3–4 de 10)."
+    }
+   ]
+  },
+  {
+   "nombre": "Superior A",
+   "dias": [
+    1
+   ],
+   "ejercicios": [
+    {
+     "ejercicioId": "press-banca",
+     "series": 4,
+     "objetivo": "4–6",
+     "descanso": 210,
+     "nota": "RIR 2–3. Sustituto: press en Smith o en máquina."
+    },
+    {
+     "ejercicioId": "dominadas",
+     "series": 4,
+     "objetivo": "5–8",
+     "descanso": 150,
+     "nota": "RIR 2. Con lastre si haces más de 10. Sustituto: jalón al pecho pesado."
+    },
+    {
+     "ejercicioId": "press-militar",
+     "series": 3,
+     "objetivo": "6–8",
+     "descanso": 150,
+     "nota": "RIR 2. Sustituto: press de hombros en máquina."
+    },
+    {
+     "ejercicioId": "remo-con-barra",
+     "series": 3,
+     "objetivo": "6–10",
+     "descanso": 120,
+     "nota": "RIR 1–2. O remo en máquina con apoyo. Sustituto: remo a una mano con mancuerna."
+    },
+    {
+     "ejercicioId": "curl-de-biceps-con-barra",
+     "series": 2,
+     "objetivo": "8–12",
+     "descanso": 90,
+     "nota": "RIR 0–1. Sustituto: curl en polea."
+    },
+    {
+     "ejercicioId": "extension-de-triceps-en-polea",
+     "series": 2,
+     "objetivo": "8–12",
+     "descanso": 90,
+     "nota": "RIR 0–1. Sustituto: press francés."
+    },
+    {
+     "ejercicioId": "correr-en-trotadora",
+     "series": 4,
+     "objetivo": "4 min",
+     "descanso": 180,
+     "nota": "Intervalos 4×4: 7 min de calentamiento progresivo antes; cada intervalo a 172–182 pulsaciones (esfuerzo 8–9 de 10). El descanso de 3 min es recuperación activa (trote suave, ~134). Al final, 3 min de vuelta a la calma. También sirve en bicicleta o máquina de remo."
+    }
+   ]
+  },
+  {
+   "nombre": "Inferior B",
+   "dias": [
+    3
+   ],
+   "ejercicios": [
+    {
+     "ejercicioId": "peso-muerto",
+     "series": 3,
+     "objetivo": "3–5",
+     "descanso": 210,
+     "nota": "RIR 2–3. Sustituto: rumano pesado con barra."
+    },
+    {
+     "ejercicioId": "sentadilla-hack-en-maquina",
+     "series": 3,
+     "objetivo": "8–10",
+     "descanso": 150,
+     "nota": "RIR 1–2. O sentadilla frontal. Sustituto: sentadilla en Smith."
+    },
+    {
+     "ejercicioId": "sentadilla-bulgara-con-mancuernas",
+     "series": 3,
+     "objetivo": "8–10",
+     "descanso": 105,
+     "nota": "RIR 1–2. Reps por pierna. Sustituto: estocadas."
+    },
+    {
+     "ejercicioId": "extension-de-cuadriceps-en-maquina",
+     "series": 2,
+     "objetivo": "10–15",
+     "descanso": 90,
+     "nota": "RIR 0–1."
+    },
+    {
+     "ejercicioId": "curl-femoral-acostado",
+     "series": 3,
+     "objetivo": "10–12",
+     "descanso": 90,
+     "nota": "RIR 0–1. Sustituto: curl femoral sentado."
+    },
+    {
+     "ejercicioId": "pantorrillas-sentado-en-maquina",
+     "series": 3,
+     "objetivo": "10–15",
+     "descanso": 60,
+     "nota": "RIR 0–1. Sustituto: pantorrillas en prensa."
+    },
+    {
+     "ejercicioId": "bicicleta-estatica",
+     "series": 1,
+     "objetivo": "25–30 min",
+     "descanso": 0,
+     "nota": "Zona 2: 115–134 pulsaciones; puedes hablar en frases completas (esfuerzo 3–4 de 10)."
+    }
+   ]
+  },
+  {
+   "nombre": "Superior B",
+   "dias": [
+    4
+   ],
+   "ejercicios": [
+    {
+     "ejercicioId": "press-inclinado-con-mancuernas",
+     "series": 3,
+     "objetivo": "8–12",
+     "descanso": 150,
+     "nota": "RIR 1–2. Sustituto: press inclinado en máquina."
+    },
+    {
+     "ejercicioId": "jalon-al-pecho-con-agarre-cerrado",
+     "series": 3,
+     "objetivo": "8–12",
+     "descanso": 120,
+     "nota": "RIR 1–2. Con agarre neutro (en V). Sustituto: dominadas asistidas."
+    },
+    {
+     "ejercicioId": "remo-sentado-en-polea",
+     "series": 3,
+     "objetivo": "10–12",
+     "descanso": 120,
+     "nota": "RIR 1. Sustituto: remo en máquina."
+    },
+    {
+     "ejercicioId": "fondos-en-paralelas",
+     "series": 2,
+     "objetivo": "8–12",
+     "descanso": 120,
+     "nota": "RIR 1. O press de pecho en máquina. Sustituto: aperturas."
+    },
+    {
+     "ejercicioId": "elevaciones-laterales",
+     "series": 3,
+     "objetivo": "12–20",
+     "descanso": 75,
+     "nota": "RIR 0–1. Sustituto: elevaciones laterales en polea."
+    },
+    {
+     "ejercicioId": "face-pull-en-polea",
+     "series": 2,
+     "objetivo": "12–15",
+     "descanso": 60,
+     "nota": "RIR 1. Sustituto: peck deck invertido."
+    },
+    {
+     "ejercicioId": "curl-inclinado-con-mancuernas",
+     "series": 2,
+     "objetivo": "10–15",
+     "descanso": 60,
+     "nota": "RIR 0–1. Sustituto: curl en polea."
+    },
+    {
+     "ejercicioId": "extension-de-triceps-tras-nuca-en-polea",
+     "series": 2,
+     "objetivo": "10–15",
+     "descanso": 60,
+     "nota": "RIR 0–1."
+    },
+    {
+     "ejercicioId": "trotar-en-trotadora",
+     "series": 1,
+     "objetivo": "35–40 min",
+     "descanso": 0,
+     "nota": "Zona 2: 115–134 pulsaciones. O elíptica o máquina de remo. 30 min si la sesión se alarga."
+    }
+   ]
+  }
+ ]
+}

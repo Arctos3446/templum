@@ -63,6 +63,8 @@ export function convertir(s: Pick<SerieEnCurso, Campo>, tipo: TipoEjercicio): Se
       if (v === null || v < 1 || v > 1000) return null
       r.reps = v
     } else if (c === 'km') {
+      // En cardio la distancia es opcional (por ejemplo, en intervalos): basta con el tiempo.
+      if (!s.km.trim()) continue
       const v = leerNumero(s.km)
       if (v === null || v > 1000) return null
       r.km = v

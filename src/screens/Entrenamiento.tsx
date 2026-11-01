@@ -142,7 +142,7 @@ export function Entrenamiento() {
     for (const c of CAMPOS[ej.tipo]) if (!lleno[c].trim() && sug[c]) lleno[c] = sug[c]!
     if (!convertir(lleno, ej.tipo)) {
       // Falta un dato: se marca la casilla y se lleva el cursor ahí.
-      const c = CAMPOS[ej.tipo].find((c) => !lleno[c].trim()) ?? CAMPOS[ej.tipo][0]
+      const c = CAMPOS[ej.tipo].find((c) => !lleno[c].trim() && !(c === 'km' && ej.tipo === 'cardio')) ?? CAMPOS[ej.tipo][0]
       setFaltan([s.uid])
       document.getElementById(`${s.uid}-${c}`)?.focus()
       return
@@ -360,9 +360,9 @@ export function Entrenamiento() {
                               enterKeyHint="done"
                               autoComplete="off"
                               aria-label={`${TITULO_CAMPO[c]} serie ${i + 1}`}
-                              aria-invalid={faltan.includes(s.uid) && !s[c].trim() && !sug[c]}
+                              aria-invalid={faltan.includes(s.uid) && !s[c].trim() && !sug[c] && !(c === 'km' && ej.tipo === 'cardio')}
                               value={s[c]}
-                              placeholder={sug[c] || (c === 'reps' && j.objetivo.length <= 6 ? j.objetivo : c === 'tiempo' ? 'm:ss' : '')}
+                              placeholder={sug[c] || (c === 'reps' && j.objetivo.length <= 6 ? j.objetivo : c === 'tiempo' ? 'm:ss' : c === 'km' ? 'opc.' : '')}
                               readOnly={s.hecha}
                               onFocus={(ev) => ev.target.select()}
                               onChange={(ev) => {
