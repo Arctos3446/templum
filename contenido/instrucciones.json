@@ -1,0 +1,1009 @@
+{
+  "press-banca": {
+    "pasos": [
+      "Acuéstate en el banco con los ojos bajo la barra y los pies firmes en el suelo.",
+      "Toma la barra un poco más abierta que el ancho de tus hombros y junta los omóplatos.",
+      "Baja la barra controlada hasta rozar la parte baja del pecho, con los codos a unos 45° del cuerpo.",
+      "Empuja hacia arriba hasta estirar los brazos, sin despegar la espalda ni los glúteos del banco."
+    ],
+    "consejo": "Si entrenas pesado, usa un compañero o los seguros del rack."
+  },
+  "press-banca-inclinado": {
+    "pasos": [
+      "Ajusta el banco a unos 30–45° y acuéstate con los pies firmes en el suelo.",
+      "Toma la barra un poco más abierta que los hombros y junta los omóplatos.",
+      "Baja la barra controlada hasta la parte alta del pecho, bajo las clavículas.",
+      "Empuja hacia arriba hasta estirar los brazos."
+    ],
+    "consejo": "Más inclinación carga más el hombro; con 30° el trabajo queda en el pecho alto."
+  },
+  "press-plano-con-mancuernas": {
+    "pasos": [
+      "Siéntate con las mancuernas sobre los muslos y acuéstate llevándolas al pecho.",
+      "Empieza con los brazos estirados sobre el pecho y las palmas mirando hacia tus pies.",
+      "Baja las mancuernas abriendo los codos a unos 45° hasta sentir el estiramiento del pecho.",
+      "Empuja hacia arriba juntándolas un poco al final, sin chocarlas."
+    ],
+    "consejo": "Al terminar, lleva las mancuernas al pecho y siéntate con ellas; no las sueltes desde arriba."
+  },
+  "press-inclinado-con-mancuernas": {
+    "pasos": [
+      "Ajusta el banco a unos 30–45° y siéntate con las mancuernas sobre los muslos.",
+      "Recuéstate llevándolas a la altura del pecho alto.",
+      "Empuja hacia arriba hasta estirar los brazos.",
+      "Baja controlado hasta sentir el estiramiento del pecho, con los codos a unos 45°."
+    ],
+    "consejo": "Mantén los omóplatos juntos y apoyados en el banco durante toda la serie."
+  },
+  "press-de-pecho-en-maquina": {
+    "pasos": [
+      "Ajusta el asiento para que los agarres queden a la altura del medio del pecho.",
+      "Siéntate con la espalda apoyada y toma los agarres.",
+      "Empuja hacia adelante hasta casi estirar los brazos.",
+      "Vuelve despacio hasta sentir el estiramiento del pecho, sin que el peso choque."
+    ],
+    "consejo": "No despegues la espalda del respaldo para empujar más."
+  },
+  "press-inclinado-en-maquina": {
+    "pasos": [
+      "Ajusta el asiento para que los agarres queden a la altura del pecho alto.",
+      "Siéntate con la espalda bien apoyada y toma los agarres.",
+      "Empuja hacia adelante y arriba hasta casi estirar los brazos.",
+      "Vuelve despacio, sin que el peso choque."
+    ],
+    "consejo": "Mantén los hombros abajo, lejos de las orejas."
+  },
+  "press-banca-en-maquina-smith": {
+    "pasos": [
+      "Pon el banco plano bajo la barra, de modo que baje a la parte baja del pecho.",
+      "Toma la barra un poco más abierta que los hombros y gírala para soltar los ganchos.",
+      "Baja controlado hasta rozar el pecho.",
+      "Empuja hasta estirar los brazos y, al terminar, gira la barra para engancharla."
+    ],
+    "consejo": "Pon los topes de seguridad un poco por encima de tu pecho."
+  },
+  "press-inclinado-en-maquina-smith": {
+    "pasos": [
+      "Pon el banco a unos 30–45° bajo la barra, de modo que baje al pecho alto.",
+      "Toma la barra un poco más abierta que los hombros y suelta los ganchos.",
+      "Baja controlado hasta rozar el pecho alto.",
+      "Empuja hasta estirar los brazos y vuelve a enganchar la barra al terminar."
+    ],
+    "consejo": "Revisa antes de empezar dónde baja la barra; si cae en el cuello, mueve el banco."
+  },
+  "aperturas-en-maquina-peck-deck": {
+    "pasos": [
+      "Ajusta el asiento para que los agarres queden a la altura del pecho.",
+      "Siéntate con la espalda apoyada y toma los agarres con los codos un poco doblados.",
+      "Junta los brazos al frente apretando el pecho.",
+      "Vuelve despacio hasta sentir el estiramiento, sin ir más atrás de la línea de los hombros."
+    ],
+    "consejo": "Los codos se quedan igual de doblados todo el tiempo; el movimiento sale del hombro."
+  },
+  "fondos-en-paralelas": {
+    "pasos": [
+      "Sube a las paralelas con los brazos estirados y el cuerpo apenas inclinado hacia adelante.",
+      "Baja doblando los codos hasta que los brazos queden más o menos paralelos al suelo.",
+      "Empuja hacia arriba hasta estirar los brazos."
+    ],
+    "consejo": "Inclinarte hacia adelante trabaja más el pecho. Si te duele el hombro, no bajes tanto."
+  },
+  "flexiones": {
+    "pasos": [
+      "Apoya las manos en el suelo un poco más abiertas que los hombros y estira las piernas.",
+      "Aprieta el abdomen y los glúteos para que el cuerpo quede recto como una tabla.",
+      "Baja hasta que el pecho casi toque el suelo, con los codos a unos 45° del cuerpo.",
+      "Empuja hasta estirar los brazos."
+    ],
+    "consejo": "Si cuesta, apoya las rodillas o las manos en un banco, pero mantén el cuerpo recto."
+  },
+  "flexiones-abiertas": {
+    "pasos": [
+      "Apoya las manos bastante más abiertas que los hombros y estira las piernas.",
+      "Mantén el cuerpo recto, con el abdomen y los glúteos apretados.",
+      "Baja hasta que el pecho casi toque el suelo.",
+      "Empuja hasta estirar los brazos."
+    ],
+    "consejo": "No abras tanto que sientas molestia en los hombros."
+  },
+  "flexiones-inclinadas": {
+    "pasos": [
+      "Apoya las manos en un banco o una superficie firme, un poco más abiertas que los hombros.",
+      "Estira las piernas hacia atrás y mantén el cuerpo recto.",
+      "Baja el pecho hacia el borde del banco.",
+      "Empuja hasta estirar los brazos."
+    ],
+    "consejo": "Mientras más alta la superficie, más fácil. Sirve para avanzar hacia la flexión normal."
+  },
+  "flexiones-declinadas": {
+    "pasos": [
+      "Apoya los pies en un banco o un cajón y las manos en el suelo, un poco más abiertas que los hombros.",
+      "Mantén el cuerpo recto, sin dejar caer la cadera.",
+      "Baja hasta que el pecho casi toque el suelo.",
+      "Empuja hasta estirar los brazos."
+    ],
+    "consejo": "Con los pies más altos trabaja más el pecho alto y el hombro."
+  },
+  "dominadas": {
+    "pasos": [
+      "Cuélgate de la barra con las palmas mirando hacia adelante, un poco más abiertas que los hombros.",
+      "Baja los hombros y aprieta el abdomen antes de subir.",
+      "Sube llevando el pecho hacia la barra hasta que el mentón la pase.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "Sube sin balancearte ni patalear; si no salen todavía, usa las dominadas asistidas."
+  },
+  "dominadas-supinas": {
+    "pasos": [
+      "Cuélgate de la barra con las palmas mirando hacia ti, al ancho de los hombros.",
+      "Baja los hombros y aprieta el abdomen.",
+      "Sube hasta que el mentón pase la barra.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "Este agarre usa más los bíceps, así que suele salir más fácil que la dominada normal."
+  },
+  "dominadas-con-lastre": {
+    "pasos": [
+      "Cuelga el peso de un cinturón de lastre o sujeta una mancuerna entre los pies.",
+      "Cuélgate de la barra con las palmas hacia adelante, un poco más abiertas que los hombros.",
+      "Sube hasta que el mentón pase la barra.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "Agrega peso solo cuando hagas unas 8 dominadas limpias sin lastre."
+  },
+  "dominadas-asistidas": {
+    "pasos": [
+      "Amarra la banda elástica a la barra y apoya en ella una rodilla o los pies.",
+      "Toma la barra con las palmas hacia adelante, un poco más abiertas que los hombros.",
+      "Sube hasta que el mentón pase la barra.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "Cuando te resulte fácil, cambia a una banda más delgada."
+  },
+  "jalon-al-pecho": {
+    "pasos": [
+      "Ajusta el rodillo para que trabe tus muslos y toma la barra más abierta que los hombros.",
+      "Siéntate con el pecho alto y la espalda apenas inclinada hacia atrás.",
+      "Tira la barra hacia la parte alta del pecho llevando los codos hacia abajo.",
+      "Sube controlado hasta estirar los brazos."
+    ],
+    "consejo": "Nunca tires la barra por detrás de la nuca."
+  },
+  "jalon-al-pecho-con-agarre-cerrado": {
+    "pasos": [
+      "Pon el agarre en V en la polea y traba los muslos bajo el rodillo.",
+      "Siéntate con el pecho alto y los brazos estirados.",
+      "Tira el agarre hacia el pecho llevando los codos pegados al cuerpo.",
+      "Sube controlado hasta estirar los brazos."
+    ],
+    "consejo": "Piensa en bajar los codos, no en tirar con las manos."
+  },
+  "jalon-supino": {
+    "pasos": [
+      "Toma la barra con las palmas mirando hacia ti, al ancho de los hombros.",
+      "Siéntate con los muslos trabados y el pecho alto.",
+      "Tira la barra hacia la parte alta del pecho.",
+      "Sube controlado hasta estirar los brazos."
+    ],
+    "consejo": "No te eches muy atrás para bajar más peso."
+  },
+  "pullover-en-polea": {
+    "pasos": [
+      "Ponte de pie frente a la polea alta, con una barra recta o una cuerda.",
+      "Inclínate un poco hacia adelante con los brazos estirados al frente y los codos apenas doblados.",
+      "Baja la barra en arco hasta los muslos, sin doblar más los codos.",
+      "Vuelve despacio hasta la altura de la cabeza."
+    ],
+    "consejo": "El movimiento sale del hombro; los brazos se quedan casi rectos."
+  },
+  "remo-con-barra": {
+    "pasos": [
+      "Toma la barra al ancho de los hombros, con las palmas hacia ti y las rodillas un poco dobladas.",
+      "Inclina el torso hacia adelante desde la cadera, con la espalda recta.",
+      "Tira la barra hacia el abdomen juntando los omóplatos.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "La espalda no se curva ni sube con cada repetición."
+  },
+  "remo-supino-con-barra": {
+    "pasos": [
+      "Toma la barra con las palmas mirando hacia adelante, al ancho de los hombros.",
+      "Inclina el torso desde la cadera, con la espalda recta y las rodillas un poco dobladas.",
+      "Tira la barra hacia la parte baja del abdomen con los codos pegados al cuerpo.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "Mantén la espalda quieta; si te balanceas, baja el peso."
+  },
+  "remo-a-una-mano-con-mancuerna": {
+    "pasos": [
+      "Apoya una rodilla y la mano del mismo lado en un banco plano.",
+      "Toma la mancuerna con la otra mano, con el brazo estirado y la espalda recta.",
+      "Tira la mancuerna hacia la cadera llevando el codo hacia atrás.",
+      "Baja controlado hasta estirar el brazo y repite con el otro lado."
+    ],
+    "consejo": "No gires el torso para subir la mancuerna."
+  },
+  "remo-con-mancuernas": {
+    "pasos": [
+      "Toma una mancuerna en cada mano, con las rodillas un poco dobladas.",
+      "Inclina el torso hacia adelante desde la cadera, con la espalda recta.",
+      "Tira las mancuernas hacia la cadera juntando los omóplatos.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "Mira al suelo un poco adelante para mantener el cuello alineado."
+  },
+  "remo-con-pecho-apoyado-en-banco-inclinado": {
+    "pasos": [
+      "Ajusta un banco a unos 30–45° y acuéstate boca abajo con el pecho apoyado.",
+      "Deja colgar las mancuernas con los brazos estirados.",
+      "Tira las mancuernas hacia atrás juntando los omóplatos.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "Al tener el pecho apoyado, la espalda baja descansa; ideal si te molesta la zona lumbar."
+  },
+  "remo-sentado-en-polea": {
+    "pasos": [
+      "Siéntate con los pies en los apoyos, las rodillas un poco dobladas y toma el agarre.",
+      "Siéntate erguido, con el pecho alto y los brazos estirados.",
+      "Tira el agarre hacia el abdomen juntando los omóplatos.",
+      "Vuelve controlado hasta estirar los brazos, sin encorvar la espalda."
+    ],
+    "consejo": "El torso se queda casi quieto; no te balancees hacia atrás."
+  },
+  "remo-en-t": {
+    "pasos": [
+      "Ponte sobre la barra con los pies a los lados y toma el agarre.",
+      "Inclina el torso desde la cadera, con la espalda recta y las rodillas un poco dobladas.",
+      "Tira el agarre hacia el pecho juntando los omóplatos.",
+      "Baja controlado hasta estirar los brazos."
+    ],
+    "consejo": "Si la espalda se curva, baja el peso."
+  },
+  "remo-en-maquina": {
+    "pasos": [
+      "Ajusta el asiento y el apoyo del pecho para que los agarres queden a la altura del pecho.",
+      "Siéntate con el pecho apoyado y toma los agarres.",
+      "Tira hacia atrás llevando los codos pegados al cuerpo.",
+      "Vuelve despacio hasta estirar los brazos."
+    ],
+    "consejo": "Mantén el pecho pegado al apoyo durante toda la serie."
+  },
+  "remo-alto-en-maquina": {
+    "pasos": [
+      "Ajusta el asiento para que los agarres queden a la altura de los hombros.",
+      "Siéntate con el pecho apoyado y toma los agarres.",
+      "Tira hacia atrás con los codos abiertos, a la altura de los hombros.",
+      "Vuelve despacio hasta estirar los brazos."
+    ],
+    "consejo": "Junta los omóplatos al final de cada repetición."
+  },
+  "peso-muerto": {
+    "pasos": [
+      "Ponte con la barra sobre la mitad del pie y los pies al ancho de la cadera.",
+      "Baja la cadera y toma la barra justo por fuera de las piernas, con la espalda recta y el pecho alto.",
+      "Aprieta el abdomen y sube empujando el suelo con los pies, con la barra pegada a las piernas.",
+      "Al llegar arriba estira la cadera y baja la barra por el mismo camino."
+    ],
+    "consejo": "La espalda nunca se curva. Si pasa, el peso es demasiado."
+  },
+  "peso-muerto-desde-rack": {
+    "pasos": [
+      "Pon la barra en los soportes del rack, a la altura de las rodillas o un poco más abajo.",
+      "Tómala justo por fuera de las piernas, con la espalda recta y el pecho alto.",
+      "Sube estirando la cadera, con la barra pegada a los muslos.",
+      "Baja controlado hasta apoyarla de nuevo en los soportes."
+    ],
+    "consejo": "Sirve para practicar la parte final del peso muerto con menos carga en la espalda baja."
+  },
+  "hiperextensiones-lumbares": {
+    "pasos": [
+      "Ajusta el banco para que la cadera quede justo en el borde del apoyo y traba los pies.",
+      "Cruza los brazos sobre el pecho, con el cuerpo recto.",
+      "Baja el torso doblándote desde la cadera, con la espalda recta.",
+      "Sube hasta que el cuerpo quede en línea recta, sin echarte hacia atrás."
+    ],
+    "consejo": "No subas más allá de la línea recta; arquear la espalda no suma."
+  },
+  "encogimientos-con-barra": {
+    "pasos": [
+      "Toma la barra con las palmas hacia ti, al ancho de los hombros, con los brazos estirados.",
+      "Sube los hombros hacia las orejas lo más alto que puedas.",
+      "Aguanta un segundo arriba.",
+      "Baja despacio."
+    ],
+    "consejo": "Sube y baja en línea recta, sin girar los hombros."
+  },
+  "encogimientos-con-mancuernas": {
+    "pasos": [
+      "Toma una mancuerna en cada mano a los lados del cuerpo.",
+      "Sube los hombros hacia las orejas lo más alto que puedas.",
+      "Aguanta un segundo arriba.",
+      "Baja despacio."
+    ],
+    "consejo": "Los brazos se quedan estirados; no dobles los codos."
+  },
+  "sentadilla-con-barra": {
+    "pasos": [
+      "Apoya la barra sobre la parte alta de la espalda, no en el cuello, y sácala del rack.",
+      "Separa los pies un poco más que la cadera, con las puntas un poco hacia afuera.",
+      "Baja llevando la cadera atrás y abajo, con las rodillas siguiendo la dirección de los pies.",
+      "Baja hasta que los muslos queden al menos paralelos al suelo y sube empujando con todo el pie."
+    ],
+    "consejo": "Pon los seguros del rack a la altura de tu sentadilla más baja."
+  },
+  "sentadilla-en-maquina-smith": {
+    "pasos": [
+      "Apoya la barra sobre la parte alta de la espalda y suelta los ganchos.",
+      "Pon los pies un poco adelante de la barra, al ancho de los hombros.",
+      "Baja hasta que los muslos queden paralelos al suelo.",
+      "Sube empujando con todo el pie y engancha la barra al terminar."
+    ],
+    "consejo": "Ajusta los topes de seguridad antes de empezar."
+  },
+  "sentadilla-hack-en-maquina": {
+    "pasos": [
+      "Apoya la espalda y los hombros en las almohadillas, con los pies al ancho de los hombros.",
+      "Suelta los seguros de la máquina.",
+      "Baja doblando las rodillas hasta que los muslos queden paralelos a la plataforma.",
+      "Sube empujando con todo el pie, sin estirar del todo las rodillas."
+    ],
+    "consejo": "Los pies más arriba en la plataforma trabajan más glúteos; más abajo, más cuádriceps."
+  },
+  "sentadilla-libre": {
+    "pasos": [
+      "Ponte de pie con los pies un poco más abiertos que la cadera.",
+      "Estira los brazos al frente para equilibrarte.",
+      "Baja llevando la cadera atrás y abajo, con el pecho alto.",
+      "Baja hasta que los muslos queden paralelos al suelo y sube."
+    ],
+    "consejo": "Los talones siempre apoyados y las rodillas en la dirección de los pies."
+  },
+  "sentadilla-con-salto": {
+    "pasos": [
+      "Ponte de pie con los pies al ancho de los hombros.",
+      "Baja a una sentadilla hasta que los muslos queden casi paralelos al suelo.",
+      "Salta hacia arriba con fuerza, ayudándote con los brazos.",
+      "Cae suave sobre la punta de los pies y baja directo a la siguiente sentadilla."
+    ],
+    "consejo": "Cae con las rodillas un poco dobladas para amortiguar."
+  },
+  "sentadilla-bulgara-con-mancuernas": {
+    "pasos": [
+      "Ponte de espaldas a un banco, con una mancuerna en cada mano.",
+      "Apoya el empeine de un pie en el banco y adelanta el otro unos dos pasos.",
+      "Baja doblando la rodilla de adelante hasta que el muslo quede paralelo al suelo.",
+      "Sube empujando con el talón de adelante. Termina las repeticiones y cambia de pierna."
+    ],
+    "consejo": "El peso va en la pierna de adelante; la de atrás solo equilibra."
+  },
+  "prensa-de-piernas": {
+    "pasos": [
+      "Siéntate con la espalda bien apoyada y los pies en la plataforma, al ancho de los hombros.",
+      "Suelta los seguros y estira las piernas sin trabar las rodillas.",
+      "Baja la plataforma doblando las rodillas hasta unos 90°.",
+      "Empuja con todo el pie hasta casi estirar las piernas."
+    ],
+    "consejo": "Si la cadera se despega del asiento al bajar, no bajes tanto."
+  },
+  "extension-de-cuadriceps-en-maquina": {
+    "pasos": [
+      "Ajusta el respaldo para que la rodilla quede alineada con el eje de la máquina.",
+      "Pon el rodillo sobre los tobillos y toma los agarres del asiento.",
+      "Estira las piernas hasta arriba y aprieta un segundo.",
+      "Baja despacio, sin que el peso choque."
+    ],
+    "consejo": "Sube sin dar tirones."
+  },
+  "curl-femoral-acostado": {
+    "pasos": [
+      "Acuéstate boca abajo con las rodillas justo en el borde del banco.",
+      "Pon el rodillo sobre los tobillos, por encima del talón, y toma los agarres.",
+      "Dobla las rodillas llevando los talones hacia los glúteos.",
+      "Baja despacio hasta casi estirar las piernas."
+    ],
+    "consejo": "La cadera se queda pegada al banco todo el tiempo."
+  },
+  "curl-femoral-sentado": {
+    "pasos": [
+      "Ajusta la máquina para que la rodilla quede alineada con su eje.",
+      "Pon el rodillo bajo los tobillos y baja el apoyo sobre los muslos.",
+      "Dobla las rodillas llevando los talones hacia abajo y atrás.",
+      "Vuelve despacio hasta casi estirar las piernas."
+    ],
+    "consejo": "Mantén la espalda apoyada en el respaldo."
+  },
+  "curl-femoral-de-pie": {
+    "pasos": [
+      "Ponte de pie en la máquina con el rodillo detrás del tobillo y apoya los antebrazos.",
+      "Dobla la rodilla llevando el talón hacia el glúteo.",
+      "Aprieta un segundo arriba.",
+      "Baja despacio. Termina las repeticiones y cambia de pierna."
+    ],
+    "consejo": "No arquees la espalda para subir más el talón."
+  },
+  "peso-muerto-rumano": {
+    "pasos": [
+      "Ponte de pie con la barra en las manos, al ancho de los hombros, y las rodillas un poco dobladas.",
+      "Lleva la cadera hacia atrás y deja bajar la barra pegada a las piernas, con la espalda recta.",
+      "Baja hasta sentir el estiramiento atrás de los muslos, más o menos bajo las rodillas.",
+      "Sube empujando la cadera hacia adelante y aprieta los glúteos."
+    ],
+    "consejo": "Las rodillas casi no se mueven; todo sale de llevar la cadera atrás."
+  },
+  "peso-muerto-rumano-con-mancuernas": {
+    "pasos": [
+      "Ponte de pie con una mancuerna en cada mano frente a los muslos y las rodillas un poco dobladas.",
+      "Lleva la cadera hacia atrás y deja bajar las mancuernas pegadas a las piernas.",
+      "Baja hasta sentir el estiramiento atrás de los muslos, con la espalda recta.",
+      "Sube empujando la cadera hacia adelante y aprieta los glúteos."
+    ],
+    "consejo": "Si la espalda empieza a curvarse, ahí termina tu bajada."
+  },
+  "peso-muerto-sumo": {
+    "pasos": [
+      "Separa los pies bastante más que los hombros, con las puntas hacia afuera.",
+      "Baja la cadera y toma la barra por dentro de las piernas, con los brazos rectos.",
+      "Abre las rodillas hacia afuera, saca pecho y sube empujando el suelo.",
+      "Estira la cadera arriba y baja la barra por el mismo camino."
+    ],
+    "consejo": "La espalda queda más vertical que en el peso muerto normal, pero igual de recta."
+  },
+  "estocadas-con-mancuernas": {
+    "pasos": [
+      "Ponte de pie con una mancuerna en cada mano a los lados del cuerpo.",
+      "Da un paso largo hacia adelante.",
+      "Baja hasta que la rodilla de atrás casi toque el suelo y ambas rodillas queden en 90°.",
+      "Empuja con el pie de adelante para volver y cambia de pierna."
+    ],
+    "consejo": "Mantén el torso derecho y la rodilla de adelante sobre el pie, sin irse hacia adentro."
+  },
+  "hip-thrust-con-barra": {
+    "pasos": [
+      "Siéntate en el suelo con la parte alta de la espalda apoyada en el borde de un banco.",
+      "Pasa la barra sobre la cadera (usa una almohadilla) y apoya los pies en el suelo, al ancho de la cadera.",
+      "Sube la cadera hasta que el cuerpo quede recto de los hombros a las rodillas.",
+      "Aprieta los glúteos un segundo y baja controlado."
+    ],
+    "consejo": "Arriba, las canillas quedan verticales y el mentón hacia el pecho."
+  },
+  "puente-de-gluteos-con-barra": {
+    "pasos": [
+      "Acuéstate boca arriba en el suelo con las rodillas dobladas y los pies apoyados.",
+      "Pon la barra sobre la cadera, con una almohadilla.",
+      "Sube la cadera apretando los glúteos hasta que el cuerpo quede recto de los hombros a las rodillas.",
+      "Baja controlado hasta casi tocar el suelo."
+    ],
+    "consejo": "Empuja con los talones, no con las puntas."
+  },
+  "abductores-en-maquina": {
+    "pasos": [
+      "Siéntate con la espalda apoyada y las almohadillas por fuera de las rodillas.",
+      "Abre las piernas hacia afuera lo más que puedas.",
+      "Aguanta un segundo.",
+      "Vuelve despacio, sin que el peso choque."
+    ],
+    "consejo": "Inclinarte un poco hacia adelante trabaja más los glúteos."
+  },
+  "aductores-en-maquina": {
+    "pasos": [
+      "Siéntate con la espalda apoyada y las almohadillas por dentro de las rodillas.",
+      "Ajusta la abertura inicial hasta donde te sientas cómodo.",
+      "Junta las piernas apretando la parte interna de los muslos.",
+      "Vuelve despacio a la posición abierta."
+    ],
+    "consejo": "No abras más de lo que te permite tu flexibilidad."
+  },
+  "pantorrillas-de-pie-en-maquina": {
+    "pasos": [
+      "Pon los hombros bajo las almohadillas y la punta de los pies en el borde del escalón.",
+      "Deja bajar los talones hasta sentir el estiramiento.",
+      "Sube en punta de pies lo más alto que puedas.",
+      "Aguanta un segundo arriba y baja despacio."
+    ],
+    "consejo": "Las rodillas se quedan rectas, sin trabarlas."
+  },
+  "pantorrillas-sentado-en-maquina": {
+    "pasos": [
+      "Siéntate con la punta de los pies en el apoyo y las almohadillas sobre los muslos, cerca de las rodillas.",
+      "Suelta el seguro y deja bajar los talones hasta sentir el estiramiento.",
+      "Sube en punta de pies lo más alto que puedas.",
+      "Aguanta un segundo arriba y baja despacio."
+    ],
+    "consejo": "Sentado se trabaja más el músculo profundo de la pantorrilla (el sóleo)."
+  },
+  "pantorrillas-en-prensa": {
+    "pasos": [
+      "Siéntate en la prensa y apoya solo la punta de los pies en el borde bajo de la plataforma.",
+      "Estira las piernas sin trabar las rodillas. No sueltes los seguros si tu máquina lo permite.",
+      "Empuja la plataforma con la punta de los pies.",
+      "Vuelve despacio hasta sentir el estiramiento."
+    ],
+    "consejo": "Usa poco peso al principio; que el pie no se resbale de la plataforma."
+  },
+  "press-militar": {
+    "pasos": [
+      "De pie, toma la barra un poco más abierta que los hombros y apóyala en la parte alta del pecho.",
+      "Aprieta el abdomen y los glúteos.",
+      "Empuja la barra hacia arriba, moviendo apenas la cabeza hacia atrás para que pase.",
+      "Termina con los brazos estirados sobre la cabeza y baja controlado al pecho."
+    ],
+    "consejo": "No arquees la espalda baja para empujar."
+  },
+  "press-militar-sentado": {
+    "pasos": [
+      "Ajusta el banco con el respaldo vertical, bajo la barra del rack.",
+      "Toma la barra un poco más abierta que los hombros y bájala a la parte alta del pecho.",
+      "Empuja hacia arriba hasta estirar los brazos.",
+      "Baja controlado al pecho."
+    ],
+    "consejo": "Mantén la espalda apoyada en el respaldo."
+  },
+  "press-de-hombros-con-mancuernas": {
+    "pasos": [
+      "Siéntate en un banco con respaldo vertical y sube las mancuernas a la altura de los hombros.",
+      "Pon las palmas mirando hacia adelante.",
+      "Empuja hacia arriba hasta casi estirar los brazos.",
+      "Baja controlado hasta la altura de las orejas."
+    ],
+    "consejo": "Los codos van un poco hacia adelante, no totalmente abiertos a los lados."
+  },
+  "press-de-hombros-en-maquina": {
+    "pasos": [
+      "Ajusta el asiento para que los agarres queden a la altura de los hombros.",
+      "Siéntate con la espalda apoyada y toma los agarres.",
+      "Empuja hacia arriba hasta casi estirar los brazos.",
+      "Baja despacio, sin que el peso choque."
+    ],
+    "consejo": "No despegues la espalda del respaldo."
+  },
+  "press-de-hombros-en-maquina-smith": {
+    "pasos": [
+      "Pon un banco con respaldo vertical bajo la barra, de modo que baje frente a tu cara.",
+      "Toma la barra un poco más abierta que los hombros y suelta los ganchos.",
+      "Baja controlado hasta la altura del mentón.",
+      "Empuja hasta estirar los brazos y engancha la barra al terminar."
+    ],
+    "consejo": "La barra baja por delante de la cara, nunca por detrás de la nuca."
+  },
+  "flexiones-en-parada-de-manos": {
+    "pasos": [
+      "Apoya las manos en el suelo a unos 15 cm de la pared, al ancho de los hombros.",
+      "Sube las piernas a la pared hasta quedar cabeza abajo con los brazos estirados.",
+      "Baja doblando los codos hasta que la cabeza casi toque el suelo.",
+      "Empuja hasta estirar los brazos."
+    ],
+    "consejo": "Es avanzado. Si recién empiezas, practica primero con los pies sobre un banco y la cadera alta."
+  },
+  "elevaciones-laterales": {
+    "pasos": [
+      "De pie, toma una mancuerna en cada mano a los lados del cuerpo.",
+      "Con los codos un poco doblados, sube los brazos hacia los lados.",
+      "Sube hasta la altura de los hombros, con los meñiques apenas más arriba que los pulgares.",
+      "Baja despacio."
+    ],
+    "consejo": "Usa poco peso; si tienes que balancearte, es demasiado."
+  },
+  "elevaciones-laterales-en-polea": {
+    "pasos": [
+      "Ponte de lado a una polea baja y toma el agarre con la mano más lejana.",
+      "Con el codo un poco doblado, sube el brazo hacia el lado.",
+      "Sube hasta la altura del hombro.",
+      "Baja despacio. Termina las repeticiones y cambia de lado."
+    ],
+    "consejo": "La polea mantiene la tensión abajo, donde la mancuerna no pesa."
+  },
+  "peck-deck-invertido": {
+    "pasos": [
+      "Siéntate en la máquina de aperturas mirando hacia el respaldo, con el pecho apoyado.",
+      "Toma los agarres con los brazos estirados al frente, a la altura de los hombros.",
+      "Abre los brazos hacia atrás hasta que queden en línea con los hombros.",
+      "Vuelve despacio al frente."
+    ],
+    "consejo": "Trabaja la parte de atrás del hombro; no juntes los omóplatos de más."
+  },
+  "face-pull-en-polea": {
+    "pasos": [
+      "Pon una cuerda en la polea a la altura de la cara y tómala con las palmas mirándose.",
+      "Da un paso atrás con los brazos estirados.",
+      "Tira la cuerda hacia la frente, abriendo las manos a los lados de la cara.",
+      "Aguanta un segundo y vuelve despacio."
+    ],
+    "consejo": "Los codos van altos, a la altura de los hombros."
+  },
+  "curl-de-biceps-con-barra": {
+    "pasos": [
+      "De pie, toma la barra al ancho de los hombros con las palmas mirando hacia adelante.",
+      "Pega los codos a los costados.",
+      "Sube la barra doblando los codos hasta la altura del pecho.",
+      "Baja despacio hasta estirar los brazos."
+    ],
+    "consejo": "No te balancees con la espalda; solo se mueven los antebrazos."
+  },
+  "curl-de-biceps-con-barra-z": {
+    "pasos": [
+      "Toma la barra Z por las curvas de afuera, con las palmas hacia adelante.",
+      "Pega los codos a los costados.",
+      "Sube la barra doblando los codos.",
+      "Baja despacio hasta estirar los brazos."
+    ],
+    "consejo": "La barra Z es más amable con las muñecas que la recta."
+  },
+  "curl-de-biceps-con-mancuernas": {
+    "pasos": [
+      "De pie o sentado, toma una mancuerna en cada mano a los lados.",
+      "Sube una o ambas girando la palma hacia arriba a medida que subes.",
+      "Aprieta el bíceps arriba.",
+      "Baja despacio hasta estirar el brazo."
+    ],
+    "consejo": "Los codos se quedan pegados al cuerpo, sin irse hacia adelante."
+  },
+  "curl-martillo": {
+    "pasos": [
+      "Toma una mancuerna en cada mano con las palmas mirando hacia el cuerpo.",
+      "Pega los codos a los costados.",
+      "Sube las mancuernas sin girar las muñecas, como si sostuvieras un martillo.",
+      "Baja despacio."
+    ],
+    "consejo": "Además del bíceps, trabaja el antebrazo."
+  },
+  "curl-inclinado-con-mancuernas": {
+    "pasos": [
+      "Ajusta un banco a unos 45–60° y recuéstate con una mancuerna en cada mano.",
+      "Deja colgar los brazos estirados, un poco por detrás del cuerpo.",
+      "Sube las mancuernas girando las palmas hacia arriba.",
+      "Baja despacio hasta estirar los brazos."
+    ],
+    "consejo": "Usa menos peso que en el curl de pie; el estiramiento lo hace más difícil."
+  },
+  "curl-en-banco-scott": {
+    "pasos": [
+      "Siéntate en el banco Scott con la parte de atrás de los brazos apoyada en el cojín.",
+      "Toma la barra con las palmas hacia arriba.",
+      "Sube la barra doblando los codos.",
+      "Baja despacio, casi hasta estirar los brazos."
+    ],
+    "consejo": "No estires los codos de golpe abajo; ahí el bíceps está más expuesto."
+  },
+  "curl-scott-en-maquina": {
+    "pasos": [
+      "Ajusta el asiento para que los codos queden alineados con el eje de la máquina.",
+      "Apoya la parte de atrás de los brazos en el cojín y toma los agarres.",
+      "Sube doblando los codos.",
+      "Baja despacio, sin que el peso choque."
+    ],
+    "consejo": "Los codos no se despegan del cojín."
+  },
+  "curl-de-biceps-en-polea": {
+    "pasos": [
+      "Ponte frente a una polea baja con una barra recta o Z.",
+      "Toma la barra con las palmas hacia arriba y pega los codos a los costados.",
+      "Sube la barra doblando los codos.",
+      "Baja despacio hasta estirar los brazos."
+    ],
+    "consejo": "Da un paso atrás para que el cable tire durante todo el recorrido."
+  },
+  "curl-martillo-en-polea-con-cuerda": {
+    "pasos": [
+      "Pon una cuerda en la polea baja y tómala con las palmas mirándose.",
+      "Pega los codos a los costados.",
+      "Sube la cuerda doblando los codos, sin girar las muñecas.",
+      "Baja despacio."
+    ],
+    "consejo": "Mantén las muñecas firmes y rectas."
+  },
+  "curl-invertido-con-barra": {
+    "pasos": [
+      "Toma la barra con las palmas mirando hacia abajo, al ancho de los hombros.",
+      "Pega los codos a los costados.",
+      "Sube la barra doblando los codos.",
+      "Baja despacio."
+    ],
+    "consejo": "Usa menos peso que en el curl normal; trabaja mucho el antebrazo."
+  },
+  "extension-de-triceps-en-polea": {
+    "pasos": [
+      "Ponte frente a una polea alta con una barra recta o en V y tómala con las palmas hacia abajo.",
+      "Pega los codos a los costados, con los antebrazos doblados.",
+      "Empuja la barra hacia abajo hasta estirar los brazos.",
+      "Sube despacio hasta que los antebrazos queden paralelos al suelo."
+    ],
+    "consejo": "Los codos no se mueven; solo bajan y suben los antebrazos."
+  },
+  "extension-de-triceps-en-polea-con-cuerda": {
+    "pasos": [
+      "Pon una cuerda en la polea alta y tómala con las palmas mirándose.",
+      "Pega los codos a los costados.",
+      "Empuja hacia abajo y, al final, separa las puntas de la cuerda hacia los lados.",
+      "Sube despacio."
+    ],
+    "consejo": "Abrir la cuerda al final aprieta más el tríceps."
+  },
+  "extension-de-triceps-tras-nuca-en-polea": {
+    "pasos": [
+      "Pon una cuerda en la polea baja o media, date vuelta y llévala detrás de la cabeza.",
+      "Inclínate un poco hacia adelante, con los codos apuntando hacia arriba, junto a la cabeza.",
+      "Estira los brazos hacia adelante y arriba.",
+      "Vuelve despacio doblando los codos."
+    ],
+    "consejo": "Los codos se quedan quietos y cerca de la cabeza."
+  },
+  "press-frances-con-barra-z": {
+    "pasos": [
+      "Acuéstate en un banco plano con la barra Z sobre el pecho y los brazos estirados.",
+      "Baja la barra doblando solo los codos, hacia la frente o un poco más atrás.",
+      "Mantén los codos apuntando al techo.",
+      "Sube estirando los brazos."
+    ],
+    "consejo": "Baja despacio y con control: la barra pasa cerca de tu cabeza."
+  },
+  "press-frances-con-mancuernas": {
+    "pasos": [
+      "Acuéstate en un banco plano con una mancuerna en cada mano y los brazos estirados.",
+      "Pon las palmas mirándose.",
+      "Baja las mancuernas doblando solo los codos, a los lados de la cabeza.",
+      "Sube estirando los brazos."
+    ],
+    "consejo": "Los codos apuntan al techo y no se abren hacia los lados."
+  },
+  "extension-de-triceps-en-maquina": {
+    "pasos": [
+      "Ajusta el asiento para que los codos queden alineados con el eje de la máquina.",
+      "Apoya los brazos en el cojín y toma los agarres.",
+      "Empuja hasta estirar los brazos.",
+      "Vuelve despacio, sin que el peso choque."
+    ],
+    "consejo": "Mantén la espalda apoyada."
+  },
+  "fondos-para-triceps": {
+    "pasos": [
+      "Siéntate en el borde de un banco y apoya las manos a los lados de la cadera.",
+      "Saca la cadera del banco, con las piernas estiradas o dobladas.",
+      "Baja doblando los codos hacia atrás hasta unos 90°.",
+      "Empuja hasta estirar los brazos."
+    ],
+    "consejo": "Mantén la espalda cerca del banco. Si te duele el hombro, no bajes tanto."
+  },
+  "flexiones-cerradas": {
+    "pasos": [
+      "Apoya las manos en el suelo bajo los hombros o un poco más juntas.",
+      "Estira las piernas y mantén el cuerpo recto.",
+      "Baja con los codos pegados al cuerpo hasta que el pecho casi toque el suelo.",
+      "Empuja hasta estirar los brazos."
+    ],
+    "consejo": "Si te molestan las muñecas, no juntes tanto las manos."
+  },
+  "curl-de-muneca-con-barra": {
+    "pasos": [
+      "Siéntate con los antebrazos apoyados sobre los muslos y las muñecas por fuera de las rodillas.",
+      "Toma la barra con las palmas hacia arriba.",
+      "Deja bajar la barra doblando las muñecas.",
+      "Sube la barra solo con las muñecas, lo más alto que puedas."
+    ],
+    "consejo": "Movimiento corto y controlado; los antebrazos no se despegan."
+  },
+  "curl-de-muneca-invertido-con-barra": {
+    "pasos": [
+      "Siéntate con los antebrazos apoyados sobre los muslos y las muñecas por fuera de las rodillas.",
+      "Toma la barra con las palmas hacia abajo.",
+      "Deja bajar la barra doblando las muñecas.",
+      "Sube la barra solo con las muñecas."
+    ],
+    "consejo": "Usa menos peso que en el curl de muñeca normal."
+  },
+  "abdominales-crunch": {
+    "pasos": [
+      "Acuéstate boca arriba con las rodillas dobladas y los pies en el suelo.",
+      "Pon las manos en el pecho o tocando suavemente las sienes.",
+      "Despega los hombros del suelo contrayendo el abdomen.",
+      "Baja despacio."
+    ],
+    "consejo": "No tires del cuello con las manos; la fuerza sale del abdomen."
+  },
+  "abdominales-completos-sit-up": {
+    "pasos": [
+      "Acuéstate boca arriba con las rodillas dobladas y los pies apoyados (o trabados).",
+      "Cruza los brazos sobre el pecho.",
+      "Sube el torso completo hasta quedar sentado.",
+      "Baja despacio hasta apoyar la espalda."
+    ],
+    "consejo": "Sube enrollando la espalda, sin dar un tirón."
+  },
+  "crunch-invertido": {
+    "pasos": [
+      "Acuéstate boca arriba con los brazos a los lados y las rodillas dobladas en el aire.",
+      "Lleva las rodillas hacia el pecho levantando la cadera del suelo.",
+      "Aprieta el abdomen arriba.",
+      "Baja la cadera despacio."
+    ],
+    "consejo": "Sube la cadera con el abdomen, no con impulso de las piernas."
+  },
+  "crunch-oblicuo": {
+    "pasos": [
+      "Acuéstate boca arriba con las rodillas dobladas y las manos tocando las sienes.",
+      "Sube los hombros girando el torso para llevar un codo hacia la rodilla contraria.",
+      "Baja despacio.",
+      "Alterna los lados."
+    ],
+    "consejo": "El giro sale del torso, no del codo."
+  },
+  "bicicleta-abdominal": {
+    "pasos": [
+      "Acuéstate boca arriba con las manos tocando las sienes y las piernas levantadas.",
+      "Lleva un codo hacia la rodilla contraria mientras estiras la otra pierna.",
+      "Cambia de lado como si pedalearas.",
+      "Sigue alternando sin apurarte."
+    ],
+    "consejo": "Lento y controlado rinde más que rápido."
+  },
+  "abdominal-en-v-navaja": {
+    "pasos": [
+      "Acuéstate boca arriba con los brazos estirados sobre la cabeza y las piernas estiradas.",
+      "Sube al mismo tiempo el torso y las piernas, intentando tocar los pies con las manos.",
+      "Forma una V arriba.",
+      "Baja despacio sin dejar caer la espalda de golpe."
+    ],
+    "consejo": "Si es muy difícil, dobla un poco las rodillas."
+  },
+  "crunch-en-maquina": {
+    "pasos": [
+      "Ajusta el asiento y toma los agarres o apoya el pecho en el cojín.",
+      "Enrolla el torso hacia adelante contrayendo el abdomen.",
+      "Aprieta un segundo abajo.",
+      "Vuelve despacio."
+    ],
+    "consejo": "No uses los brazos para tirar; la fuerza sale del abdomen."
+  },
+  "elevacion-de-piernas-colgado": {
+    "pasos": [
+      "Cuélgate de una barra con los brazos estirados.",
+      "Sube las piernas estiradas al frente hasta la altura de la cadera o más.",
+      "Aguanta un segundo arriba.",
+      "Baja despacio, sin balancearte."
+    ],
+    "consejo": "Si cuesta con las piernas estiradas, sube las rodillas dobladas."
+  },
+  "elevacion-de-rodillas-en-paralelas": {
+    "pasos": [
+      "Apoya los antebrazos en la estación de paralelas, con la espalda contra el respaldo.",
+      "Deja colgar las piernas.",
+      "Sube las rodillas hacia el pecho.",
+      "Baja despacio."
+    ],
+    "consejo": "Mantén la espalda apoyada y sube sin balanceo."
+  },
+  "elevacion-de-piernas-en-banco": {
+    "pasos": [
+      "Acuéstate boca arriba en un banco y tómate de su borde detrás de la cabeza.",
+      "Estira las piernas.",
+      "Súbelas hasta que queden verticales.",
+      "Baja despacio sin que toquen el suelo."
+    ],
+    "consejo": "La espalda baja se queda pegada al banco."
+  },
+  "plancha": {
+    "pasos": [
+      "Apoya los antebrazos en el suelo, con los codos bajo los hombros.",
+      "Estira las piernas y apóyate en la punta de los pies.",
+      "Aprieta el abdomen y los glúteos para que el cuerpo quede recto como una tabla.",
+      "Aguanta el tiempo indicado, respirando normal."
+    ],
+    "consejo": "Que la cadera no se hunda ni quede muy arriba."
+  },
+  "plancha-lateral": {
+    "pasos": [
+      "Acuéstate de lado y apoya el antebrazo con el codo bajo el hombro.",
+      "Estira las piernas una sobre otra.",
+      "Sube la cadera hasta que el cuerpo quede en línea recta.",
+      "Aguanta el tiempo indicado y cambia de lado."
+    ],
+    "consejo": "Si es muy difícil, apoya la rodilla de abajo."
+  },
+  "escaladores-mountain-climbers": {
+    "pasos": [
+      "Ponte en posición de flexión, con los brazos estirados.",
+      "Lleva una rodilla hacia el pecho.",
+      "Vuelve y lleva la otra, alternando rápido como si corrieras.",
+      "Mantén la cadera baja todo el tiempo."
+    ],
+    "consejo": "Los hombros quedan sobre las manos."
+  },
+  "giros-rusos": {
+    "pasos": [
+      "Siéntate con las rodillas dobladas y echa el torso un poco hacia atrás.",
+      "Junta las manos frente al pecho (puedes tomar un disco o una mancuerna).",
+      "Gira el torso para llevar las manos a un lado de la cadera.",
+      "Gira hacia el otro lado y sigue alternando."
+    ],
+    "consejo": "Para hacerlo más difícil, levanta los pies del suelo."
+  },
+  "rueda-abdominal": {
+    "pasos": [
+      "Arrodíllate y toma la rueda con ambas manos bajo los hombros.",
+      "Rueda hacia adelante estirando el cuerpo, con el abdomen apretado.",
+      "Llega hasta donde puedas sin que la espalda baja se hunda.",
+      "Vuelve tirando con el abdomen."
+    ],
+    "consejo": "Empieza con recorridos cortos y alarga de a poco."
+  },
+  "burpees": {
+    "pasos": [
+      "De pie, baja a una sentadilla y apoya las manos en el suelo.",
+      "Lleva los pies hacia atrás de un salto, hasta quedar en posición de flexión.",
+      "Vuelve a llevar los pies hacia las manos.",
+      "Sube con un salto, con los brazos arriba."
+    ],
+    "consejo": "Puedes agregar una flexión abajo, o quitar el salto si recién empiezas."
+  },
+  "trotar-al-aire-libre": {
+    "pasos": [
+      "Empieza caminando rápido unos 5 minutos para calentar.",
+      "Trota a un ritmo en el que todavía puedas conversar.",
+      "Da pasos cortos, apoyando el pie bajo el cuerpo.",
+      "Termina caminando unos minutos para bajar las pulsaciones."
+    ],
+    "consejo": "Usa zapatillas para correr y aumenta el tiempo de a poco, semana a semana."
+  },
+  "trotar-en-trotadora": {
+    "pasos": [
+      "Súbete con la máquina detenida y engancha la llave de seguridad a la ropa.",
+      "Empieza caminando unos 5 minutos para calentar.",
+      "Sube la velocidad a un ritmo en el que todavía puedas conversar.",
+      "Termina bajando la velocidad y camina unos minutos."
+    ],
+    "consejo": "Una inclinación de 1% se parece más a trotar al aire libre."
+  },
+  "correr-en-trotadora": {
+    "pasos": [
+      "Engancha la llave de seguridad y calienta caminando y trotando unos 5 minutos.",
+      "Sube a tu velocidad de carrera.",
+      "Mantén el torso derecho y los brazos sueltos, sin tomarte de las barandas.",
+      "Termina bajando la velocidad de a poco."
+    ],
+    "consejo": "Nunca te bajes con la cinta en movimiento."
+  },
+  "bicicleta-estatica": {
+    "pasos": [
+      "Ajusta el asiento para que, con el pedal abajo, la rodilla quede apenas doblada.",
+      "Pedalea suave unos 5 minutos para calentar.",
+      "Sube la resistencia hasta un esfuerzo moderado y constante.",
+      "Termina pedaleando suave unos minutos."
+    ],
+    "consejo": "Si el asiento queda muy bajo, sufren las rodillas."
+  },
+  "eliptica": {
+    "pasos": [
+      "Súbete apoyando los pies completos en los pedales.",
+      "Toma las barras móviles y empieza suave para calentar.",
+      "Sube la resistencia hasta un esfuerzo moderado.",
+      "Empuja y tira con los brazos para trabajar también la parte de arriba."
+    ],
+    "consejo": "Mantén el torso derecho y los talones apoyados."
+  },
+  "escaladora": {
+    "pasos": [
+      "Súbete con la máquina detenida y toma las barandas.",
+      "Empieza a un ritmo lento para calentar.",
+      "Sube el ritmo hasta un esfuerzo moderado.",
+      "Apoya el pie completo en cada escalón."
+    ],
+    "consejo": "Las barandas son para equilibrarte; no cargues el peso en ellas."
+  },
+  "saltar-la-cuerda": {
+    "pasos": [
+      "Ajusta el largo: al pisar el centro, las manillas deben llegar a las axilas.",
+      "Gira la cuerda con las muñecas, con los codos cerca del cuerpo.",
+      "Salta bajito, sobre la punta de los pies.",
+      "Alterna tiempos de salto con pausas cortas si recién empiezas."
+    ],
+    "consejo": "Salta sobre una superficie que amortigüe, no sobre cemento."
+  },
+  "nadar": {
+    "pasos": [
+      "Calienta con unos largos suaves.",
+      "Nada a un ritmo que puedas mantener, en el estilo que prefieras.",
+      "Respira de forma regular, soltando el aire bajo el agua.",
+      "Termina con unos largos lentos."
+    ],
+    "consejo": "Si te cansas, descansa en el borde; cuenta el tiempo total de nado."
+  }
+}

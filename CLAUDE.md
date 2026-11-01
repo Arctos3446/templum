@@ -15,7 +15,7 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Parte 1 ✅ aprobada el 2026-11-01 · Parte 2 hecha el 2026-11-01, espera la prueba del usuario |
+| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Sigue la Parte 3 (entrenamiento en curso) |
 | 3 · Publicar e instalar en el celular | Pendiente |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
@@ -92,6 +92,7 @@ contenido/
   oraciones.json               9 oraciones aprobadas: id, momento (inicio|cierre), tipo, titulo, texto
   ejercicios.json              112 ejercicios aprobados: id, nombre, grupo, equipo, tipo, musculoPrincipal, musculosSecundarios, idOriginal, dibujos[]
   ejercicios-descartados.json  58 que quitó el usuario (no usar)
+  instrucciones.json           "Cómo hacerlo" de los 112 ejercicios: id → pasos[] y consejo. Los escribió Claude; el usuario no quiso revisarlos uno por uno
   dibujos/                     Dibujos de línea de Everkinetic (relaxation y tension), en currentColor
   calendario.json              223 celebraciones fijas y 11 móviles: fecha o regla, nombre, rango, color, delSenor, region, precedencia
   liturgia.js                  Cálculo del día litúrgico (Pascua, tiempos, precedencia y traslados). Pasa a src/lib/liturgia.ts
@@ -118,7 +119,8 @@ contenido/
 - En cada rutina, un ejercicio guarda `series`, `objetivo` (texto libre: "8–10", "30 s", "20 min"), `descanso` en segundos y `nota`. Las rutinas se reordenan arrastrando ⋮⋮ (@dnd-kit) y los días van de 0 = lunes a 6 = domingo.
 - Inicio muestra hasta 4 rutinas; las del día van primero, con la etiqueta "Hoy".
 - `useAvisoSalida` pregunta "¿Salir sin guardar?" al cancelar, al tocar el menú o al cerrar la pestaña. Después de guardar se sale con `sinAviso()`.
-- El detalle del ejercicio alterna las dos fases del dibujo cada 1,4 s. Los récords que muestra dependen del tipo y se llenan en la parte 5.
+- El detalle del ejercicio alterna las dos fases del dibujo cada 1,4 s (al usuario le gustó así). La pestaña "Cómo hacerlo" sale de `contenido/instrucciones.json` y no aparece en los ejercicios propios. Los récords que muestra dependen del tipo y se llenan en la parte 5.
+- Decisiones del usuario: valores iniciales al agregar un ejercicio, 3 series × 8–10 con 1:30 de descanso (cardio: 1 × 20 min, sin descanso); los 112 de la biblioteca no se editan, solo los propios.
 - Los créditos de Everkinetic (CC BY-SA 4.0) y de free-exercise-db ya están al pie de Ajustes.
 - Prueba automática: puppeteer-core con Brave (`executablePath: '/usr/bin/brave'`), instalado en una carpeta temporal y no en el proyecto. Crea una rutina, agrega ejercicios, los reordena, la guarda, prueba los avisos y crea un ejercicio propio, sin errores en la consola.
 

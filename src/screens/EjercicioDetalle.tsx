@@ -9,6 +9,10 @@ import { Volver } from '../components/Volver'
 import { Dialogo } from '../components/Dialogo'
 import { Empty } from '../components/Empty'
 import { Icon } from '../components/Icon'
+import instruccionesJson from '../../contenido/instrucciones.json'
+
+// Pasos para hacer bien cada ejercicio de la biblioteca (los propios no tienen).
+const INSTRUCCIONES = instruccionesJson as Record<string, { pasos: string[]; consejo?: string }>
 
 // Qué récords se muestran según el tipo de ejercicio (se llenan en la parte 5).
 const ESTADISTICAS: Record<TipoEjercicio, string[]> = {
@@ -22,7 +26,7 @@ export function EjercicioDetalle() {
   const { id } = useParams()
   const ej = useEjercicio(id)
   const navigate = useNavigate()
-  const [pestana, setPestana] = useState<'resumen' | 'historial'>('resumen')
+  const [pestana, setPestana] = useState<'resumen' | 'historial' | 'como'>('resumen')
   const [borrar, setBorrar] = useState<{ rutinas: number } | null>(null)
 
   if (ej === undefined) return <main className="screen" />
@@ -35,6 +39,8 @@ export function EjercicioDetalle() {
         </Empty>
       </main>
     )
+
+  const como = ej.personalizado ? undefined : INSTRUCCIONES[ej.id]
 
   async function pedirBorrar() {
     const rutinas = await db.rutinas.filter((r) => r.ejercicios.some((x) => x.ejercicioId === ej!.id)).count()
@@ -108,6 +114,11 @@ export function EjercicioDetalle() {
             <button type="button" role="tab" aria-selected={pestana === 'historial'} onClick={() => setPestana('historial')}>
               Historial
             </button>
+            {como && (
+              <button type="button" role="tab" aria-selected={pestana === 'como'} onClick={() => setPestana('como')}>
+                Cómo hacerlo
+              </button>
+            )}
           </div>
 
           {pestana === 'resumen' ? (
@@ -124,6 +135,20 @@ export function EjercicioDetalle() {
                 Cuando lo hagas en un entrenamiento, aquí verás tus récords y lo que hiciste la última vez.
               </Empty>
             </>
+          ) : pestana === 'como' && como ? (
+            <div className="como">
+              <ol className="pasos">
+                {como.pasos.map((p) => (
+                  <li key={p}>{p}</li>
+                ))}
+              </ol>
+              {como.consejo && (
+                <p className="consejo">
+                  <span>Ojo</span>
+                  {como.consejo}
+                </p>
+              )}
+            </div>
           ) : (
             <Empty icon="cal" title="Sin historial todavía">
               Aquí aparecerá cada vez que lo hayas entrenado, con sus series.

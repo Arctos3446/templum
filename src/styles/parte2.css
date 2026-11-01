@@ -404,3 +404,19 @@
 }
 
 .creditos { max-width: 44ch; text-align: center; font-size: 12px; margin-top: 10px; line-height: 1.5; }
+
+/* ---------- Cómo hacerlo ---------- */
+.como { display: flex; flex-direction: column; gap: 16px; }
+.pasos { list-style: none; counter-reset: paso; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.pasos li { counter-increment: paso; display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: baseline; }
+.pasos li::before {
+  content: counter(paso);
+  font-weight: 500; font-size: 18px; line-height: 1;
+  color: var(--gold); text-align: center;
+}
+.consejo {
+  display: flex; flex-direction: column; gap: 4px;
+  background: var(--surface); border: 1px solid var(--line); border-left: 2px solid var(--gold);
+  border-radius: var(--radius-l); padding: 14px 16px;
+}
+.consejo span { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
