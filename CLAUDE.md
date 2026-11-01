@@ -15,8 +15,8 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Partes 5, 6 y 7 hechas el 2026-11-01. El usuario pidió publicar para probar con uso real en el celular e ir reportando errores y cambios |
-| 3 · Publicar e instalar en el celular | Pendiente |
+| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Partes 1 a 7 hechas el 2026-11-01 y publicadas |
+| 3 · Publicar e instalar en el celular | ✅ Publicada el 2026-11-01 en **https://arctos3446.github.io/templum/**. El usuario la prueba con uso real y va reportando errores y cambios |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
 El usuario todavía **no tiene rutinas** armadas. Las creará él en la app, así que no hay que precargarlas.
@@ -210,7 +210,8 @@ contenido/
   - `insights.ts`: avisos de progreso.
   - `summary.ts`: el resumen para Claude.
   - `exportImport.ts`: exportar e importar.
-- El equipo tiene Node 24, npm y git. La carpeta es un repositorio git (rama `main`, autor "Arctos"). El usuario tiene cuenta de GitHub, que servirá para publicar en la Etapa 3.
+- El equipo tiene Node 24, npm y git. La carpeta es un repositorio git (rama `main`, autor "Arctos"), con el correo privado de GitHub `182037004+Arctos3446@users.noreply.github.com`. **No usar el gmail en los commits**: el proyecto es público y el historial se reescribió para ocultarlo.
+- **Publicación:** el proyecto público es https://github.com/Arctos3446/templum. Cada `git push` a `main` construye y publica sola la app (`.github/workflows/publicar.yml`, GitHub Pages) en unos 30 s. Para seguir el avance: `gh run watch`. `gh` está instalado en `~/.local/bin` (sesión iniciada como Arctos3446, con el permiso `workflow`). La app instalada se actualiza sola al volver a abrirla.
 - Para sacar fotos de prueba sin molestar al usuario sirve `firefox --headless --screenshot` con un perfil temporal; Brave en modo headless se queda colgado.
 - Verificación en cada parte: `npm run dev`, una prueba guiada con el usuario y revisión a tamaño celular. Antes de publicar, `npm run build` sin errores.
 - La publicación (Etapa 3) es gratis en GitHub Pages o Vercel. Se publica solo la app; los datos se quedan en cada dispositivo.
