@@ -8,9 +8,32 @@ export interface Ajustes {
   vibrar: boolean
   /** La pantalla no se apaga mientras entrenas. */
   pantallaEncendida: boolean
+  /** Descanso (segundos) con que parte cada ejercicio nuevo en una rutina o entrenamiento. */
+  descanso: number
+
+  // Elementos de fe (cada uno con su interruptor; los valores por defecto los eligió el usuario en el diseño).
+  feVersiculoInicio: boolean
+  feSanto: boolean
+  feVersiculoFin: boolean
+  feRecord: boolean
+  feDescanso: boolean
+  feOracionInicio: boolean
+  feOracionFin: boolean
 }
 
-const DEFECTO: Ajustes = { sonido: true, vibrar: true, pantallaEncendida: true }
+const DEFECTO: Ajustes = {
+  sonido: true,
+  vibrar: true,
+  pantallaEncendida: true,
+  descanso: 90,
+  feVersiculoInicio: true,
+  feSanto: true,
+  feVersiculoFin: true,
+  feRecord: true,
+  feDescanso: false,
+  feOracionInicio: false,
+  feOracionFin: true,
+}
 const CLAVE = 'templum.ajustes'
 const avisar = new Set<() => void>()
 

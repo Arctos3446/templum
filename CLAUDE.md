@@ -94,6 +94,8 @@ src/
   components/GraficoLinea.tsx  Gráfico de línea propio en SVG (sin librería), con lectura al tocar
   lib/records.ts, insights.ts  Métricas por sesión, 1RM (Epley), récords por tipo y avisos con reglas
   styles/parte5.css            Progreso, gráfico, récords y avisos
+  lib/liturgia.ts              Calendario litúrgico (traído de contenido/liturgia.js; igual en 2.191 días comprobados) y la línea del santo
+  styles/parte6.css            Santo del día, frases de récord y descanso, oraciones
 public/dibujos/                Copia de contenido/dibujos que usa la app (si cambia un dibujo, copiarlo aquí)
 diseno/
   guia-de-estilo.html          Guía de estilo aprobada (paleta, letras, logos, piezas)
@@ -172,6 +174,16 @@ contenido/
   - Solo se juzgan los ejercicios hechos en las últimas 2 semanas. El cardio no se juzga, porque la distancia varía a propósito. Al tocar un aviso se abre ese ejercicio en el gráfico.
 - "Copiar resumen para Claude" (está en la maqueta de Progreso) queda para la Parte 7.
 - Prueba automática: `pruebas/parte5.mjs` (siembra 3 meses: press banca que sube, sentadilla estancada, dominadas, plancha y trote).
+
+## Cómo quedó construida la Parte 6 (2026-11-01)
+
+- Inicio muestra el **versículo del día**: uno distinto cada día, que recorre los 91 sin repetir en orden salteado. Bajo la fecha va el **santo o la fiesta del día**, con un punto del color litúrgico. Los días de semana comunes solo dicen el tiempo ("Tiempo Ordinario"); los domingos y los días mayores muestran su nombre.
+- **Frase de récord:** un versículo de los marcados "record", bajo la línea dorada del récord en el entrenamiento.
+- **Versículo en el descanso** (apagado por defecto): uno de los marcados "descanso", en la barra del temporizador.
+- **Oración al empezar** (apagada por defecto): un botón arriba del entrenamiento, hasta marcar la primera serie.
+- **Versículo y oración al terminar:** en la pantalla de fin.
+- Ajustes guarda cada interruptor en `templum.ajustes` (localStorage), con los valores por defecto aprobados en el diseño, más el "Descanso por defecto" (1:30, de 15 en 15 s).
+- "Mis versículos" (agregar o quitar frases propias), que está en la maqueta de Ajustes, quedó pendiente para después de publicar.
 
 ## Plan técnico (Etapa 2)
 

@@ -7,6 +7,7 @@ import { convertir, numeroEntero, seriesRecord, textoRecord } from '../lib/serie
 import { fechaLarga } from '../lib/fechas'
 import { oracionDeCierre, versiculoDeCierre } from '../lib/contenido'
 import { ChiRho } from '../components/Logo'
+import { useAjustes } from '../lib/ajustes'
 import { Hoja } from '../components/Hoja'
 
 const ESTRELLA = 'M24 9l3.6 7.4 8.2 1.2-5.9 5.7 1.4 8.1L24 27.6l-7.3 3.8 1.4-8.1-5.9-5.7 8.2-1.2z'
@@ -26,6 +27,7 @@ export function FinEntrenamiento() {
   const [actualizar, setActualizar] = useState(true)
   const [oracion, setOracion] = useState(false)
   const [guardando, setGuardando] = useState(false)
+  const ajustes = useAjustes()
 
   const tipoDe = useCallback((id: string) => mapa?.get(id)?.tipo, [mapa])
   const previos = useMemo(() => (historial && mapa ? calcularPrevios(historial, tipoDe) : null), [historial, mapa, tipoDe])
@@ -113,17 +115,19 @@ export function FinEntrenamiento() {
         </div>
       )}
 
-      <div className="verse-card fin-verso">
-        <q>{verso.texto}</q>
-        <span className="r">{verso.ref}</span>
-      </div>
+      {ajustes.feVersiculoFin && (
+        <div className="verse-card fin-verso">
+          <q>{verso.texto}</q>
+          <span className="r">{verso.ref}</span>
+        </div>
+      )}
 
-      <button type="button" className="btn btn-ghost fin-oracion" onClick={() => setOracion(true)}>
-        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 3v18M7 8h10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" />
-        </svg>
-        {rezo.titulo}
-      </button>
+      {ajustes.feOracionFin && (
+        <button type="button" className="btn btn-ghost fin-oracion" onClick={() => setOracion(true)}>
+          <Cruz />
+          {rezo.titulo}
+        </button>
+      )}
 
       <div className="fin-acciones">
         <button type="button" className="btn btn-primary btn-block" disabled={guardando} onClick={guardar}>
@@ -144,5 +148,13 @@ export function FinEntrenamiento() {
         <p className="oracion-texto">{rezo.texto}</p>
       </Hoja>
     </main>
+  )
+}
+
+export function Cruz() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3v18M7 8h10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square" />
+    </svg>
   )
 }

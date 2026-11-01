@@ -13,7 +13,7 @@ import type {
 } from './tipos'
 import { OBJETIVO_INICIAL } from './tipos'
 import { convertir, valorRecord } from '../lib/series'
-import { DESCANSO_POR_DEFECTO } from '../lib/tiempo'
+import { leerAjustes } from '../lib/ajustes'
 
 export function serieVacia(): SerieEnCurso {
   return { uid: nuevoId(), kg: '', reps: '', tiempo: '', km: '', hecha: false }
@@ -26,7 +26,7 @@ export function ejercicioEnCurso(ej: Ejercicio, deRutina?: EjercicioEnRutina): E
     uid: deRutina?.uid ?? nuevoId(),
     ejercicioId: ej.id,
     objetivo: deRutina?.objetivo ?? OBJETIVO_INICIAL[ej.tipo],
-    descanso: deRutina?.descanso ?? (ej.tipo === 'cardio' ? 0 : DESCANSO_POR_DEFECTO),
+    descanso: deRutina?.descanso ?? (ej.tipo === 'cardio' ? 0 : leerAjustes().descanso),
     nota: deRutina?.nota ?? '',
     series: Array.from({ length: Math.max(1, n) }, serieVacia),
   }

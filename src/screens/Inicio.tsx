@@ -10,6 +10,9 @@ import { diaDeSemana } from '../lib/rutinas'
 import { useEnCurso, useEntrenamientos } from '../db/entrenamientos'
 import { useEmpezar } from '../components/Empezar'
 import { numeroEntero } from '../lib/series'
+import { useAjustes } from '../lib/ajustes'
+import { versiculoDelDia } from '../lib/contenido'
+import { lineaDelDia } from '../lib/liturgia'
 
 const INICIALES = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
 
@@ -21,6 +24,9 @@ export function Inicio() {
   const dia = diaDeSemana(hoy)
   // Primero las que tocan hoy; se muestran hasta 4.
   const enCurso = useEnCurso()
+  const ajustes = useAjustes()
+  const verso = versiculoDelDia(hoy)
+  const santo = lineaDelDia(hoy)
   const historial = useEntrenamientos()
   const { empezar, dialogo } = useEmpezar()
 
@@ -44,17 +50,23 @@ export function Inicio() {
 
       <div className="inicio">
         <div className="inicio-col">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+          <div className="fecha-bloque">
             <span className="fecha">{fechaLarga(hoy)}</span>
-            {/* El tiempo litúrgico y el santo del día llegan en la parte 6. */}
+            {ajustes.feSanto && (
+              <span className="santo">
+                <i className={`lit lit-${santo.color}`} aria-hidden="true" />
+                {santo.texto}
+              </span>
+            )}
           </div>
 
-          {/* Por ahora un versículo fijo; en la parte 6 cambiará cada día. */}
-          <div className="verse-card">
-            <span className="k">Versículo del día</span>
-            <q>¿No saben que su cuerpo es templo del Espíritu Santo?</q>
-            <span className="r">1 Corintios 6, 19</span>
-          </div>
+          {ajustes.feVersiculoInicio && (
+            <div className="verse-card">
+              <span className="k">Versículo del día</span>
+              <q>{verso.texto}</q>
+              <span className="r">{verso.ref}</span>
+            </div>
+          )}
 
           {enCurso ? (
             <Link to="/entrenamiento" className="btn btn-primary btn-block">

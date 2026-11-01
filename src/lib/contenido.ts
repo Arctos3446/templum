@@ -29,3 +29,14 @@ export function elegir<T>(lista: T[], clave: string): T {
 
 export const versiculoDeCierre = (clave: string) => elegir(VERSICULOS.filter((v) => v.momentos.includes('cierre')), clave)
 export const oracionDeCierre = (clave: string) => elegir(ORACIONES.filter((o) => o.momento === 'cierre'), clave)
+
+/** Versículo del día: el mismo durante todo el día y distinto cada día. */
+export function versiculoDelDia(d = new Date()): Versiculo {
+  const lista = VERSICULOS.filter((v) => v.momentos.includes('inicio'))
+  // Recorre la lista en un orden fijo pero salteado, para que días seguidos no repitan tema.
+  const dia = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000)
+  return lista[(dia * 37) % lista.length]
+}
+export const versiculoDeRecord = (clave: string) => elegir(VERSICULOS.filter((v) => v.momentos.includes('record')), clave)
+export const versiculoDeDescanso = (clave: string) => elegir(VERSICULOS.filter((v) => v.momentos.includes('descanso')), clave)
+export const oracionDeInicio = (clave: string) => elegir(ORACIONES.filter((o) => o.momento === 'inicio'), clave)

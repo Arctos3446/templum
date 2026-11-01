@@ -26,7 +26,9 @@ import {
   type Campo,
 } from '../lib/series'
 import { prepararSonido, usePantallaEncendida } from '../lib/aviso'
-import { useAjustes } from '../lib/ajustes'
+import { useAjustes, leerAjustes } from '../lib/ajustes'
+import { oracionDeInicio, versiculoDeDescanso, versiculoDeRecord } from '../lib/contenido'
+import { Cruz } from './FinEntrenamiento'
 import { useAhora } from '../lib/useAhora'
 import { mmss } from '../lib/tiempo'
 import { Dialogo } from '../components/Dialogo'
@@ -57,6 +59,7 @@ export function Entrenamiento() {
   const [eligiendo, setEligiendo] = useState<null | 'agregar' | string>(null)
   const [faltan, setFaltan] = useState<string[]>([])
   const [preguntar, setPreguntar] = useState<null | 'terminar' | 'vacio' | 'descartar'>(null)
+  const [rezando, setRezando] = useState(false)
 
   const desdeDb = useRef<EntrenamientoEnCurso | null>(null)
   useEffect(() => {
@@ -259,6 +262,13 @@ export function Entrenamiento() {
         </div>
       </header>
 
+      {ajustes.feOracionInicio && hechas === 0 && (
+        <button type="button" className="btn btn-ghost oracion-inicio" onClick={() => setRezando(true)}>
+          <Cruz />
+          {oracionDeInicio(e.id).titulo}
+        </button>
+      )}
+
       <div className="bloques">
         {e.ejercicios.length === 0 && (
           <Empty icon="dumbbell" title="Entrenamiento en blanco">
@@ -386,6 +396,7 @@ export function Entrenamiento() {
                       </span>
                     </div>
                   )}
+                  {ultimoRecord >= 0 && ajustes.feRecord && <FraseRecord clave={j.series[ultimoRecord].uid} />}
 
                   <button type="button" className="agregar-serie" onClick={() => cambiarEj(j.uid, (x) => ({ ...x, series: [...x.series, serieVacia()] }))}>
                     + Agregar serie
@@ -504,6 +515,10 @@ export function Entrenamiento() {
         />
       )}
 
+      <Hoja abierto={rezando} titulo={oracionDeInicio(e.id).titulo} onCerrar={() => setRezando(false)}>
+        <p className="oracion-texto">{oracionDeInicio(e.id).texto}</p>
+      </Hoja>
+
       <Dialogo
         abierto={preguntar === 'terminar'}
         titulo="¿Terminar el entrenamiento?"
@@ -605,9 +620,29 @@ function Descanso({ d, cambiar }: { d: { hasta: number; total: number }; cambiar
           {listo ? 'Cerrar' : 'Saltar'}
         </button>
       </div>
+      {leerAjustes().feDescanso && !listo && <VersoDescanso clave={String(d.hasta - d.total * 1000)} />}
       <div className="descanso-barra">
         <div style={{ width: `${Math.min(100, (quedan / d.total) * 100)}%` }} />
       </div>
     </div>
+  )
+}
+
+function FraseRecord({ clave }: { clave: string }) {
+  const v = versiculoDeRecord(clave)
+  return (
+    <p className="frase-record">
+      “{v.texto}” <span>{v.ref}</span>
+    </p>
+  )
+}
+
+/** Un versículo breve durante el descanso (apagado por defecto). Se elige al empezar el descanso. */
+function VersoDescanso({ clave }: { clave: string }) {
+  const v = versiculoDeDescanso(clave)
+  return (
+    <p className="verso-descanso">
+      “{v.texto}” <span>{v.ref}</span>
+    </p>
   )
 }

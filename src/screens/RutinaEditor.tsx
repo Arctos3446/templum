@@ -16,7 +16,8 @@ import { useMapaEjercicios } from '../db/ejercicios'
 import { nuevoId } from '../db/db'
 import { ETIQUETA_OBJETIVO, OBJETIVO_INICIAL, type Ejercicio, type EjercicioEnRutina } from '../db/tipos'
 import { DIAS_INICIAL, DIAS_LARGOS, resumenFila } from '../lib/rutinas'
-import { DESCANSO_POR_DEFECTO, leerMmss, mmss } from '../lib/tiempo'
+import { leerMmss, mmss } from '../lib/tiempo'
+import { leerAjustes } from '../lib/ajustes'
 import { BarraEditor } from '../components/BarraEditor'
 import { useAvisoSalida } from '../components/AvisoSalida'
 import { Dialogo } from '../components/Dialogo'
@@ -36,7 +37,7 @@ function filaNueva(ej: Ejercicio): EjercicioEnRutina {
     ejercicioId: ej.id,
     series: ej.tipo === 'cardio' ? 1 : 3,
     objetivo: OBJETIVO_INICIAL[ej.tipo],
-    descanso: ej.tipo === 'cardio' ? 0 : DESCANSO_POR_DEFECTO,
+    descanso: ej.tipo === 'cardio' ? 0 : leerAjustes().descanso,
     nota: '',
   }
 }
