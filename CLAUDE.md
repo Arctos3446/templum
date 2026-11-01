@@ -15,15 +15,14 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Partes 1 a 7 hechas el 2026-11-01 y publicadas |
-| 3 · Publicar e instalar en el celular | ✅ Publicada el 2026-11-01 en **https://arctos3446.github.io/templum/**. El usuario la prueba con uso real y va reportando errores y cambios |
+| 2 · Construcción | ✅ Partes 1 a 7 terminadas el 2026-11-01. Las partes 1 a 4 las aprobó el usuario; la 5 la aceptó, y las 6 y 7 se hicieron a su pedido para publicar pronto |
+| 3 · Publicar e instalar en el celular | ✅ Publicada el 2026-11-01 en **https://arctos3446.github.io/templum/** (repositorio público Arctos3446/templum). ⏳ **Ahora:** el usuario la prueba en el gimnasio y va reportando errores y cambios |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
 **Rutina del usuario (2026-11-01):** se cargó como plantilla. Para agregarla a la app se abre https://arctos3446.github.io/templum/#/plantilla/concurrente-4-dias en el navegador del celular y se toca "Agregar estas 4 rutinas": Inferior A (lunes), Superior A (martes), Inferior B (jueves) y Superior B (viernes). El RIR y los sustitutos van en la nota de cada ejercicio. El 4×4 son 4 series de "4 min" con 3:00 de descanso (recuperación activa). En cardio, los km son opcionales.
 
-**Próxima sesión:** el usuario instaló la app en su Samsung A16 con **Firefox** (2026-11-01) y la está probando en el gimnasio. Hay que empezar preguntándole qué errores o cambios encontró. Quedan pendientes "Mis versículos" (frases propias, está en la maqueta de Ajustes) y los dibujos de los 51 ejercicios que no tienen. Todavía no se ha probado la app instalada en Firefox para Android.
+**Próxima sesión:** el usuario instaló la app en su Samsung A16 con **Firefox** (2026-11-01) y la está probando en el gimnasio con su rutina de 4 días. Hay que empezar preguntándole qué errores o cambios encontró, y si las rutinas de la plantilla aparecieron en la app instalada (se agregan desde el navegador Firefox; no está comprobado que la app y el navegador compartan los datos). Quedan pendientes "Mis versículos" (frases propias, está en la maqueta de Ajustes) y los dibujos de los 51 ejercicios que no tienen. Todavía no se ha probado la app instalada en Firefox para Android.
 
-El usuario todavía **no tiene rutinas** armadas. Las creará él en la app, así que no hay que precargarlas.
 
 ## Próximos pasos
 
