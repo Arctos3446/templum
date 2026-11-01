@@ -14,6 +14,7 @@ import './styles/tokens.css'
 import './styles/base.css'
 import './styles/parte2.css'
 import './styles/parte3.css'
+import './styles/parte4.css'
 import { App } from './App'
 import { pedirAlmacenamientoPersistente } from './db/db'
 

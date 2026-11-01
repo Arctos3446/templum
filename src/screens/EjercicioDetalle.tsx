@@ -9,6 +9,9 @@ import { Volver } from '../components/Volver'
 import { Dialogo } from '../components/Dialogo'
 import { Empty } from '../components/Empty'
 import { Icon } from '../components/Icon'
+import { useEntrenamientos } from '../db/entrenamientos'
+import { fechaLarga, haceCuanto } from '../lib/fechas'
+import { textoSerie } from '../lib/series'
 import instruccionesJson from '../../contenido/instrucciones.json'
 
 // Pasos para hacer bien cada ejercicio de la biblioteca (los propios no tienen).
@@ -28,6 +31,7 @@ export function EjercicioDetalle() {
   const navigate = useNavigate()
   const [pestana, setPestana] = useState<'resumen' | 'historial' | 'como'>('resumen')
   const [borrar, setBorrar] = useState<{ rutinas: number } | null>(null)
+  const historial = useEntrenamientos()
 
   if (ej === undefined) return <main className="screen" />
   if (ej === null)
@@ -41,6 +45,11 @@ export function EjercicioDetalle() {
     )
 
   const como = ej.personalizado ? undefined : INSTRUCCIONES[ej.id]
+  // Cada vez que se hizo, de la más nueva a la más antigua (el historial ya viene así).
+  const veces = (historial ?? []).flatMap((h) =>
+    h.ejercicios.filter((x) => x.ejercicioId === ej.id && x.series.length).map((x) => ({ h, series: x.series })),
+  )
+  const ultima = veces[0]
 
   async function pedirBorrar() {
     const rutinas = await db.rutinas.filter((r) => r.ejercicios.some((x) => x.ejercicioId === ej!.id)).count()
@@ -131,9 +140,16 @@ export function EjercicioDetalle() {
                   </div>
                 ))}
               </div>
-              <Empty icon="trend" title="Aún no lo has hecho">
-                Cuando lo hagas en un entrenamiento, aquí verás tus récords y lo que hiciste la última vez.
-              </Empty>
+              {ultima ? (
+                <Link to={`/historial/${ultima.h.id}`} className="ultima-vez">
+                  <span className="uv-k">Última vez · {haceCuanto(ultima.h.inicio)}</span>
+                  <span className="num">{ultima.series.map((x) => textoSerie(x, ej.tipo)).join(' · ')}</span>
+                </Link>
+              ) : (
+                <Empty icon="trend" title="Aún no lo has hecho">
+                  Cuando lo hagas en un entrenamiento, aquí verás tus récords y lo que hiciste la última vez.
+                </Empty>
+              )}
             </>
           ) : pestana === 'como' && como ? (
             <div className="como">
@@ -148,6 +164,18 @@ export function EjercicioDetalle() {
                   {como.consejo}
                 </p>
               )}
+            </div>
+          ) : veces.length ? (
+            <div className="veces">
+              {veces.map(({ h, series }, i) => (
+                <Link key={`${h.id}-${i}`} to={`/historial/${h.id}`} className="vez">
+                  <span className="vez-cab">
+                    <span className="vez-fecha">{fechaLarga(new Date(h.inicio))}</span>
+                    <span className="vez-nombre">{h.nombre}</span>
+                  </span>
+                  <span className="vez-series num">{series.map((x) => textoSerie(x, ej.tipo)).join(' · ')}</span>
+                </Link>
+              ))}
             </div>
           ) : (
             <Empty icon="cal" title="Sin historial todavía">

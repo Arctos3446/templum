@@ -151,3 +151,16 @@ export function calcularPrevios(historial: Entrenamiento[], tipoDe: (id: string)
   }
   return m
 }
+
+/** undefined = cargando, null = no existe. */
+export function useEntrenamiento(id: string | undefined): Entrenamiento | null | undefined {
+  return useLiveQuery(async () => (id ? ((await db.entrenamientos.get(id)) ?? null) : null), [id])
+}
+
+export async function actualizarEntrenamiento(h: Entrenamiento) {
+  await db.entrenamientos.put(h)
+}
+
+export async function eliminarEntrenamiento(id: string) {
+  await db.entrenamientos.delete(id)
+}

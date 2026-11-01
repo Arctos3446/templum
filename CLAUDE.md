@@ -15,7 +15,7 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Sigue la Parte 4 (historial y calendario) |
+| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 hecha el 2026-11-01, espera la prueba del usuario |
 | 3 · Publicar e instalar en el celular | Pendiente |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
@@ -87,6 +87,9 @@ src/
   lib/series.ts                Leer y mostrar series por tipo (kg con coma, m:ss), sugerencias, récords
   lib/ajustes.ts, lib/aviso.ts Ajustes de cada persona (sonido, vibración, pantalla) y aviso del descanso
   lib/contenido.ts             Versículos y oraciones (elige uno fijo por entrenamiento)
+  screens/Historial.tsx        Calendario del mes y lista por semanas · SesionDetalle.tsx · SesionEditor.tsx
+  lib/historial.ts             Volumen, récords de cada sesión (en su momento) y semanas de constancia
+  styles/parte4.css            Historial, calendario, detalle y edición de una sesión
 public/dibujos/                Copia de contenido/dibujos que usa la app (si cambia un dibujo, copiarlo aquí)
 diseno/
   guia-de-estilo.html          Guía de estilo aprobada (paleta, letras, logos, piezas)
@@ -141,6 +144,17 @@ contenido/
 - Se puede empezar desde ▶ en cada rutina (Inicio, Rutinas o la pantalla Empezar) o en blanco. Si ya hay uno en curso, pregunta antes de descartarlo. Mientras hay uno en curso se ve el aviso "En curso" sobre el menú (abajo en el celular, al final del menú lateral en el computador).
 - Inicio ya muestra los días entrenados de la semana y sus totales.
 - Prueba automática: `pruebas/parte3.mjs` en la carpeta temporal (siembra una rutina y un entrenamiento anterior directo en IndexedDB).
+
+## Cómo quedó construida la Parte 4 (2026-11-01)
+
+- Rutas: `/historial`, `/historial/:id` (detalle) y `/historial/:id/editar` (enfoque, con aviso al salir sin guardar).
+- Calendario según la maqueta: días entrenados en púrpura, hoy con anillo dorado y días futuros tenues. No deja avanzar más allá del mes actual. El mes que se mira se recuerda al volver de un detalle (sessionStorage). Al tocar un día entrenado, la lista muestra solo ese día.
+- Totales del mes: entrenamientos y tiempo total. "Semanas de constancia" cuenta semanas seguidas (de lunes a domingo) con al menos un entrenamiento; si esta semana aún no entrenas, no se corta.
+- La lista va agrupada por semana ("Esta semana", "Semana pasada", "Semana del 12 de octubre"), con duración, kilos, ejercicios y récords.
+- Los récords de cada sesión se calculan "en su momento", recorriendo el historial del más antiguo al más nuevo. Si se edita o borra una sesión, se recalculan solos.
+- El editor permite cambiar nombre, fecha, hora, duración, series (con las mismas casillas del entrenamiento) y agregar o quitar ejercicios. Las series incompletas se marcan en rojo y bloquean el guardado.
+- En el detalle del ejercicio, Resumen muestra "Última vez" y la pestaña Historial lista cada vez que se hizo. Los récords y el 1RM llegan en la parte 5.
+- Prueba automática: `pruebas/parte4.mjs` (siembra 12 sesiones de octubre y noviembre). Después de escribir directo en IndexedDB hay que recargar, porque Dexie guarda en caché las consultas.
 
 ## Plan técnico (Etapa 2)
 

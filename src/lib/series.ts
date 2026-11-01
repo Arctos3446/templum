@@ -179,3 +179,15 @@ export function seriesRecord(ej: EjercicioEnCurso, tipo: TipoEjercicio, mejorPre
   })
   return r
 }
+
+/** Para el detalle de un entrenamiento: "60 kg × 10", "12 reps", "0:45", "5 km · 25:00". */
+export function textoSerieLargo(s: SerieHecha, tipo: TipoEjercicio): string {
+  switch (tipo) {
+    case 'pesas':
+      return `${numero(s.kg ?? 0)} kg × ${s.reps ?? 0}`
+    case 'peso_corporal':
+      return `${s.reps ?? 0} reps`
+    default:
+      return textoSerie(s, tipo)
+  }
+}

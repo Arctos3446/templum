@@ -12,6 +12,8 @@ import { Ajustes } from './screens/Ajustes'
 import { Entrenamiento } from './screens/Entrenamiento'
 import { FinEntrenamiento } from './screens/FinEntrenamiento'
 import { Empezar } from './screens/Empezar'
+import { SesionDetalle } from './screens/SesionDetalle'
+import { SesionEditor } from './screens/SesionEditor'
 import { useEnCurso } from './db/entrenamientos'
 import { useVigiaDescanso } from './lib/aviso'
 
@@ -48,6 +50,8 @@ const router = createHashRouter([
       { path: '/entrenamiento/fin', element: <FinEntrenamiento />, handle: enfoque },
       { path: '/progreso', element: <Progreso /> },
       { path: '/historial', element: <Historial /> },
+      { path: '/historial/:id', element: <SesionDetalle /> },
+      { path: '/historial/:id/editar', element: <SesionEditor />, handle: enfoque },
       { path: '/ajustes', element: <Ajustes /> },
       { path: '*', element: <Inicio /> },
     ],
