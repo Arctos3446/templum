@@ -9,11 +9,14 @@ import { ListaEjercicios } from './ListaEjercicios'
 export function SelectorEjercicios({
   titulo = 'Agregar ejercicios',
   unico = false,
+  soloIds,
   onCerrar,
   onElegir,
 }: {
   titulo?: string
   unico?: boolean
+  /** Si viene, solo se muestran estos ejercicios. */
+  soloIds?: string[]
   onCerrar: () => void
   onElegir: (ids: string[]) => void
 }) {
@@ -44,8 +47,8 @@ export function SelectorEjercicios({
         <div className="selector-cuerpo">
           {ejercicios && (
             <ListaEjercicios
-              ejercicios={ejercicios}
-              clave="selector"
+              ejercicios={soloIds ? ejercicios.filter((e) => soloIds.includes(e.id)) : ejercicios}
+              clave={soloIds ? 'selector-filtrado' : 'selector'}
               modo="elegir"
               seleccion={seleccion}
               onAlternar={(eid) => {

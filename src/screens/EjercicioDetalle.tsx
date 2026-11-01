@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { borrarEjercicioPropio, useEjercicio } from '../db/ejercicios'
 import { db } from '../db/db'
-import { NOMBRE_TIPO, type TipoEjercicio } from '../db/tipos'
+import { NOMBRE_TIPO } from '../db/tipos'
+import { resumenDetalle, sesionesDe } from '../lib/records'
 import { DibujoAnimado } from '../components/ImagenEjercicio'
 import { MapaMusculos } from '../components/MapaMusculos'
 import { Volver } from '../components/Volver'
@@ -16,14 +17,6 @@ import instruccionesJson from '../../contenido/instrucciones.json'
 
 // Pasos para hacer bien cada ejercicio de la biblioteca (los propios no tienen).
 const INSTRUCCIONES = instruccionesJson as Record<string, { pasos: string[]; consejo?: string }>
-
-// Qué récords se muestran según el tipo de ejercicio (se llenan en la parte 5).
-const ESTADISTICAS: Record<TipoEjercicio, string[]> = {
-  pesas: ['Récord de peso', '1RM estimado', 'Mejor volumen'],
-  peso_corporal: ['Más reps en una serie', 'Más reps en un día', 'Veces hecho'],
-  tiempo: ['Mejor tiempo', 'Veces hecho'],
-  cardio: ['Mayor distancia', 'Mejor ritmo', 'Veces hecho'],
-}
 
 export function EjercicioDetalle() {
   const { id } = useParams()
@@ -133,10 +126,10 @@ export function EjercicioDetalle() {
           {pestana === 'resumen' ? (
             <>
               <div className="stats num">
-                {ESTADISTICAS[ej.tipo].map((t) => (
-                  <div className="stat" key={t}>
-                    <span className="l">{t}</span>
-                    <span className="v">—</span>
+                {resumenDetalle(ej.tipo, sesionesDe(ej.id, historial ?? [])).map((x) => (
+                  <div className="stat" key={x.nombre}>
+                    <span className="l">{x.nombre}</span>
+                    <span className="v">{x.texto}</span>
                   </div>
                 ))}
               </div>

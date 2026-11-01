@@ -15,7 +15,7 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 |---|---|
 | 0 · Diseño visual | ✅ Aprobada |
 | 1 · Contenido | ✅ Aprobada el 2026-11-01 (versículos, oraciones, ejercicios y calendario litúrgico) |
-| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Sigue la Parte 5 (progreso) |
+| 2 · Construcción | ⏳ **En curso** desde el 2026-11-01. Partes 1 y 2 ✅ aprobadas el 2026-11-01 · Parte 3 ✅ aprobada el 2026-11-01 · Parte 4 ✅ aprobada el 2026-11-01 · Parte 5 hecha el 2026-11-01, espera la prueba del usuario |
 | 3 · Publicar e instalar en el celular | Pendiente |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
@@ -90,6 +90,10 @@ src/
   screens/Historial.tsx        Calendario del mes y lista por semanas · SesionDetalle.tsx · SesionEditor.tsx
   lib/historial.ts             Volumen, récords de cada sesión (en su momento) y semanas de constancia
   styles/parte4.css            Historial, calendario, detalle y edición de una sesión
+  screens/Progreso.tsx         Gráfico por ejercicio, récords personales y avisos
+  components/GraficoLinea.tsx  Gráfico de línea propio en SVG (sin librería), con lectura al tocar
+  lib/records.ts, insights.ts  Métricas por sesión, 1RM (Epley), récords por tipo y avisos con reglas
+  styles/parte5.css            Progreso, gráfico, récords y avisos
 public/dibujos/                Copia de contenido/dibujos que usa la app (si cambia un dibujo, copiarlo aquí)
 diseno/
   guia-de-estilo.html          Guía de estilo aprobada (paleta, letras, logos, piezas)
@@ -156,9 +160,22 @@ contenido/
 - En el detalle del ejercicio, Resumen muestra "Última vez" y la pestaña Historial lista cada vez que se hizo. Los récords y el 1RM llegan en la parte 5.
 - Prueba automática: `pruebas/parte4.mjs` (siembra 12 sesiones de octubre y noviembre). Después de escribir directo en IndexedDB hay que recargar, porque Dexie guarda en caché las consultas.
 
+## Cómo quedó construida la Parte 5 (2026-11-01)
+
+- El gráfico se dibuja con SVG propio (`GraficoLinea`), sin Recharts, para que la app pese menos. Sigue la maqueta: línea púrpura con área tenue y el último punto en dorado con su valor. Al tocar o pasar el mouse aparece una línea punteada con el valor y la fecha (también con las flechas del teclado), y hay una tabla oculta para lectores de pantalla. Los colores pasaron la revisión de contraste en oscuro y en claro.
+- Métricas por tipo: pesas → 1RM estimado (Epley), peso máximo y volumen; peso corporal → más reps y reps totales; tiempo → mejor tiempo; cardio → distancia y ritmo (en el ritmo, menos es mejor). Periodos: 3 meses, 6 meses, 1 año y Todo. El ejercicio, la métrica y el periodo se recuerdan durante la sesión.
+- Récords personales por tipo. Los que se lograron en la última sesión salen en dorado. Los tres números del Resumen en el detalle del ejercicio ya se llenan.
+- Avisos (`lib/insights.ts`):
+  - **Días sin entrenar:** desde 5 días.
+  - **Estancado:** la mejor marca tiene 3 semanas o más y hubo 3 sesiones o más sin superarla, con una sugerencia concreta. Muestra hasta 2.
+  - **Buen progreso:** en las últimas 12 semanas, 4 sesiones o más y una mejora de 5 % o más. Muestra hasta 2.
+  - Solo se juzgan los ejercicios hechos en las últimas 2 semanas. El cardio no se juzga, porque la distancia varía a propósito. Al tocar un aviso se abre ese ejercicio en el gráfico.
+- "Copiar resumen para Claude" (está en la maqueta de Progreso) queda para la Parte 7.
+- Prueba automática: `pruebas/parte5.mjs` (siembra 3 meses: press banca que sube, sentadilla estancada, dominadas, plancha y trote).
+
 ## Plan técnico (Etapa 2)
 
-- PWA con **Vite + React + TypeScript**, datos locales con **Dexie** (IndexedDB), gráficos con **Recharts** y **vite-plugin-pwa** para instalarla y usarla sin internet.
+- PWA con **Vite + React + TypeScript**, datos locales con **Dexie** (IndexedDB), gráficos en SVG propio (se descartó Recharts para que pese menos) y **vite-plugin-pwa** para instalarla y usarla sin internet.
 - Mapa de músculos con una silueta SVG; por ejemplo react-body-highlighter (MIT) o una propia como la de la maqueta.
 - La capa de datos va aislada en `src/db/` para poder agregar la nube (Supabase) después sin rehacer nada.
 - Modelo de datos:
