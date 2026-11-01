@@ -19,6 +19,8 @@ App personal de entrenamiento al estilo de Hevy, con identidad católica: el cue
 | 3 · Publicar e instalar en el celular | ✅ Publicada el 2026-11-01 en **https://arctos3446.github.io/templum/**. El usuario la prueba con uso real y va reportando errores y cambios |
 | 4 · Futuro (nube, Claude dentro de la app, medidas corporales) | Opcional |
 
+**Próxima sesión:** el usuario instaló la app en su Samsung A16 con **Firefox** (2026-11-01) y la está probando en el gimnasio. Hay que empezar preguntándole qué errores o cambios encontró. Quedan pendientes "Mis versículos" (frases propias, está en la maqueta de Ajustes) y los dibujos de los 51 ejercicios que no tienen. Todavía no se ha probado la app instalada en Firefox para Android.
+
 El usuario todavía **no tiene rutinas** armadas. Las creará él en la app, así que no hay que precargarlas.
 
 ## Próximos pasos
